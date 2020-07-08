@@ -24,7 +24,6 @@ export class ListContactsComponent implements OnInit {
    */
   async fillContacts(){
     this.contacts = await this.chatService.getContacts();
-    console.log(this.contacts)
   }
 
 }

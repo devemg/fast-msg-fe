@@ -1,6 +1,5 @@
 <div class="container">
-  <mat-selection-list #shoes [multiple]="false">
-    <div mat-subheader>Contactos</div>
+  <mat-selection-list [multiple]="false">
       <mat-list-option *ngFor="let contact of contacts">
         <mat-icon mat-list-icon>note</mat-icon>
         <div mat-line>{{contact.name}}</div>
