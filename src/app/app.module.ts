@@ -8,13 +8,15 @@ import { ChatComponent } from './components/chat/chat.component';
 import { MainChatComponent } from './components/main-chat/main-chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModulesModule } from './shared-modules/shared-modules.module';
+import { ListChatsComponent } from './components/list-chats/list-chats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListContactsComponent,
     ChatComponent,
-    MainChatComponent
+    MainChatComponent,
+    ListChatsComponent
   ],
   imports: [
     BrowserModule,

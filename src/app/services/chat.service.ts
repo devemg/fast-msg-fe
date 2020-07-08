@@ -13,7 +13,17 @@ export class ChatService {
 
   constructor() { 
     this.list_chat = [
-      
+      {
+        contactImage:'image',
+        contactName:'chat 1',
+        id:1,
+        lastMessage:{
+          id:1,
+          content:"Holis",
+          date: new Date(),
+          owner:1
+        }
+      }
     ];
 
     this.list_contact = [

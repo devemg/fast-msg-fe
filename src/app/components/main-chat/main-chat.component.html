@@ -1,4 +1,14 @@
-<div class="container">
-<list-contacts></list-contacts>
-<app-chat></app-chat>
+<div class="lists">
+<mat-tab-group>
+        <mat-tab label="Chats"> 
+            <list-chats></list-chats>
+        </mat-tab>
+        <mat-tab label="Contactos"> 
+            <list-contacts></list-contacts>
+        </mat-tab>
+</mat-tab-group>
+</div>
+
+<div class="chat">
+    <app-chat></app-chat>
 </div>
