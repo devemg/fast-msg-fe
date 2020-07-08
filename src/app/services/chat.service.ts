@@ -7,8 +7,8 @@ import { Contact } from '../models/contact.model';
 })
 export class ChatService {
 
-  list_chat:Chat[];
-  list_contact:Contact[];
+  private list_chat:Chat[];
+  private list_contact:Contact[];
 
   constructor() { 
     this.list_chat = [
