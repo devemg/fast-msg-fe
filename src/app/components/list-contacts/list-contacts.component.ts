@@ -10,7 +10,7 @@ import { Contact } from 'src/app/models/contact.model';
 export class ListContactsComponent implements OnInit {
 
   contacts:Contact[];
-
+  
   constructor(
     public chatService:ChatService
   ) { }
