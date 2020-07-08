@@ -7,6 +7,7 @@ import { ListContactsComponent } from './components/list-contacts/list-contacts.
 import { ChatComponent } from './components/chat/chat.component';
 import { MainChatComponent } from './components/main-chat/main-chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModulesModule } from './shared-modules/shared-modules.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModulesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
