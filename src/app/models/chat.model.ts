@@ -1,7 +1,10 @@
+import { Message } from './message.model';
+
 export class Chat {
     constructor(
         public id:number,
-        public message:string,
-        public date:Date
+        public contactName:string,
+        public contactImage:string,
+        public messages:Message[]
     ){}
 }

@@ -1,1 +1,10 @@
-<p>chat works!</p>
+<div class="container">
+    <mat-toolbar>
+        {{chat.contactImage}}
+        {{chat.contactName}}
+    </mat-toolbar>
+    <p *ngFor="let message of chat.messages" [ngClass]="idUser == message.owner?'own-message':'contact-message'" >
+        {{message.content}}
+        <span>{{message.date | date }}</span>
+    </p>
+</div>
