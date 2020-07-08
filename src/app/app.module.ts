@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { MainChatComponent } from './components/main-chat/main-chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainChatComponent } from './components/main-chat/main-chat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
