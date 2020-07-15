@@ -82,6 +82,90 @@ export class ChatService {
           content:"holiiiiis x4",
           date:new Date(),
           owner:2
+        },
+        {
+          id:5,
+          content:"holiiiiis x4",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:1,
+          content:"holiiiiis",
+          date:new Date(),
+          owner:1
+        }
+        ,{
+          id:2,
+          content:"holiiiiis x2",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:3,
+          content:"holiiiiis x3",
+          date:new Date(),
+          owner:1
+        },
+        {
+          id:4,
+          content:"holiiiiis x4",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:1,
+          content:"holiiiiis",
+          date:new Date(),
+          owner:1
+        }
+        ,{
+          id:2,
+          content:"holiiiiis x2",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:3,
+          content:"holiiiiis x3",
+          date:new Date(),
+          owner:1
+        },
+        {
+          id:4,
+          content:"holiiiiis x4",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:5,
+          content:"holiiiiis x4",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:1,
+          content:"holiiiiis",
+          date:new Date(),
+          owner:1
+        }
+        ,{
+          id:2,
+          content:"holiiiiis x2",
+          date:new Date(),
+          owner:2
+        },
+        {
+          id:3,
+          content:"holiiiiis x3",
+          date:new Date(),
+          owner:1
+        },
+        {
+          id:4,
+          content:"holiiiiis x4",
+          date:new Date(),
+          owner:2
         }
       ]
     };
