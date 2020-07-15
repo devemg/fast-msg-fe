@@ -4,13 +4,16 @@
         {{chat.contactName}}
     </mat-toolbar>
     <div id="container-messages">
-        <div *ngFor="let message of chat.messages" class="message"
-            [ngClass]="idUser == message.owner?'own-message':'contact-message'">
-            <p class="content">{{message.content}}
-            </p>
-            <span class="date">{{message.date | date:'shortTime' }}</span>
+        <div *ngFor="let message of chat.messages" class="message">
+            <div class="content" [ngClass]="idUser == message.owner?'own-message':'contact-message'">
+                <p>{{message.content}}
+                </p>
+                <span class="date">{{message.date | date:'shortTime' }}</span> 
+            </div> 
+            <div class="clearfix"></div>
         </div>
     </div>
+   <div class="clearfix"></div>
     <div id="send-message">
         <input type="text" placeholder="mensaje..."/>
         <mat-icon class="icon">send</mat-icon>

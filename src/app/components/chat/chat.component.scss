@@ -7,57 +7,60 @@
     height: 100vh;
 }
 
+.clearfix {float: none; clear: both;}
+
 #info  {
     background-color: colors.$primary-color;
-    color:black;
+    color:colors.$bg-color;
 }
 
-
 #container-messages {
-    //propiedades de flex
-    display:flex;
-    flex-direction: column; 
-    flex-grow: 1;
-    justify-content: space-evenly;
- 
-    
     height: 100%;
     overflow-x: scroll;
     background-image: url("../../../assets/img/oriental-tiles.png");
-    //background-color: rebeccapurple;
-    
 }
 
 .message{
-    //propiedades de flex
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-   
-    background-color: white;
-    padding: 12px;
-    padding-bottom: 5px;
-    max-width: 50%;
-    border-radius: 10px;
-    margin-left: 3%;
-    margin-right: 3%;
+    width: 100%;
+    background-color: transparent;
     margin-top: 3%;
+ 
+    .content {
+        border-radius: 10px;
+        background-color: colors.$bg-message;
+        color: colors.$text-message;
+        opacity: 1;
+        max-width: 50%;
+        margin-left: 2%;
+        margin-right: 2%;
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-top: 10px;
+        padding-bottom: 3px;
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    
+        .date {display: block;
+            float: right;
+            margin: 0;
+            padding: 0;
+            padding-left: 30px;
+            font-weight: lighter;
+            font-size: 13px;
 
-
-    .date {
-        font-weight: lighter;
-        padding-top: 22px;
-        font-size: 14px;
+        }
     }
-
 }
 
 .own-message{
-    align-self: flex-start;
+    float: right;
 }
 
 .contact-message{
-    align-self: flex-end;
+    float: left;
 }
 
 #send-message{
@@ -73,12 +76,12 @@
     }
 
     .icon {
+        flex-basis: 10%;
         width: 100%;
         height: 100%;
         text-align: center;
         margin: 0;
         padding: 0;
-        flex-basis: 10%;
         line-height: 53px;
         color: colors.$primary-color;
         cursor: pointer;
