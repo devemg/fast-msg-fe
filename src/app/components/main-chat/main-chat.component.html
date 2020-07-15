@@ -1,3 +1,43 @@
+<mat-sidenav-container
+    class="example-container" (backdropClick)="closeSideNav()">
+    
+  <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side">
+    <p><button mat-button (click)="closeSideNav()">Toggle</button></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div id="container">
+        <div id="options">
+            <ul>
+                <li><mat-icon class="icon"
+                    (click)="openSideNav()" 
+                    matTooltip="Cuenta" matTooltipPosition="right"
+                    >account_circle</mat-icon></li>
+                <li><mat-icon class="icon"
+                    (click)="openSideNav()"
+                    matTooltip="Contactos" matTooltipPosition="right"
+                    >contacts</mat-icon></li>
+                <li><mat-icon class="icon"
+                    (click)="openSideNav()"
+                    matTooltip="Chats" matTooltipPosition="right"
+                    >chat</mat-icon></li>
+                <li><mat-icon class="icon"
+                    (click)="openSideNav()" 
+                    matTooltip="Configuración" matTooltipPosition="right"
+                    >settings</mat-icon></li>
+            </ul>
+        </div>
+        <div id="chat">
+            <app-chat></app-chat>
+        </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!----
 <div id="container">
     <div id="options">
         <ul>
@@ -19,13 +59,4 @@
         <app-chat></app-chat>
     </div>
 </div>
-
-<!----
-<mat-tab label="Chats"> 
-                <list-chats></list-chats>
-            </mat-tab>
-            <mat-tab label="Contactos"> 
-                <list-contacts></list-contacts>
-            </mat-tab>
-        
         -->
