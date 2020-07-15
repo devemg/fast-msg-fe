@@ -1,5 +1,5 @@
-$dark-color:#1d1c22;;
-$light-color:#cfbb8d;
+@use '../../../assets/css/colors' as colors;
+
 
 #container {
     display: flex;
@@ -9,8 +9,8 @@ $light-color:#cfbb8d;
 }
 
 #options {
-    background-color: $dark-color;
-    color: $light-color;
+    background-color: colors.$bg-color;
+    color: colors.$primary-color;
     ul {
         margin: 0;
         padding: 0;
@@ -50,7 +50,7 @@ $light-color:#cfbb8d;
 }
 
 .titles-tooltip{
-    background-color: $light-color;
+    background-color: colors.$primary-color;
     opacity: 1;
 
 }

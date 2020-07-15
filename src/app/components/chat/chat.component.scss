@@ -1,7 +1,4 @@
-
-$dark-color:#1d1c22;;
-$light-color:#cfbb8d;
-$bg-chat:#0d1238;
+@use '../../../assets/css/colors' as colors;
 
 .container {
     display: flex;
@@ -11,8 +8,8 @@ $bg-chat:#0d1238;
 }
 
 #info  {
-    background-color: $dark-color;
-    color: $light-color;
+    background-color: colors.$primary-color;
+    color:black;
 }
 
 
@@ -67,7 +64,7 @@ $bg-chat:#0d1238;
     height: 10%;
     display: flex;
     flex-direction: row;
-    background-color:$bg-chat;
+    background-color:colors.$bg-color;
 
     input {
         flex-basis: 90%;
@@ -83,13 +80,13 @@ $bg-chat:#0d1238;
         padding: 0;
         flex-basis: 10%;
         line-height: 53px;
-        color: $light-color;
+        color: colors.$primary-color;
         cursor: pointer;
         transition: all 300ms;
     }
 
     .icon:hover {
-        background-color: $light-color;
-        color: $bg-chat;
+        background-color: colors.$primary-color;
+        color: colors.$bg-color;
     }
 }
