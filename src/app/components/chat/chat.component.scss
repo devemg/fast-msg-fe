@@ -1,9 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+}
+
+
+#container-messages {
+    //propiedades de flex
+    display:flex;
+    flex-direction: column; 
+    flex-grow: 1;
+    justify-content: space-evenly;
+    
+    height: 100%;
+    overflow-x: scroll;
+    background-image: url("../../../assets/img/oriental-tiles.png");
+    //background-color: rebeccapurple;
+
+    
+}
+
+.message{
+    //propiedades de flex
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+   
+    background-color: gray;
+    padding: 12px;
+    max-width: 50%;
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+
+    .date {
+        font-weight: lighter;
+        padding-top: 22px;
+        font-size: 14px;
+    }
+
+}
+
 .own-message{
-    border: 2px solid black;
-    float: left;
+    background-color: black;
+    color: white;
+    align-self: flex-start;
 }
 
 .contact-message{
-    border: 2px solid blue;
-    float: right;
+    background-color: white;
+    color: black;
+    align-self: flex-end;
 }

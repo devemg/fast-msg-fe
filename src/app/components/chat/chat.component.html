@@ -1,10 +1,14 @@
-<div>
+<div class="container">
     <mat-toolbar>
         {{chat.contactImage}}
         {{chat.contactName}}
     </mat-toolbar>
-    <p *ngFor="let message of chat.messages" [ngClass]="idUser == message.owner?'own-message':'contact-message'" >
-        {{message.content}}
-        <span>{{message.date | date }}</span>
-    </p>
+    <div id="container-messages">
+        <div *ngFor="let message of chat.messages" class="message"
+            [ngClass]="idUser == message.owner?'own-message':'contact-message'">
+            <p class="content">{{message.content}}
+            </p>
+            <span class="date">{{message.date | date:'shortTime' }}</span>
+        </div>
+    </div>
 </div>
