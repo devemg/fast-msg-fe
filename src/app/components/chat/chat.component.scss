@@ -1,8 +1,17 @@
+
+$dark-color:#1d1c22;;
+$light-color:#cfbb8d;
+
 .container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+}
+
+#info  {
+    background-color: $dark-color;
+    color: $light-color;
 }
 
 
@@ -12,12 +21,12 @@
     flex-direction: column; 
     flex-grow: 1;
     justify-content: space-evenly;
+    align-items: stretch;
     
     height: 100%;
     overflow-x: scroll;
     background-image: url("../../../assets/img/oriental-tiles.png");
     //background-color: rebeccapurple;
-
     
 }
 
@@ -27,12 +36,15 @@
     flex-direction: row;
     justify-content: flex-end;
    
-    background-color: gray;
+    background-color: white;
     padding: 12px;
+    padding-bottom: 5px;
     max-width: 50%;
     border-radius: 10px;
     margin-left: 3%;
     margin-right: 3%;
+    margin-top: 3%;
+
 
     .date {
         font-weight: lighter;
@@ -43,13 +55,9 @@
 }
 
 .own-message{
-    background-color: black;
-    color: white;
     align-self: flex-start;
 }
 
 .contact-message{
-    background-color: white;
-    color: black;
     align-self: flex-end;
 }
