@@ -1,6 +1,7 @@
 
 $dark-color:#1d1c22;;
 $light-color:#cfbb8d;
+$bg-chat:#0d1238;
 
 .container {
     display: flex;
@@ -60,4 +61,35 @@ $light-color:#cfbb8d;
 
 .contact-message{
     align-self: flex-end;
+}
+
+#send-message{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    background-color:$bg-chat;
+
+    input {
+        flex-basis: 90%;
+        margin: 5px;
+        font-size: 15px;
+    }
+
+    .icon {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        flex-basis: 10%;
+        line-height: 53px;
+        color: $light-color;
+        cursor: pointer;
+        transition: all 300ms;
+    }
+
+    .icon:hover {
+        background-color: $light-color;
+        color: $bg-chat;
+    }
 }
