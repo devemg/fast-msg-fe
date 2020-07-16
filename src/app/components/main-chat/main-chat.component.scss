@@ -112,6 +112,7 @@
 
     .container-options{
         flex-basis: 85%;
+        overflow-x: hidden;
         overflow-y: scroll;
     }   
 }
