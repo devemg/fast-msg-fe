@@ -2,9 +2,32 @@
 
 .mat-list-item {
     color: colors.$text-neutral;
+
+    .image {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    .icon-chat {
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+    }
+
+    .message {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .date {
+        font-size: 13px;
+    }
 }
 
 .mat-list-item:hover {
     background-color: colors.$primary-color;
     color: colors.$bg-color;
 }
+

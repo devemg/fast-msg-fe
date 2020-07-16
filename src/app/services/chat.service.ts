@@ -23,6 +23,72 @@ export class ChatService {
           date: new Date(),
           owner: 1
         }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 1,
+          content: "Holis",
+          date: new Date(),
+          owner: 1
+        }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 1,
+          content: "Holis",
+          date: new Date(),
+          owner: 1
+        }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 1,
+          content: "Holis",
+          date: new Date(),
+          owner: 1
+        }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 1,
+          content: "Holis",
+          date: new Date(),
+          owner: 1
+        }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 1,
+          content: "Holis",
+          date: new Date(),
+          owner: 1
+        }
+      },
+      {
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        contactName: 'chat 1',
+        id: 1,
+        lastMessage: {
+          id: 23,
+          content: "Holis",
+          date: new Date(),
+          owner: 25
+        }
       }
     ];
 

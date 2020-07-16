@@ -1,8 +1,13 @@
 <div class="container-chats">
-    <mat-selection-list #shoes [multiple]="false">
-        <mat-list-option *ngFor="let chat of chats">
-          <mat-icon mat-list-icon>note</mat-icon>
-          <div mat-line>{{chat.contactName}}</div>
-        </mat-list-option>
-      </mat-selection-list>
-  </div>
+  <mat-selection-list #shoes [multiple]="false">
+    <mat-list-option *ngFor="let chat of chats">
+      <div class="icon-chat" mat-list-icon style="background-image: url({{chat.contactImage}});">
+      </div>
+      <div mat-line>{{chat.contactName}}</div>
+      <div mat-line class="message">
+        <p><span>{{chat.lastMessage.owner!=idUser?chat.contactName:'Yo'}}:</span>{{chat.lastMessage.content}}</p>
+        <span class="date">{{chat.lastMessage.date | date:'short'}}</span>
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
