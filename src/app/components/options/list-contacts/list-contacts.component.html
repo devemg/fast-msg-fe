@@ -1,8 +1,18 @@
 <div class="container-contacts">
-  <mat-selection-list [multiple]="false">
-      <mat-list-option *ngFor="let contact of contacts">
-        <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>{{contact.name}}</div>
-      </mat-list-option>
-    </mat-selection-list>
+<mat-list>
+  <mat-list-item *ngFor="let contact of contacts">
+    <div>
+      <img class="image" src="{{contact.image}}" alt="imagen"/>
+    </div>
+    <div mat-line>{{contact.name}}</div>
+    <div mat-line>
+      <button class="btn-msg" mat-mini-fab matTooltip="Enviar Mensaje" >
+        <mat-icon>sms</mat-icon>
+      </button>
+      <button class="btn-del" mat-mini-fab matTooltip="Eliminar">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>
 </div>

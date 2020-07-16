@@ -14,7 +14,7 @@ export class ChatService {
   constructor() {
     this.list_chat = [
       {
-        contactImage: 'image',
+        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         contactName: 'chat 1',
         id: 1,
         lastMessage: {
@@ -29,92 +29,92 @@ export class ChatService {
     this.list_contact = [
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       },
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       },
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       },
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       },
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       },
       {
         id: 1,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 1'
       },
       {
         id: 2,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 2'
       },
       {
         id: 3,
-        image: 'image',
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
         name: 'Nombreee 3'
       }
     ];
