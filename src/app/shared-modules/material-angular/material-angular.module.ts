@@ -7,6 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [],
@@ -19,7 +20,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatToolbarModule,
     MatTabsModule,
     MatTooltipModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
   ]
 })
 export class MaterialAngularModule { }

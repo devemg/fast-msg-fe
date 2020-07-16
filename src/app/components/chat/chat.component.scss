@@ -9,9 +9,65 @@
 
 .clearfix {float: none; clear: both;}
 
-#info  {
+#header-chat  {
     background-color: colors.$primary-color;
     color:colors.$bg-color;
+
+    display: flex;
+    flex-flow: wrap row;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    .left {
+        display: flex;
+        flex-flow: wrap row;
+        flex-grow: 1;
+
+        .avatar {
+            width: 55px;
+            height: 55px;
+            background-color: black;
+            border-radius: 100%;    
+            background-size: cover;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+    
+        #info {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .status {
+                color: colors.$bg-color;
+                font-size: 16px;
+            }
+
+            .name {
+                color: colors.$bg-color;
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    .menu {
+        cursor: pointer;
+        font-size: 30px;
+        margin: 0;
+        padding: 17px;
+    }
+
+    .menu:hover {
+        transform: scale(1.5,1.5);
+    }
+
 }
 
 #container-messages {

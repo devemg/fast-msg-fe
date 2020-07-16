@@ -1,7 +1,14 @@
+
 <div class="container">
-    <mat-toolbar id="info">
-        {{chat.contactImage}}
-        {{chat.contactName}}
+    <mat-toolbar id="header-chat">
+        <div class="left">
+            <div class="avatar" style="background-image: url({{chat.contactImage}});"></div>
+        <div id="info">
+            <p class="name">{{chat.contactName}}</p>
+            <span class="status">En línea...</span>
+        </div>
+        </div>
+        <mat-icon class="menu">menu</mat-icon>
     </mat-toolbar>
     <div id="container-messages">
         <div *ngFor="let message of chat.messages" class="message">

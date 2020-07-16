@@ -56,8 +56,8 @@ export class ChatService {
   async getChat(id: number): Promise<Chat> {
     return {
       id: 1,
-      contactImage: "Contacto 1",
-      contactName: "image",
+      contactImage: "https://material.angular.io/assets/img/examples/shiba1.jpg",
+      contactName: "Contacto 1",
       messages: [
         {
           id: 1,
