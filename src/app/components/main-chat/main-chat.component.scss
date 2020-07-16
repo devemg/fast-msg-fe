@@ -4,6 +4,13 @@
     width: 100%;
 }
 
+.no-v-scroll {
+    height: 100%;
+    overflow-y: hidden; 
+    display: flex; 
+    flex-direction: column;
+  }
+  
 #container {
     display: flex;
     flex-flow: row wrap;
@@ -58,6 +65,7 @@
     opacity: 1;
 
 }
+   
 
 #sidenav {
     width: 30%;

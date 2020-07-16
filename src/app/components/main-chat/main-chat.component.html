@@ -1,35 +1,36 @@
-<mat-sidenav-container
-    class="example-container" (backdropClick)="closeSideNav()">
-    
-  <mat-sidenav id="sidenav" #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side">
-    <div id="header">
-        <h3>{{title_option}}</h3>
-        <mat-icon class="icon" (click)="closeSideNav()">close</mat-icon>
-    </div>
-    <div class="container-options">
-        <list-contacts class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>
-        <list-chats class="full-width" *ngIf="indexOption === getIndex('Chats')"></list-chats>
-        <app-account class="full-width" *ngIf="indexOption === getIndex('Cuenta')"></app-account>
-        <app-settings class="full-width" *ngIf="indexOption === getIndex('Configuración')"></app-settings>
-    </div>    
-</mat-sidenav>
+<mat-sidenav-container class="example-container" (backdropClick)="closeSideNav()">
 
-  <mat-sidenav-content>
-    <div id="container">
-        <div id="options">
-            <ul >
-                <li *ngFor="let option of options; let index = index" >
-                    <mat-icon class="icon"
-                    (click)="openSideNav(index)" 
-                    matTooltip="{{option.title}}" matTooltipPosition="right"
-                    >{{option.icon}}</mat-icon></li>
-            </ul>
+    <mat-sidenav id="sidenav" #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="true">
+        <div class="no-v-scroll">
+            <div id="header">
+                <h3>{{title_option}}</h3>
+                <mat-icon class="icon" (click)="closeSideNav()">close</mat-icon>
+            </div>
+            <div class="container-options">
+                <list-contacts class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>
+                <list-chats class="full-width" *ngIf="indexOption === getIndex('Chats')"></list-chats>
+                <app-account class="full-width" *ngIf="indexOption === getIndex('Cuenta')"></app-account>
+                <app-settings class="full-width" *ngIf="indexOption === getIndex('Configuración')"></app-settings>
+            </div>
         </div>
-        <div id="chat">
-            <app-chat></app-chat>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div id="container">
+            <div id="options">
+                <ul>
+                    <li *ngFor="let option of options; let index = index">
+                        <mat-icon class="icon" (click)="openSideNav(index)" matTooltip="{{option.title}}"
+                            matTooltipPosition="right">{{option.icon}}</mat-icon>
+                    </li>
+                </ul>
+            </div>
+            <div id="chat">
+                <app-chat></app-chat>
+            </div>
         </div>
-    </div>
-  </mat-sidenav-content>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 
 
