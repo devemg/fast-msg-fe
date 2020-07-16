@@ -1,0 +1,10 @@
+@use '../../../../assets/css/colors' as colors;
+
+.mat-list-item {
+    color: colors.$text-neutral;
+}
+
+.mat-list-item:hover {
+    background-color: colors.$primary-color;
+    color: colors.$bg-color;
+}

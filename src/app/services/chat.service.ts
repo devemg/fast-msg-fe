@@ -41,6 +41,81 @@ export class ChatService {
         id: 3,
         image: 'image',
         name: 'Nombreee 3'
+      },
+      {
+        id: 1,
+        image: 'image',
+        name: 'Nombreee 1'
+      },
+      {
+        id: 2,
+        image: 'image',
+        name: 'Nombreee 2'
+      },
+      {
+        id: 3,
+        image: 'image',
+        name: 'Nombreee 3'
+      },
+      {
+        id: 1,
+        image: 'image',
+        name: 'Nombreee 1'
+      },
+      {
+        id: 2,
+        image: 'image',
+        name: 'Nombreee 2'
+      },
+      {
+        id: 3,
+        image: 'image',
+        name: 'Nombreee 3'
+      },
+      {
+        id: 1,
+        image: 'image',
+        name: 'Nombreee 1'
+      },
+      {
+        id: 2,
+        image: 'image',
+        name: 'Nombreee 2'
+      },
+      {
+        id: 3,
+        image: 'image',
+        name: 'Nombreee 3'
+      },
+      {
+        id: 1,
+        image: 'image',
+        name: 'Nombreee 1'
+      },
+      {
+        id: 2,
+        image: 'image',
+        name: 'Nombreee 2'
+      },
+      {
+        id: 3,
+        image: 'image',
+        name: 'Nombreee 3'
+      },
+      {
+        id: 1,
+        image: 'image',
+        name: 'Nombreee 1'
+      },
+      {
+        id: 2,
+        image: 'image',
+        name: 'Nombreee 2'
+      },
+      {
+        id: 3,
+        image: 'image',
+        name: 'Nombreee 3'
       }
     ];
   }
