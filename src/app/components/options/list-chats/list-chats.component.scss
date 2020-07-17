@@ -2,6 +2,7 @@
 
 .mat-list-item {
     color: colors.$text-neutral;
+    transition: all 300ms;
 
     .image {
         width: 50px;
