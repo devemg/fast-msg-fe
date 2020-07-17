@@ -1,4 +1,5 @@
 @use '../../../../assets/css/colors' as colors;
+@use '../../../../assets/css/fonts' as fonts;
 
 .container-account {
     color: black;
@@ -26,7 +27,7 @@
             padding-right: 6px;
             background-color: white;
             text-align: center;
-            font-family: 'Dancing Script', cursive;
+            font-family:fonts.$polaroid;
             font-size: 25px;
             padding-bottom: 15px;
             padding-top: 10px;
@@ -37,7 +38,7 @@
 
     
     .info {
-        margin-top: 50px;
+        margin-bottom: 50px;
         display: flex;
         flex-flow: row wrap;
         padding-left: 5px;
@@ -53,6 +54,7 @@
             h3 {
                 flex-basis: 100%;
                 border-bottom: 1px solid gray;
+                font-family:fonts.$title;
             }
     
             input[type="text"],
@@ -94,8 +96,7 @@
                 transition: all 300ms;
 
                 img {
-                    width: 50%;
-                    opacity: 0.7;
+                    width: 60%;
                     border: 3px solid white;
                     margin: 0 auto;
                     border-radius: 100%;

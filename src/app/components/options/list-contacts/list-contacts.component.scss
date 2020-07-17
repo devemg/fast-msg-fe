@@ -1,4 +1,5 @@
 @use '../../../../assets/css/colors' as colors;
+@use '../../../../assets/css/fonts' as fonts;
 
 
 .mat-list-item {
@@ -27,6 +28,11 @@
 
     .btn-msg {
         background-color: colors.$secondary-color;
+    }
+
+    .name {
+        font-size: 16px;
+        font-family: fonts.$name;
     }
 
 }
