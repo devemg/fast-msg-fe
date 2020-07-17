@@ -1,4 +1,11 @@
 <div class="container-chats">
+  <div id="search">
+    <input type="text" placeholder="buscar..." />
+    <button mat-icon-button color="accent">
+     <mat-icon>search</mat-icon>
+      </button>
+  </div>
+  
   <mat-selection-list #shoes [multiple]="false">
     <mat-list-option *ngFor="let chat of chats">
       <div class="icon-chat" mat-list-icon style="background-image: url({{chat.contactImage}});">

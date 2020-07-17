@@ -38,3 +38,19 @@
     color: colors.$bg-color;
 }
 
+#search{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    input {
+        flex-basis: 80%;
+    }
+
+    button {
+        color: colors.$primary-color;
+    }
+
+
+}
