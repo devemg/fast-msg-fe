@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SesionService } from 'src/app/services/sesion.service';
-import { Profile } from 'src/app/models/profile.model';
+import { SesionService } from '../../../services/sesion.service';
+import { Profile } from '../../../models/profile.model';
 
 @Component({
   selector: 'app-account',
@@ -17,7 +17,7 @@ export class AccountComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selectedImage = '../../../../assets/img/mooning.png';
+    this.selectedImage = '../../../../../assets/img/mooning.png';
     this.getProfile();
   }
 

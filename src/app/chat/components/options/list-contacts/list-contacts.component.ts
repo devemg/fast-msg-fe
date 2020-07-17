@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'src/app/services/chat.service';
-import { Contact } from 'src/app/models/contact.model';
+import { ChatService } from '../../../services/chat.service';
+import { Contact } from '../../../models/contact.model';
 
 @Component({
   selector: 'list-contacts',
