@@ -4,7 +4,10 @@
         <div class="no-v-scroll">
             <div id="header">
                 <h3>{{title_option}}</h3>
-                <mat-icon class="icon" (click)="closeSideNav()">close</mat-icon>
+                <button mat-icon-button color="accent" (click)="closeSideNav()">
+                    <mat-icon>close</mat-icon>
+                </button>
+
             </div>
             <div class="container-options">
                 <list-contacts class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>

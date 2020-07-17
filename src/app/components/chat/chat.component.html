@@ -8,7 +8,9 @@
             <span class="status">En línea...</span>
         </div>
         </div>
-        <mat-icon class="menu">menu</mat-icon>
+        <button mat-icon-button >
+            <mat-icon>menu</mat-icon>
+        </button>
     </mat-toolbar>
     <div id="container-messages">
         <div *ngFor="let message of chat.messages" class="message">
@@ -23,6 +25,8 @@
    <div class="clearfix"></div>
     <div id="send-message">
         <input type="text" placeholder="mensaje..."/>
-        <mat-icon class="icon">send</mat-icon>
+        <button mat-icon-button >
+            <mat-icon>send</mat-icon>
+        </button>
     </div>
 </div>
