@@ -16,9 +16,9 @@ export class MainChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.indexOption = 2;
+    this.indexOption = 3;
     this.options = options;
-    this.title_option='Chats';
+    this.title_option='Configs';
   }
 
   /**

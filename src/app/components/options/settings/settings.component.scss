@@ -1,0 +1,58 @@
+
+.themes {
+    color: #c7c7c7;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-flow: wrap row;
+
+    h3 {
+        flex-basis: 100%;
+        border-bottom: 1px solid gray;
+    }
+
+    .container-colors{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+        .color {
+            background-color: rebeccapurple;
+            width: 45px;
+            height: 45px;
+            border: 2px solid white;
+            border-radius: 100%;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .green {
+            background-color: yellowgreen;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+        
+        .pink {
+            background-color: pink;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .purple {
+            background-color: purple;
+        }
+        
+
+    }
+
+}
