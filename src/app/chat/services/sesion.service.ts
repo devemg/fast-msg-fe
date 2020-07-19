@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Profile } from '../models/profile.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SesionService {
 
-  constructor() { }
+  constructor(
+    private http:HttpClient
+  ) { }
 
   getUserID(){
-    return 1;
+    return "5f13218c8cb953232d4c4af0";
   }
 
   async getProfile():Promise<Profile> {
-    return {
-      name:"Emely Yecenia Garcia Monge",
-      image:"https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/29511815_2015136788513675_8681625286948105454_n.jpg?_nc_cat=108&_nc_sid=85a577&_nc_ohc=IzUhawLCxgQAX9XHPQE&_nc_ht=scontent-mia3-1.xx&oh=336b3795e2a0c3b6737b410908f96d39&oe=5F36AD64",
-      email:'garciam.emm@gmail.com'
-    }
+   return this.http.get<Profile>('http://localhost:8080/user?id=5f13218c8cb953232d4c4af0')
+   .toPromise();
   }
 
 }

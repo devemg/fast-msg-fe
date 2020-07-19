@@ -11,7 +11,7 @@ import { SesionService } from '../../services/sesion.service';
 export class ChatComponent implements OnInit {
 
   chat:Chat;
-  idUser:number;
+  idUser:string;
   constructor(
     private chatService:ChatService,
     private sesionService:SesionService
