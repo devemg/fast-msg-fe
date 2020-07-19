@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Chat } from '../models/chat.model';
 import { Contact } from '../models/contact.model';
 import { ChatItemList } from '../models/chat-item-list.model';
+import { HttpClient } from '@angular/common/http';
+import { ENDPOINT_USER, ENDPOINT_CHAT } from 'src/app/global-setting';
+import { SesionService } from './sesion.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,189 +12,23 @@ import { ChatItemList } from '../models/chat-item-list.model';
 export class ChatService {
 
   private list_chat: ChatItemList[];
-  private list_contact: Contact[];
 
-  constructor() {
-    this.list_chat = [
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 1,
-          content: "Holis",
-          date: new Date(),
-          owner: 1
-        }
-      },
-      {
-        contactImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        contactName: 'chat 1',
-        id: 1,
-        lastMessage: {
-          id: 23,
-          content: "Holis",
-          date: new Date(),
-          owner: 25
-        }
-      }
-    ];
-
-    this.list_contact = [
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      },
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      },
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      },
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      },
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      },
-      {
-        id: 1,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 1'
-      },
-      {
-        id: 2,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 2'
-      },
-      {
-        id: 3,
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        name: 'Nombreee 3'
-      }
-    ];
-  }
+  constructor(
+    private http:HttpClient,
+    private sesionService:SesionService
+  ) {}
 
   async getChats(): Promise<ChatItemList[]> {
+    await this.http.get<ChatItemList[]>(ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID())
+    .subscribe(res=>{
+      console.log(res)
+    });
+
     return this.list_chat;
   }
 
   async getContacts(): Promise<Contact[]> {
-    return this.list_contact;
+    return this.http.get<Contact[]>(ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
   }
 
   async getChat(id: number): Promise<Chat> {
