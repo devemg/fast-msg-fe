@@ -26,8 +26,8 @@ export class ChatService {
     return this.http.get<Contact[]>(ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
   }
 
-  async getChat(id: number): Promise<Chat> {
-    return null;
+  async getChat(id: string): Promise<Chat> {
+    return this.http.get<Chat>(ENDPOINT_CHAT+'?id='+id).toPromise();
   }
 
 }

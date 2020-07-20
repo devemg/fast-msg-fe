@@ -7,7 +7,7 @@ import { options } from './options';
   templateUrl: './main-chat.component.html',
   styleUrls: ['./main-chat.component.scss']
 })
-export class MainChatComponent implements OnInit,OnChanges {
+export class MainChatComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   options:any[];
   indexOption:number;
@@ -21,11 +21,7 @@ export class MainChatComponent implements OnInit,OnChanges {
     this.indexOption = -1;
     this.options = options;
     this.title_option='';
-    this.idChat='15s';
-  }
-
-  ngOnChanges(){
-    console.log('algo cambio...')
+    this.idChat=null;
   }
 
   /**
@@ -62,7 +58,7 @@ export class MainChatComponent implements OnInit,OnChanges {
   }
 
   changeChat(event){
-    console.log("EVENTO RECIBIDO",event)
+    this.idChat = event;
   }
 
 }
