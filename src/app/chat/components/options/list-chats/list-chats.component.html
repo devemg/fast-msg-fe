@@ -6,8 +6,9 @@
       </button>
   </div>
   
-  <mat-selection-list #shoes [multiple]="false">
-    <mat-list-option *ngFor="let chat of chats">
+  <mat-selection-list [multiple]="false" 
+  (selectionChange)="onSelection($event)">
+    <mat-list-option *ngFor="let chat of chats" [value]="chat.id">
       <div class="icon-chat" mat-list-icon style="background-image: url({{chat.image}});">
       </div>
       <div mat-line class="name">{{chat.name}}</div>

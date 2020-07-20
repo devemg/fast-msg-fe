@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ChatItemList } from '../../../models/chat-item-list.model';
 import { ChatService } from '../../../services/chat.service';
 import { SesionService } from '../../../services/sesion.service';
@@ -9,7 +9,10 @@ import { SesionService } from '../../../services/sesion.service';
   styleUrls: ['./list-chats.component.scss']
 })
 export class ListChatsComponent implements OnInit {
+  @Output('chatId')
+  sendChatId = new EventEmitter<string>();
 
+  
   chats:ChatItemList[];
   idUser:string;
   constructor(
@@ -27,4 +30,7 @@ export class ListChatsComponent implements OnInit {
     this.idUser = this.sesionService.getUserID();
   }
 
+  onSelection(event){
+    this.sendChatId.emit(event.option.value);
+  }
 }

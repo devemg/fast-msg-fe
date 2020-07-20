@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
 
@@ -7,11 +7,13 @@ import { options } from './options';
   templateUrl: './main-chat.component.html',
   styleUrls: ['./main-chat.component.scss']
 })
-export class MainChatComponent implements OnInit {
+export class MainChatComponent implements OnInit,OnChanges {
   @ViewChild('sidenav') sidenav: MatSidenav;
   options:any[];
   indexOption:number;
   title_option:string;
+
+  idChat:string;
 
   constructor() { }
 
@@ -19,6 +21,11 @@ export class MainChatComponent implements OnInit {
     this.indexOption = -1;
     this.options = options;
     this.title_option='';
+    this.idChat='15s';
+  }
+
+  ngOnChanges(){
+    console.log('algo cambio...')
   }
 
   /**
@@ -52,6 +59,10 @@ export class MainChatComponent implements OnInit {
    */
   getIndex(tittle:string):number{
     return this.options.findIndex(element=>element.title === tittle)
+  }
+
+  changeChat(event){
+    console.log("EVENTO RECIBIDO",event)
   }
 
 }

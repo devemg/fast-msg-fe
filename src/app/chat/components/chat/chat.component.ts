@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Chat } from '../../models/chat.model';
 import { ChatService } from '../../services/chat.service';
 import { SesionService } from '../../services/sesion.service';
@@ -9,6 +9,8 @@ import { SesionService } from '../../services/sesion.service';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  @Input() idChat:string;
+
 
   chat:Chat;
   idUser:string;
@@ -16,7 +18,7 @@ export class ChatComponent implements OnInit {
     private chatService:ChatService,
     private sesionService:SesionService
   ) { 
-    this.getChat();
+   // this.getChat();
   }
 
   ngOnInit(): void {
