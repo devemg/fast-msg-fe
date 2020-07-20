@@ -1,6 +1,6 @@
 export class Contact{
     constructor(
-        public id:number,
+        public _id:number,
         public name:string,
         public image:string
     ){}
