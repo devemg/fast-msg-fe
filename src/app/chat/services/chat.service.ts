@@ -11,7 +11,6 @@ import { SesionService } from './sesion.service';
 })
 export class ChatService {
 
-  private list_chat: ChatItemList[];
 
   constructor(
     private http:HttpClient,
@@ -19,12 +18,8 @@ export class ChatService {
   ) {}
 
   async getChats(): Promise<ChatItemList[]> {
-    await this.http.get<ChatItemList[]>(ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID())
-    .subscribe(res=>{
-      console.log(res)
-    });
+    return this.http.get<ChatItemList[]>(ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID()).toPromise()
 
-    return this.list_chat;
   }
 
   async getContacts(): Promise<Contact[]> {
@@ -34,8 +29,8 @@ export class ChatService {
   async getChat(id: number): Promise<Chat> {
     return {
       id: 1,
-      contactImage: "https://material.angular.io/assets/img/examples/shiba1.jpg",
-      contactName: "Contacto 1",
+      image: "https://material.angular.io/assets/img/examples/shiba1.jpg",
+      name: "Contacto 1",
       messages: [
         {
           id: 1,
