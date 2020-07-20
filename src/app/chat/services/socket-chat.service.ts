@@ -21,4 +21,10 @@ export class SocketChatService {
     }
   }
 
+  sendMessage(message,chatId){
+    if(this.socket){
+      this.socket.emit('chat-message',{owner:this.sesionService.getUserID(),chatId,message}); 
+    }
+  }
+
 }

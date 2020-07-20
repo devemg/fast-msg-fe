@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
+import { SocketChatService } from '../../services/socket-chat.service';
 
 @Component({
   selector: 'app-main-chat',
@@ -15,13 +16,16 @@ export class MainChatComponent implements OnInit {
 
   idChat:string;
 
-  constructor() { }
+  constructor(
+    private socketService:SocketChatService
+  ) { }
 
   ngOnInit(): void {
     this.indexOption = -1;
     this.options = options;
     this.title_option='';
     this.idChat=null;
+    this.socketService.registerInSocketChat()
   }
 
   /**
@@ -58,6 +62,7 @@ export class MainChatComponent implements OnInit {
   }
 
   changeChat(event){
+    this.closeSideNav();
     this.idChat = event;
   }
 
