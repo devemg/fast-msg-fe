@@ -3,8 +3,8 @@ import { Chat } from '../models/chat.model';
 import { Contact } from '../models/contact.model';
 import { ChatItemList } from '../models/chat-item-list.model';
 import { HttpClient } from '@angular/common/http';
-import { ENDPOINT_USER, ENDPOINT_CHAT } from 'src/app/global-setting';
 import { SesionService } from './sesion.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +18,16 @@ export class ChatService {
   ) {}
 
   async getChats(): Promise<ChatItemList[]> {
-    return this.http.get<ChatItemList[]>(ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID()).toPromise()
+    return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID()).toPromise()
 
   }
 
   async getContacts(): Promise<Contact[]> {
-    return this.http.get<Contact[]>(ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
+    return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
   }
 
   async getChat(id: string): Promise<Chat> {
-    return this.http.get<Chat>(ENDPOINT_CHAT+'?id='+id).toPromise();
+    return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id).toPromise();
   }
 
 }
