@@ -8,16 +8,16 @@
         <div class="info">
                 <div class="data-user">
                         <h3>Nombre de Usuario</h3>
-                        <input type="text" placeholder="{{profile.name}}" />
-                        <button mat-icon-button matTooltip="Guardar">
+                        <input type="text" placeholder="{{profile.name}}" [formControl]="name" />
+                        <button mat-icon-button matTooltip="Guardar" (click)="editName()">
                                 <mat-icon>done_outline</mat-icon>
                             </button>
                 </div>
 
                 <div class="data-user">
                         <h3>Correo Electrónico</h3>
-                        <input type="email" placeholder="{{profile.email}}" />
-                        <button mat-icon-button matTooltip="Guardar">
+                        <input type="email" placeholder="{{profile.email}}"[formControl]="email" />
+                        <button mat-icon-button matTooltip="Guardar" (click)="editEmail()">
                                 <mat-icon>done_outline</mat-icon>
                             </button>
                 </div>
@@ -26,7 +26,7 @@
                         <h3>Foto de perfil</h3>
                         <label for="file">
                                 <p>Cambiar Imagen</p>
-                                <img src="{{selectedImage}}" />
+                                <img src="{{selectedImage.src}}" />
                         </label>
                         <input #imageInput name="file" id="file" 
                         type="file" 
@@ -34,7 +34,8 @@
                         placeholder="imagen de perfil"
                         (change)="processFile($event)"
                         /> 
-                        <button mat-icon-button matTooltipPosition="after" matTooltip="Guardar">
+                        <button mat-icon-button matTooltipPosition="after" matTooltip="Guardar"
+                        (click)="editImage()">
                                 <mat-icon>done_outline</mat-icon>
                             </button>
                 </div>

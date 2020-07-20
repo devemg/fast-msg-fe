@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SesionService } from '../../../services/sesion.service';
 import { Profile } from '../../../models/profile.model';
+import { FormControl } from '@angular/forms';
+import { UserService } from 'src/app/chat/services/user.service';
+import { ImgFile } from 'src/app/chat/models/ImgFile.model';
 
 @Component({
   selector: 'app-account',
@@ -10,22 +12,63 @@ import { Profile } from '../../../models/profile.model';
 export class AccountComponent implements OnInit {
 
   profile: Profile = new Profile('', '', '');
-  selectedImage: string;
-
+  selectedImage: ImgFile;
+  name = new FormControl('');
+  email = new FormControl('');
+  
   constructor(
-    private sesionService: SesionService
+    private userService:UserService
   ) { }
 
   ngOnInit(): void {
-    this.selectedImage = '../../../../../assets/img/mooning.png';
+    this.selectedImage = new ImgFile('../../../../../assets/img/mooning.png',null);
     this.getProfile();
   }
 
+  /**
+   * obtener el perfil
+   */
   async getProfile() {
-    this.profile = await this.sesionService.getProfile();
-    this.selectedImage = this.profile.image;
+    this.profile = await this.userService.getProfile();
+    console.log(this.profile)
+    this.selectedImage = new ImgFile(this.profile.image,null);
   }
 
+  async editName(){
+    if(this.name.valid){
+      await this.userService.editUser({name:this.name.value})
+      .then(res=>{
+        console.log(res)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    }
+  }
+
+  async editImage(){
+    if(this.selectedImage.file){
+      await this.userService.editImage(this.selectedImage.file)
+      .then(res=>{
+        console.log(res)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    }
+  }
+
+  async editEmail(){
+    if(this.email.valid){
+      await this.userService.editUser({email:this.email.value})
+      .then(res=>{
+        console.log('exito',res)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    }
+  }
 
       /**
    * permite subir la imagen
@@ -36,7 +79,8 @@ export class AccountComponent implements OnInit {
   var myReader:FileReader = new FileReader();
 
   myReader.onloadend = (e) => {
-   this.selectedImage = myReader.result.toString();
+
+   this.selectedImage =new ImgFile( myReader.result.toString(),file);
   }
   myReader.readAsDataURL(file);
   }

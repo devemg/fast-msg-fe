@@ -9,6 +9,7 @@ import { ListChatsComponent } from './components/options/list-chats/list-chats.c
 import { ListContactsComponent } from './components/options/list-contacts/list-contacts.component';
 import { SettingsComponent } from './components/options/settings/settings.component';
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MaterialAngularModule } from '../shared-modules/material-angular/materi
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     ChatRoutingModule,
     MaterialAngularModule 
   ]
