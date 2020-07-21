@@ -64,7 +64,8 @@
     flex-flow: column wrap;
     justify-content: flex-start;
     
-    #content-first {
+    #content-first ,
+    #content-third{
         background-image: url('../../../../assets/img/mooning.png');
         display: flex;
         flex-flow: row wrap;
@@ -170,19 +171,45 @@
         }
 
     }
- 
 
-    #content-third {
+    #content-third{
+        h1 {
+            letter-spacing: 0;
+        }
+    }
+
+    #content-fourth {
         background-color: salmon;
         min-height: 75vh;
-
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
         align-items: center;
 
-        .card {
-            width: 45%;
+        a {
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+        }
+
+        h3 {
+            padding-top: 20px;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+        }
+        
+        mat-icon {
+            display: none;
+            transition: all 1000ms;
+        }
+
+        .card:hover {
+            mat-icon {
+                display: initial;
+            }
         }
 
     }
