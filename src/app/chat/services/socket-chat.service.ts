@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/assets/environments/environment';
 import { SesionService } from './sesion.service';
 import { Message } from '../models/message.model';
 import { Observable } from 'rxjs';

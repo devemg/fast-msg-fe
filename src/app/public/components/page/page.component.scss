@@ -1,0 +1,136 @@
+@use '../../../../assets/css/colors' as colors;
+@use '../../../../assets/css/fonts' as fonts;
+
+#container-page {
+    height: 100%;
+    background-image: url('../../../../assets/img/mooning.png');
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    
+    #content-first {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100vh;
+
+        .img-container {
+            background-color: red;
+            flex: 1;
+            text-align: right;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+        
+        .info-container {
+            background-color: rebeccapurple;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 33px;
+            flex: 2;
+            display: flex;
+            flex-flow: wrap column;
+            justify-content: center;
+
+            h1 {
+                font-size: 60px;
+                font-family: fonts.$big-title;
+                font-weight: bold;
+                letter-spacing: 5px;
+            }
+
+            h2 {
+                text-align: justify;
+                font-family: fonts.$middle-text;
+            }
+
+        }
+
+    }
+
+    #content-second {
+        height: 100vh;
+        background-color: colors.$bg-color;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        
+
+        .card {
+            background-color: #c4c4c4;
+            width: 25%;
+            height: 50%;
+            border-radius: 10px;
+            //sombras
+            -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+            box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            cursor: pointer;
+
+            mat-icon {
+                width: 100%;
+                text-align: center;
+                font-size: 100px;
+                height: auto;
+            }
+
+            h3 {
+                width: 100%;
+                text-align: center;
+                font-family: fonts.$big-title;
+                letter-spacing: 3px;
+                font-size: 27px;
+                margin: 0;
+            }
+
+            p {
+                font-family: fonts.$middle-text;
+            }
+
+        }
+
+        .theme-1:hover{
+            background-color: colors.$primary-color;
+        }
+
+        .theme-2:hover{
+            background-color: pink;
+        }
+
+        .theme-3:hover{
+            background-color: peru;
+        }
+    }
+
+    #content-third {
+        background-color: salmon;
+        min-height: 75vh;
+    }
+}
+
+.theme-1{
+    background-color: colors.$primary-color;
+}
+
+#footer {
+    background-color: colors.$bg-color;
+    min-height: 25vh;
+    a {
+        color: white;
+    }
+
+}

@@ -4,7 +4,7 @@ import { Contact } from '../models/contact.model';
 import { ChatItemList } from '../models/chat-item-list.model';
 import { HttpClient } from '@angular/common/http';
 import { SesionService } from './sesion.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/assets/environments/environment';
 
 @Injectable({
   providedIn: 'root'

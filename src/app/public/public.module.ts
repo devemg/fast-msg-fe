@@ -7,13 +7,15 @@ import { PageComponent } from './components/page/page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
+import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 
 
 @NgModule({
   declarations: [LoginComponent, PageComponent, RegisterComponent, ResetPasswordComponent, ConfirmAccountComponent],
   imports: [
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    MaterialAngularModule
   ]
 })
 export class PublicModule { }
