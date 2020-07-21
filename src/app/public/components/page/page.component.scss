@@ -14,12 +14,12 @@
     justify-content: flex-start;
     
     #content-first {
+        background-image: url('../../../../assets/img/mooning.png');
         display: flex;
         flex-flow: row wrap;
         height: 100vh;
 
         .img-container {
-            background-color: red;
             flex: 1;
             text-align: right;
             height: 100%;
@@ -32,7 +32,6 @@
         }
         
         .info-container {
-            background-color: rebeccapurple;
             padding-left: 20px;
             padding-right: 20px;
             padding-top: 33px;
@@ -91,7 +90,8 @@
             h3 {
                 width: 100%;
                 text-align: center;
-                font-family: fonts.$big-title;
+                font-family: fonts.$middle-text;
+                font-weight: bold;
                 letter-spacing: 3px;
                 font-size: 27px;
                 margin: 0;
@@ -103,16 +103,20 @@
 
         }
 
-        .theme-1:hover{
-            background-color: colors.$primary-color;
+        .card:hover {
+            color:white;
         }
 
-        .theme-2:hover{
-            background-color: pink;
+        .theme-1{
+            background-color: #ff5733;
         }
 
-        .theme-3:hover{
-            background-color: peru;
+        .theme-2{
+            background-color:  #1f618d ;
+        }
+
+        .theme-3{
+            background-color: #17a589;
         }
     }
 
