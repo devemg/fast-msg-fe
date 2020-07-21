@@ -241,12 +241,20 @@
 
     }
 
-    #content-third .info-container{
-        
-        
-        h1 {
-            letter-spacing: 0px;
+    #content-third{
+        background-image: url('../../../../assets/img/carousel/team.jpg');
+        background-size: cover;
+
+        .info-container{
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+
+            h1 {
+                letter-spacing: 0px;
+            }
         }
+
+        
     }
 
     #content-fourth {
@@ -274,7 +282,7 @@
         
         mat-icon {
             display: none;
-            transition: all 1000ms;
+            transition: all 50s;
         }
 
         .card:hover {
