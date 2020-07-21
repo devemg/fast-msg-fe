@@ -21,7 +21,8 @@
     list-style: none;
     height: 85px;
     font-family: fonts.$middle-text;
-
+    transition: all 300ms;
+    
     display: flex;
     flex-flow: row wrap;
     justify-content: right;
@@ -36,6 +37,7 @@
         padding-left: 15px;
         padding-right: 15px;
         font-size: 20px;
+        transition: all 300ms;
     }
 
     li:hover {
@@ -112,49 +114,6 @@
         flex-flow: row wrap;
         justify-content: space-evenly;
         align-items: center;
-        
-
-        .card {
-            background-color: #c4c4c4;
-            width: 25%;
-            height: 50%;
-            border-radius: 10px;
-            //sombras
-            -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-            -moz-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-            box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
-            cursor: pointer;
-
-            mat-icon {
-                width: 100%;
-                text-align: center;
-                font-size: 100px;
-                height: auto;
-            }
-
-            h3 {
-                width: 100%;
-                text-align: center;
-                font-family: fonts.$middle-text;
-                font-weight: bold;
-                letter-spacing: 3px;
-                font-size: 27px;
-                margin: 0;
-            }
-
-            p {
-                font-family: fonts.$middle-text;
-            }
-
-        }
-
-        .card:hover {
-            color:white;
-        }
 
         .theme-1{
             background-color: #ff5733;
@@ -167,11 +126,65 @@
         .theme-3{
             background-color: #17a589;
         }
+
+        .card:hover {
+            color:white;
+        }  
     }
+
+    .card {
+        background-color: #c4c4c4;
+        width: 25%;
+        height: 50%;
+        border-radius: 10px;
+        transition: all 300ms;
+        //sombras
+        -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+        box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
+
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        cursor: pointer;
+
+        mat-icon {
+            width: 100%;
+            text-align: center;
+            font-size: 100px;
+            height: auto;
+        }
+
+        h3 {
+            width: 100%;
+            text-align: center;
+            font-family: fonts.$middle-text;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 27px;
+            margin: 0;
+        }
+
+        p {
+            font-family: fonts.$middle-text;
+        }
+
+    }
+ 
 
     #content-third {
         background-color: salmon;
         min-height: 75vh;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .card {
+            width: 45%;
+        }
+
     }
 }
 
