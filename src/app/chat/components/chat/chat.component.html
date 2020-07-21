@@ -11,7 +11,8 @@
             <mat-icon>menu</mat-icon>
         </button>
     </mat-toolbar>
-    <div id="container-messages">
+    <!-----[scrollTop]="scrolltop"-->
+    <div id="container-messages" #scrollMe >
         <div *ngFor="let message of chat.messages" class="message">
             <div class="content" [ngClass]="idUser == message.owner?'own-message':'contact-message'">
                 <p>{{message.content}}
