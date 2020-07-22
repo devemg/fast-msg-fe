@@ -39,7 +39,7 @@
 }
 
 
-.component {
+mat-form-field {
     width: 100%;
     display: flex;
     flex-flow: column wrap;
@@ -47,49 +47,6 @@
     padding: 5px;
     border-radius: 10px;
     font-family: fonts.$middle-text;
- 
-    label {
-        width: 100%;
-        font-size: 15px;
-    }
-
-    input {
-        width: 100%;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"]{
-        border-radius: 0;
-        border: none;
-        height: 30px;
-        font-family: fonts.$text;
-    }
-
-    input[type="submit"],
-    input[type="button"],
-    button {
-        font-family: fonts.$middle-text;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #E8BD01;
-        height: 60px;
-        border: none;
-        cursor: pointer;
-        transition: all 300ms;
-
-        -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-        -moz-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-        box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.75);
-    }
-
-    input[type="submit"]:active,
-    input[type="button"]:active,
-    button {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
 
     #msg {
         max-height: 105px;
@@ -98,4 +55,8 @@
         resize: none;
     }
 
+}
+
+.btn-submit {
+    background-color: #E8BD01;
 }
