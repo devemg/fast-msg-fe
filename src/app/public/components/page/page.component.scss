@@ -211,7 +211,7 @@
     #content-fourth {
         background-color: #EFA48B; //#FCC8B2;
         background-image: url('../../../../assets/img/backgrounds/square_bg.png');
-        min-height: 75vh;
+        min-height: 67vh;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
@@ -248,9 +248,63 @@
 
 #footer {
     background-color: colors.$bg-color;
-    min-height: 25vh;
-    a {
-        color: white;
+    min-height: 33vh;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    p {
+        font-family: fonts.$middle-text;
+        width: 100%;
+
+        a {
+            color: white;
+            font-family: fonts.$middle-text;
+            width: 100%;
+                text-decoration: none;
+                font-weight: bold;
+            
+        }
+    
+        a:hover {
+            text-shadow: 0px 0px 5px white;
+        }
     }
 
+    a {
+        color: white;
+        font-family: fonts.$middle-text;
+        width: 100%;
+            text-decoration: none;
+            font-weight: bold;
+        
+    }
+
+    a:hover {
+        text-shadow: 0px 0px 5px white;
+    }
+
+    h3 {
+        width: 100%;
+        font-family: fonts.$middle-text;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .container-footer {
+        padding:10px;
+    }
+
+
+    #sources-info{
+        padding-right: 20px;
+    p {
+        text-align: center;
+    }
+
+    }
 }
