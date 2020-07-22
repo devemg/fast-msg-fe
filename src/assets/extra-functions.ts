@@ -1,4 +1,4 @@
-import { FormGroup, ValidationErrors } from "@angular/forms";
+import { FormGroup, ValidationErrors, ValidatorFn, AbstractControl } from "@angular/forms";
 
 /**
   * Muestra los errores del formulario por los cuales no es valido
@@ -20,6 +20,14 @@ export function getFormValidationErrors(frm: FormGroup) {
 * retorna true si hay error
 * retorna false si no hay error
 */
-export function handleError(form:FormGroup,controlName: string, errorName: string) {
+export function handleError(form: FormGroup, controlName: string, errorName: string) {
     return form.controls[controlName].hasError(errorName);
 }
+
+export function passwordMatchValidator(control: AbstractControl) {
+    const password: string = control.get('password').value; 
+    const confirmPassword: string = control.get('confirmPassword').value; 
+    if (password !== confirmPassword) {
+      control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
+    }
+  }
