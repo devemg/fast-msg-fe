@@ -6,32 +6,39 @@ import { RegisterComponent } from './components/register/register.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    component:PageComponent
-  },
-  {
-    path:'login',
-    component:LoginComponent
-  },
-  {
-    path:'register',
-    component:RegisterComponent
-  },
-  {
-    path:'contact',
-    component:ContactComponent
-  },
-  {
-    path:'reset-password',
-    component:ResetPasswordComponent
-  },
-  {
-    path:'confirm-account/:id',
-    component:ConfirmAccountComponent
+        component: MainPageComponent,
+        children: [
+          {
+            path:'',
+            component:PageComponent
+          },
+          {
+            path:'login',
+            component:LoginComponent
+          },
+          {
+            path:'register',
+            component:RegisterComponent
+          },
+          {
+            path:'contact',
+            component:ContactComponent
+          },
+          {
+            path:'reset-password',
+            component:ResetPasswordComponent
+          },
+          {
+            path:'confirm-account/:id',
+            component:ConfirmAccountComponent
+          }
+        ]
   }
 ];
 

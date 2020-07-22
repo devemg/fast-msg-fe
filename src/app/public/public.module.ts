@@ -9,10 +9,11 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 import { ContactComponent } from './components/contact/contact.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, PageComponent, RegisterComponent, ResetPasswordComponent, ConfirmAccountComponent, ContactComponent],
+  declarations: [LoginComponent, PageComponent, RegisterComponent, ResetPasswordComponent, ConfirmAccountComponent, ContactComponent, MainPageComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,
