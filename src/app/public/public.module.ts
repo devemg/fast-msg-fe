@@ -10,6 +10,7 @@ import { ConfirmAccountComponent } from './components/confirm-account/confirm-ac
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
+    ReactiveFormsModule,
     MaterialAngularModule
   ]
 })
