@@ -1,9 +1,15 @@
 <div id="header">
+   
     <ul id="menu">
-        <li><a href="" [routerLink]="['/login']" >Iniciar Sesión</a></li>
-        <li><a href="" [routerLink]="['/register']" >Registrarse</a></li>
-        <li><a href="" [routerLink]="['/contact']" >Contacto</a></li>
+        <li><a href="" [routerLink]="['/login']">Iniciar Sesión</a></li>
+        <li><a href="" [routerLink]="['/register']">Registrarse</a></li>
+        <li><a href="" [routerLink]="['/contact']">Contacto</a></li>
     </ul>
+    <div id="logo">
+        <a href="" [routerLink]="['/']">
+            <img src="../../../../assets/img/icon.svg" alt="Fast Messages" />
+        </a>
+    </div>
 </div>
 
 <router-outlet></router-outlet>
