@@ -21,7 +21,7 @@ export class AccountComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selectedImage = new ImgFile('../../../../../assets/img/mooning.png',null);
+    this.selectedImage = new ImgFile('../../../../../assets/img/backgrounds/mooning.png',null);
     this.getProfile();
   }
 

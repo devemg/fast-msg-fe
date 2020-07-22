@@ -3,7 +3,7 @@
 
 #container-page {
     height: 100%;
-    background-image: url('../../../../assets/img/mooning.png');
+    background-image: url('../../../../assets/img/backgrounds/mooning.png');
 }
 
 #content {
@@ -15,7 +15,8 @@
     
     #content-first ,
     #content-third{
-        background-image: url('../../../../assets/img/mooning.png');
+        background-color: #E8BD01;
+        background-image: url('../../../../assets/img/backgrounds/square_bg.png');
         display: flex;
         flex-flow: row wrap;
         height: 100vh;
@@ -208,7 +209,8 @@
     }
 
     #content-fourth {
-        background-color: #EFA48B; 
+        background-color: #EFA48B; //#FCC8B2;
+        background-image: url('../../../../assets/img/backgrounds/square_bg.png');
         min-height: 75vh;
         display: flex;
         flex-flow: row wrap;
