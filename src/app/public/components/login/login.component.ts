@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError } from 'src/assets/extra-functions';
 import { AuthService } from '../../services/auth.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBulder:FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private alertService:AlertService
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
+    this.alertService.holaMundo()
     if(this.loginForm.valid){
       this.authService.login(this.loginForm.value)
       .subscribe(data=>{

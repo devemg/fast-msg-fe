@@ -1,7 +1,9 @@
 @use '../../../../assets/css/colors' as colors;
 @use '../../../../assets/css/fonts' as fonts;
 
-
+.container-alll{
+    height: 100vh;
+}
 #header {
     position: fixed;
     top: 0;

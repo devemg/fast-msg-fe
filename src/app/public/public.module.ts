@@ -13,6 +13,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { AlertService } from '../services/alert.service';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { AuthService } from './services/auth.service';
     HttpClientModule,
     MaterialAngularModule
   ],
-  providers:[AuthService]
+  providers:[AuthService,AlertService]
 })
 export class PublicModule { }
