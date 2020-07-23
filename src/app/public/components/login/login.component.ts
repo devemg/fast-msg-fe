@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError } from 'src/assets/extra-functions';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
 
   constructor(
-    private formBulder:FormBuilder
+    private formBulder:FormBuilder,
+    private authService:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,13 @@ export class LoginComponent implements OnInit {
 
   submit(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value)
+      this.authService.login(this.loginForm.value)
+      .subscribe(data=>{
+        console.log(data)
+      },
+      error=>{
+        console.error("Error",error)
+      })
     }else{
       //getFormValidationErrors(this.loginForm)
     }
