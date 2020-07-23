@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError } from 'src/assets/extra-functions';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,8 @@ export class ContactComponent implements OnInit {
   contactForm:FormGroup;
 
   constructor(
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private authService:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +28,13 @@ export class ContactComponent implements OnInit {
 
   submit(){
     if(this.contactForm.valid){
-      console.log(this.contactForm.value)
+      this.authService.contact(this.contactForm.value)
+      .subscribe(data=>{
+        console.log(data)
+      },
+      error=>{
+        console.error("Error",error)
+      })
     }else {
       getFormValidationErrors(this.contactForm)
     }
