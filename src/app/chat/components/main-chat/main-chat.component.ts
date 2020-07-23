@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
 import { SocketChatService } from '../../services/socket-chat.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-chat',
@@ -17,7 +18,8 @@ export class MainChatComponent implements OnInit {
   idChat:string;
 
   constructor(
-    private socketService:SocketChatService
+    private socketService:SocketChatService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -41,10 +43,13 @@ export class MainChatComponent implements OnInit {
    * @param index de opcion
    */
   openSideNav(index:number){
-    if(index!=this.indexOption){
+    
+    if(index!=this.indexOption && index!= (this.options.length-1)){
       this.title_option = this.options[index].title;
       this.indexOption = index;
       this.sidenav.open();
+    }else if (index == (this.options.length-1)) {
+      this.router.navigate(['../'])
     }else{
       this.title_option = '';
       this.indexOption = -1;

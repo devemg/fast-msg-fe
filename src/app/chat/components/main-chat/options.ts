@@ -14,4 +14,8 @@ export const options = [
     {
         title: "Configuración",
         icon: "settings"
+    },
+    {
+        title:'Salir',
+        icon:'meeting_room'
     }];
