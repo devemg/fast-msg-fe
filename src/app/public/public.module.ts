@@ -11,6 +11,8 @@ import { MaterialAngularModule } from '../shared-modules/material-angular/materi
 import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ConnectionService } from './services/connection.service';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PublicRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MaterialAngularModule
-  ]
+  ],
+  providers:[ConnectionService]
 })
 export class PublicModule { }

@@ -7,7 +7,8 @@ export const environment = {
   production: false,
   ENDPOINT_SOCKET:api,
   ENDPOINT_CHAT : api+'/chat',
-  ENDPOINT_USER : api+'/user'
+  ENDPOINT_USER : api+'/user',
+  ENDPOINT_PUBLIC : api+'/public'
 };
 
 /*
