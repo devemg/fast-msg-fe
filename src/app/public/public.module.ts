@@ -12,7 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ConnectionService } from './services/connection.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -24,6 +24,6 @@ import { ConnectionService } from './services/connection.service';
     HttpClientModule,
     MaterialAngularModule
   ],
-  providers:[ConnectionService]
+  providers:[AuthService]
 })
 export class PublicModule { }

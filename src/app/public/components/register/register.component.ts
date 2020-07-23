@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError, passwordMatchValidator } from 'src/assets/extra-functions';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ export class RegisterComponent implements OnInit {
   registerForm:FormGroup;
 
   constructor(
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private authService:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,13 @@ export class RegisterComponent implements OnInit {
 
   submit(){
     if(this.registerForm.valid){
-      console.log(this.registerForm.value)
+      this.authService.register(this.registerForm.value)
+      .subscribe(data=>{
+        console.log(data)
+      },
+      error=>{
+        console.error("Error",error)
+      })
     }else{
       getFormValidationErrors(this.registerForm)
     }
