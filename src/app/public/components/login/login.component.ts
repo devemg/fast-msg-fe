@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { getFormValidationErrors, handleError } from 'src/assets/extra-functions';
+import { handleError } from 'src/assets/extra-functions';
 import { AuthService } from '../../services/auth.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBulder:FormBuilder,
     private authService:AuthService,
-    private alertService:AlertService
+    private alertService:AlertService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -28,13 +30,14 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-    this.alertService.holaMundo()
     if(this.loginForm.valid){
       this.authService.login(this.loginForm.value)
       .subscribe(data=>{
         console.log(data)
+        this.router.navigate(['../chat'])
       },
       error=>{
+        this.alertService.alert('Inicio de Sesión','Algo ha salido mal','error')
         console.error("Error",error)
       })
     }else{
