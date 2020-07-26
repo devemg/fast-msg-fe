@@ -20,7 +20,7 @@ export class AlertService {
   alertError(title,text){
     return Swal.fire({
       title: 'Error en '+title,
-      text: text,
+      html: text,
       icon: 'error',
     })
   } 
@@ -28,7 +28,7 @@ export class AlertService {
   alertSuccess(title,text){
     return Swal.fire({
       title: title,
-      text: text,
+      html: text,
       icon: 'success'
     })
   }

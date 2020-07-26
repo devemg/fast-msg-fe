@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError } from 'src/assets/extra-functions';
 import { AuthService } from '../../services/auth.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +16,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private alertSevice:AlertService
   ) { }
 
   ngOnInit(): void {
@@ -30,10 +32,11 @@ export class ContactComponent implements OnInit {
     if(this.contactForm.valid){
       this.authService.contact(this.contactForm.value)
       .subscribe(data=>{
-        console.log(data)
+        this.alertSevice.alertSuccess('Contacto',
+        'Mensaje Envíado con éxito. <br/> ¡Espera nuestra respuesta pronto!')
       },
       error=>{
-        console.error("Error",error)
+        this.alertSevice.alertError('Contacto',error.error.message)
       })
     }else {
       getFormValidationErrors(this.contactForm)
