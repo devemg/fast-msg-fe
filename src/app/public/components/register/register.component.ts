@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError, passwordMatchValidator } from 'src/assets/extra-functions';
 import { AuthService } from '../../services/auth.service';
+import { AlertService } from 'src/app/services/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private alertService:AlertService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -28,16 +32,21 @@ export class RegisterComponent implements OnInit {
       validator: passwordMatchValidator
    }
     )
-  }
+  } 
 
   submit(){
     if(this.registerForm.valid){
       this.authService.register(this.registerForm.value)
       .subscribe(data=>{
         console.log(data)
+        this.alertService.alertSuccess('Registro Éxitoso',
+        'Revise su correo electrónico para realizar la confirmación de su cuenta')
+        .then(res=>{
+          this.router.navigate(['/'])
+        })
       },
       error=>{
-        console.error("Error",error)
+        this.alertService.alertError('Registro',error.error.message)
       })
     }else{
       getFormValidationErrors(this.registerForm)

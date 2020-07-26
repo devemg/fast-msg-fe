@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['../chat'])
       },
       error=>{
-        this.alertService.alert('Inicio de Sesión','Algo ha salido mal','error')
-        console.error("Error",error)
+        //objeto de error del server = error.error 
+        this.alertService.alertError('Inicio de Sesión',error.error.message)
       })
     }else{
       //getFormValidationErrors(this.loginForm)

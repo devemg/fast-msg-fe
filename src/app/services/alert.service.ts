@@ -17,8 +17,24 @@ export class AlertService {
     Swal.fire(title,text,type)
   }
 
+  alertError(title,text){
+    return Swal.fire({
+      title: 'Error en '+title,
+      text: text,
+      icon: 'error',
+    })
+  } 
+
+  alertSuccess(title,text){
+    return Swal.fire({
+      title: title,
+      text: text,
+      icon: 'success'
+    })
+  }
+
   confirm(){
-    Swal.fire({
+    return Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
