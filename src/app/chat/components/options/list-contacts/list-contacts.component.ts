@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChatService } from '../../../services/chat.service';
 import { Contact } from '../../../models/contact.model';
 
@@ -8,6 +8,9 @@ import { Contact } from '../../../models/contact.model';
   styleUrls: ['./list-contacts.component.scss']
 })
 export class ListContactsComponent implements OnInit {
+  @Output('chat')
+  sendChatId = new EventEmitter<string>();
+  
   contacts:Contact[];
   
   constructor(
@@ -38,8 +41,9 @@ export class ListContactsComponent implements OnInit {
    * Para crear un nuevo chat y/o recuperar el chat
    * @param id de contacto
    */
-  createChat(id){
-    console.log(id)
+  async createChat(id){
+    var response = await this.chatService.getOrCreateChat(id);
+    this.sendChatId.emit(response.chatId);
   }
 
 }

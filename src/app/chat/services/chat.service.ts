@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Chat } from '../models/chat.model';
 import { Contact } from '../models/contact.model';
 import { ChatItemList } from '../models/chat-item-list.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SesionService } from './sesion.service';
 import { environment } from 'src/assets/environments/environment';
 
@@ -28,6 +28,12 @@ export class ChatService {
 
   async getChat(id: string): Promise<Chat> {
     return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id).toPromise();
+  }
+
+  async getOrCreateChat(to: string): Promise<any> {
+    return this.http.post<any>(environment.ENDPOINT_CHAT,
+      JSON.stringify({to,from:this.sesionService.getUserID()}),
+      {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
   }
 
 }

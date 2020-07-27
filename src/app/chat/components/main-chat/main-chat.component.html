@@ -10,7 +10,7 @@
 
             </div>
             <div class="container-options">
-                <list-contacts class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>
+                <list-contacts (chat)="changeChat($event)" class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>
                 <list-chats (chatId)="changeChat($event)" class="full-width" *ngIf="indexOption === getIndex('Chats')"></list-chats>
                 <app-account class="full-width" *ngIf="indexOption === getIndex('Cuenta')"></app-account>
                 <app-settings class="full-width" *ngIf="indexOption === getIndex('Configuración')"></app-settings>
