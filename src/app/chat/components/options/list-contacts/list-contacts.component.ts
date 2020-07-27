@@ -25,4 +25,21 @@ export class ListContactsComponent implements OnInit {
     this.contacts = await this.chatService.getContacts();
   }
 
+  /**
+   * id de contacto para eliminar contacto de 
+   * lista de usuario
+   * @param id de contacto
+   */
+  deleteContact(id){
+    console.log(id)
+  }
+
+  /**
+   * Para crear un nuevo chat y/o recuperar el chat
+   * @param id de contacto
+   */
+  createChat(id){
+    console.log(id)
+  }
+
 }

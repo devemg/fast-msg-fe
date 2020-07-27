@@ -30,7 +30,6 @@ export class AccountComponent implements OnInit {
    */
   async getProfile() {
     this.profile = await this.userService.getProfile();
-    console.log(this.profile)
     this.selectedImage = new ImgFile(this.profile.image,null);
   }
 

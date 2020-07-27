@@ -48,6 +48,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
    */
   async getChat() {
     this.chat = await this.chatService.getChat(this.idChat);
+    
   }
 
   /**

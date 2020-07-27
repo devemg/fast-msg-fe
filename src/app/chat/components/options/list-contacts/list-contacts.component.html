@@ -17,10 +17,12 @@
     </div>
     <div mat-line class="name">{{contact.name}}</div>
     <div mat-line>
-      <button class="btn-msg" mat-mini-fab matTooltip="Enviar Mensaje" >
+      <button class="btn-msg" mat-mini-fab matTooltip="Enviar Mensaje" 
+      (click)="createChat(contact._id)">
         <mat-icon>sms</mat-icon>
       </button>
-      <button class="btn-del" mat-mini-fab matTooltip="Eliminar">
+      <button class="btn-del" mat-mini-fab matTooltip="Eliminar" 
+      (click)="deleteContact(contact._id)">
         <mat-icon>close</mat-icon>
       </button>
     </div>
