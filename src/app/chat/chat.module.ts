@@ -10,7 +10,7 @@ import { ListContactsComponent } from './components/options/list-contacts/list-c
 import { SettingsComponent } from './components/options/settings/settings.component';
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GroupsUsersComponent } from './components/options/groups-users/groups-users.component';
+import { CommunityComponent } from './components/options/community/community.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { GroupsUsersComponent } from './components/options/groups-users/groups-u
     ListChatsComponent,
     AccountComponent,
     SettingsComponent,
-    GroupsUsersComponent
+    CommunityComponent,
   ],
   imports: [
     CommonModule,
