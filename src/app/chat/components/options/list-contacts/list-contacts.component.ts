@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChatService } from '../../../services/chat.service';
 import { Contact } from '../../../models/contact.model';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'list-contacts',
@@ -11,13 +12,16 @@ export class ListContactsComponent implements OnInit {
   @Output('chat')
   sendChatId = new EventEmitter<string>();
   
-  contacts:Contact[];
-  
+  contacts:Contact[]; 
+  showSearch:boolean;
+
   constructor(
-    public chatService:ChatService
+    public chatService:ChatService,
+    public alertService:AlertService
   ) { }
 
   ngOnInit(): void {
+    this.showSearch = false;
     this.fillContacts();
   }
 
@@ -44,6 +48,20 @@ export class ListContactsComponent implements OnInit {
   async createChat(id){
     var response = await this.chatService.getOrCreateChat(id);
     this.sendChatId.emit(response.chatId);
+  }
+
+  /**
+   * cambia el estado de la barra de búsqueda
+   */
+  toggleSearch(){
+    this.showSearch=!this.showSearch;
+  }
+
+  /**
+   * buscar un contacto
+   */
+  searchContact(){
+
   }
 
 }

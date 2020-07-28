@@ -1,11 +1,14 @@
 <div class="container-chats">
+
+  <!-----
   <div id="search">
     <input type="text" placeholder="buscar..." />
     <button mat-icon-button color="accent">
      <mat-icon>search</mat-icon>
       </button>
-  </div>
-  
+  </div>  
+  -->
+
   <mat-selection-list [multiple]="false" 
   (selectionChange)="onSelection($event)">
     <mat-list-option *ngFor="let chat of chats" [value]="chat._id">

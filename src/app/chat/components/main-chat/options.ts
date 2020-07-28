@@ -1,5 +1,9 @@
 export const options = [
     {
+        title:'Grupos y Usuarios',
+        icon:'public'
+    },
+    {
         title: "Cuenta",
         icon: "account_circle"
     },

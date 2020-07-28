@@ -55,11 +55,20 @@
 
     button {
         margin-left: 10px;
-        background-color: colors.$primary-color;
         flex: 1;
     }
 
+    button:active {
+        background-color: colors.$primary-color;
+    }
+}
 
+.btn-toggle-active {
+    background-color: colors.$primary-color;
+}
+
+.btn-toggle {
+    background-color: colors.$bg-light-color;
 }
 
 #search{
