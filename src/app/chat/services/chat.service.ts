@@ -26,6 +26,45 @@ export class ChatService {
     return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
   }
 
+  async getContactsByEmail():Promise<Contact[]>{
+    return [
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      },
+      {
+        _id:"5f13218c8cb953232d4c4af1",
+        image:"photo",
+        name:"Roberto García"
+      }]
+  }
+
   async getChat(id: string): Promise<Chat> {
     return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id).toPromise();
   }

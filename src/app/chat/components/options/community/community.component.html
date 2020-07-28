@@ -1,41 +1,39 @@
 <div class="container-community">
-    <div class="container-info">
-        <h3>Buscar Contactos</h3>
-        <input id="input-search" type="text" placeholder="buscar..."/>
-        <div id="buttons-search">
-            <button mat-mini-fab matTooltip="Correo electrónico" ><mat-icon>alternate_email</mat-icon></button>
-            <button mat-mini-fab matTooltip="Nombre"><mat-icon>create</mat-icon></button>
+  <div class="container-info">
+    <h3>Buscar Contactos</h3>
+    <input id="input-search" type="text" placeholder="buscar..." />
+    <div id="buttons-search">
+      <button mat-mini-fab matTooltip="Correo electrónico" (click)="searchByEmail()">
+        <mat-icon>alternate_email</mat-icon>
+      </button>
+      <button mat-mini-fab matTooltip="Nombre" (click)="searchByName()">
+        <mat-icon>create</mat-icon>
+      </button>
+    </div> 
+    <mat-list>
+      <mat-list-item *ngFor="let contact of currentPage">
+        <div>
+          <img class="image" src="{{contact.image}}" alt="imagen" />
         </div>
-<!--
-        <mat-accordion>
-            <mat-expansion-panel [disabled]="contacts">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Usuarios
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div>
-                <mat-list>
-                    <mat-list-item *ngFor="let contact of contacts">
-                      <div>
-                        <img class="image" src="{{contact.image}}" alt="imagen" />
-                      </div>
-                      <div mat-line class="name">{{contact.name}}</div>
-                      <div mat-line>
-                        <button class="btn-msg" mat-mini-fab matTooltip="Agregar" (click)="addContact()" >
-                          <mat-icon>add</mat-icon>
-                        </button>
-                      </div>
-                    </mat-list-item>
-                  </mat-list>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
------>
-    </div>
+        <div mat-line class="name">{{contact.name}}</div>
+        <div mat-line>
+          <button class="btn-msg" mat-mini-fab matTooltip="Agregar" (click)="addContact(contact._id)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <mat-paginator *ngIf="currentPage.length > 0" 
+      [length]="contacts.length" 
+      [pageSize]="pageSize" 
+      hidePageSize=true
+      (page)="pagePaginator($event)">
+    </mat-paginator>
 
-    <div class="container-info">
-        <h3>Chats en Vivo</h3>
-        
-    </div>
+  </div>
+
+  <div class="container-info">
+    <h3>Chats en Vivo</h3>
+
+  </div>
 </div>

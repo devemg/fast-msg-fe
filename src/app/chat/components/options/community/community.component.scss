@@ -24,8 +24,6 @@
 }
 
 #buttons-search {
-    width: 95%;
-    height: 20px;
     padding: 10px;
     display: flex;
     flex-flow: row wrap;
@@ -42,23 +40,17 @@
     padding-top: 5px;
                 
 }
-.mat-accordion {
-    padding-top: 25px;
-}
 
-.mat-accordion .mat-expansion-panel:last-of-type {
-    background-color: transparent;
-    border-radius: 0;
-    color: colors.$bg-light-color;
+.mat-paginator {
+    background-color: colors.$bg-light-color;
 }
 
 .mat-list-base {
-    padding-top: 20px;
+    padding: 0;
+    background-color: colors.$bg-light-color;
 }
 
 .mat-list-item {
-    color: colors.$text-neutral;
-    border-bottom: 1px solid gray;
     margin-bottom: 10px;
     padding-top: 10px;
     transition: all 300ms;
@@ -89,14 +81,4 @@
         font-family: fonts.$name;
     }
 
-}
-
-.mat-list-item:hover {
-    background-color: colors.$primary-color;
-    color: colors.$bg-color;
-}
-
-
-.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
-    color: colors.$bg-light-color;
 }
