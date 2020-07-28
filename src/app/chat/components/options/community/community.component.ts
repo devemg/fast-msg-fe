@@ -58,6 +58,12 @@ export class CommunityComponent implements OnInit {
     this.currentPage = this.contacts.slice(inicio, fin);
   }
 
+  /**
+   * Limpiar elementos en paginator de usuarios
+   */
+  clearSearchUsers(){
+    this.currentPage = [];
+  }
 
   /**
   * agregar contacto al usuario
