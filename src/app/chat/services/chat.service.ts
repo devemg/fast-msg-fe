@@ -26,43 +26,16 @@ export class ChatService {
     return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
   }
 
-  async getContactsByEmail():Promise<Contact[]>{
-    return [
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      },
-      {
-        _id:"5f13218c8cb953232d4c4af1",
-        image:"photo",
-        name:"Roberto García"
-      }]
+  async getContactsByEmail(email):Promise<Contact[]>{
+    return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/email',
+    JSON.stringify({email}),
+    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+  }
+
+  async getContactsByName(name):Promise<Contact[]>{
+    return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/name',
+    JSON.stringify({name}),
+    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
   }
 
   async getChat(id: string): Promise<Chat> {

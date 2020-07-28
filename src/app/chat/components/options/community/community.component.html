@@ -1,7 +1,7 @@
 <div class="container-community">
   <div class="container-info">
     <h3>Buscar Contactos</h3>
-    <input id="input-search" type="text" placeholder="buscar..." />
+    <input id="input-search" type="text" placeholder="buscar..." [formControl]="searchText" />
     <div id="buttons-search">
       <button mat-mini-fab matTooltip="Correo electrónico" (click)="searchByEmail()">
         <mat-icon>alternate_email</mat-icon>
@@ -13,6 +13,9 @@
         <mat-icon>clear</mat-icon>
       </button>
     </div> 
+    <div id="search-error">
+      <p>{{errorSearchMessage}}</p>
+    </div>
     <mat-list>
       <mat-list-item *ngFor="let contact of currentPage">
         <div>

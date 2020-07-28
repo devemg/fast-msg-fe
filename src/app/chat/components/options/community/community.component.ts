@@ -14,6 +14,7 @@ export class CommunityComponent implements OnInit {
   pageSize:number = 5;
   currentPage: Contact[] = [];
   contacts: Contact[] = [];
+  errorSearchMessage='';
 
   searchText: FormControl;
   
@@ -30,14 +31,40 @@ export class CommunityComponent implements OnInit {
    * Buscar usuarios por correo electrónico
    */
   async searchByEmail() {
-    this.contacts = await this.chatService.getContactsByEmail();
-    this.handlePages(0, this.pageSize)
+    this.currentPage = [];
+    this.errorSearchMessage = '';
+    if (this.searchText.valid){
+      this.contacts = await this.chatService.getContactsByEmail(this.searchText.value);
+      if(this.contacts.length == 0 ){
+        this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
+      }else{
+       this.handlePages(0, this.pageSize)
+      }
+    }else{
+      if(!this.searchText.value){
+        this.errorSearchMessage='Debe ingresar un correo electrónico'
+      }
+    }
   }
 
   /**
    * Buscar usuarios por nombre
    */
-  searchByName() {
+  async searchByName() {
+    this.currentPage = [];
+    this.errorSearchMessage = '';
+    if (this.searchText.valid){
+      this.contacts = await this.chatService.getContactsByName(this.searchText.value);
+      if(this.contacts.length == 0 ){
+        this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
+      }else{
+       this.handlePages(0, this.pageSize)
+      }
+    }else{
+      if(!this.searchText.value){
+        this.errorSearchMessage='Debe ingresar un nombre'
+      }
+    }
   }
 
   /**
@@ -62,7 +89,9 @@ export class CommunityComponent implements OnInit {
    * Limpiar elementos en paginator de usuarios
    */
   clearSearchUsers(){
+    this.searchText.setValue('');
     this.currentPage = [];
+    this.errorSearchMessage = '';
   }
 
   /**
