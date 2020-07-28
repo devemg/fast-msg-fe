@@ -42,6 +42,15 @@
     padding-top: 5px;
                 
 }
+.mat-accordion {
+    padding-top: 25px;
+}
+
+.mat-accordion .mat-expansion-panel:last-of-type {
+    background-color: transparent;
+    border-radius: 0;
+    color: colors.$bg-light-color;
+}
 
 .mat-list-base {
     padding-top: 20px;
@@ -85,4 +94,9 @@
 .mat-list-item:hover {
     background-color: colors.$primary-color;
     color: colors.$bg-color;
+}
+
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    color: colors.$bg-light-color;
 }

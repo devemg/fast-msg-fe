@@ -6,21 +6,36 @@
             <button mat-mini-fab matTooltip="Correo electrónico" ><mat-icon>alternate_email</mat-icon></button>
             <button mat-mini-fab matTooltip="Nombre"><mat-icon>create</mat-icon></button>
         </div>
-
-        
-        <mat-list>
-            <mat-list-item *ngFor="let contact of contacts">
+<!--
+        <mat-accordion>
+            <mat-expansion-panel [disabled]="contacts">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Usuarios
+                </mat-panel-title>
+              </mat-expansion-panel-header>
               <div>
-                <img class="image" src="{{contact.image}}" alt="imagen" />
+                <mat-list>
+                    <mat-list-item *ngFor="let contact of contacts">
+                      <div>
+                        <img class="image" src="{{contact.image}}" alt="imagen" />
+                      </div>
+                      <div mat-line class="name">{{contact.name}}</div>
+                      <div mat-line>
+                        <button class="btn-msg" mat-mini-fab matTooltip="Agregar" (click)="addContact()" >
+                          <mat-icon>add</mat-icon>
+                        </button>
+                      </div>
+                    </mat-list-item>
+                  </mat-list>
               </div>
-              <div mat-line class="name">{{contact.name}}</div>
-              <div mat-line>
-                <button class="btn-msg" mat-mini-fab matTooltip="Agregar" (click)="addContact()" >
-                  <mat-icon>add</mat-icon>
-                </button>
-              </div>
-            </mat-list-item>
-          </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+----->
+    </div>
 
+    <div class="container-info">
+        <h3>Chats en Vivo</h3>
+        
     </div>
 </div>
