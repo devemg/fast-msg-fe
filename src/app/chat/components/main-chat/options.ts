@@ -1,6 +1,6 @@
 export const options = [
     {
-        title:'Grupos y Usuarios',
+        title:'Comunidad',
         icon:'public'
     },
     {
