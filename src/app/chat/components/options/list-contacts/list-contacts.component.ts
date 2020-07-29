@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChatService } from '../../../services/chat.service';
 import { Contact } from '../../../models/contact.model';
 import { AlertService } from 'src/app/services/alert.service';
+import { UserService } from 'src/app/chat/services/user.service';
 
 @Component({
   selector: 'list-contacts',
@@ -17,7 +18,8 @@ export class ListContactsComponent implements OnInit {
 
   constructor(
     public chatService:ChatService,
-    public alertService:AlertService
+    public alertService:AlertService,
+    public userService:UserService
   ) { }
 
   ngOnInit(): void {
@@ -29,8 +31,7 @@ export class ListContactsComponent implements OnInit {
    * Metodo para llenar contactos
    */
   async fillContacts(){
-    this.contacts = await this.chatService.getContacts();
-    console.log(JSON.stringify(this.contacts))
+    this.contacts = await this.userService.getContacts();
   }
 
   /**
@@ -39,7 +40,14 @@ export class ListContactsComponent implements OnInit {
    * @param id de contacto
    */
   deleteContact(id){
-    console.log(id)
+    this.userService.deleteContact(id)
+    .then(response=>{
+      this.alertService.alertSuccess('Contacto','Contacto eliminado con éxito')
+      this.fillContacts();
+    })
+    .catch(error=>{
+      this.alertService.alertError('Contacto','El contacto no pudo ser eliminado')
+    })
   }
 
   /**

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Chat } from '../models/chat.model';
-import { Contact } from '../models/contact.model';
 import { ChatItemList } from '../models/chat-item-list.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SesionService } from './sesion.service';
@@ -20,22 +19,6 @@ export class ChatService {
   async getChats(): Promise<ChatItemList[]> {
     return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID()).toPromise()
 
-  }
-
-  async getContacts(): Promise<Contact[]> {
-    return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
-  }
-
-  async getContactsByEmail(email):Promise<Contact[]>{
-    return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/email',
-    JSON.stringify({email}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
-  }
-
-  async getContactsByName(name):Promise<Contact[]>{
-    return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/name',
-    JSON.stringify({name}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
   }
 
   async getChat(id: string): Promise<Chat> {

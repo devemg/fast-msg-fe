@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/chat/models/contact.model';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { ChatService } from 'src/app/chat/services/chat.service';
+import { UserService } from 'src/app/chat/services/user.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-community',
@@ -20,7 +21,8 @@ export class CommunityComponent implements OnInit {
   
   constructor(
     public dialog: MatDialog,
-    public chatService: ChatService
+    public userService: UserService,
+    public alertService:AlertService
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class CommunityComponent implements OnInit {
     this.currentPage = [];
     this.errorSearchMessage = '';
     if (this.searchText.valid){
-      this.contacts = await this.chatService.getContactsByEmail(this.searchText.value);
+      this.contacts = await this.userService.getContactsByEmail(this.searchText.value);
       if(this.contacts.length == 0 ){
         this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
       }else{
@@ -54,7 +56,7 @@ export class CommunityComponent implements OnInit {
     this.currentPage = [];
     this.errorSearchMessage = '';
     if (this.searchText.valid){
-      this.contacts = await this.chatService.getContactsByName(this.searchText.value);
+      this.contacts = await this.userService.getContactsByName(this.searchText.value);
       if(this.contacts.length == 0 ){
         this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
       }else{
@@ -98,7 +100,14 @@ export class CommunityComponent implements OnInit {
   * agregar contacto al usuario
   */
   addContact(id) {
-
+    this.userService.addContact(id)
+    .then(res=>{
+      this.alertService.alertSuccess('Contacto','Contacto agregado con éxito')
+    },
+    error=>{
+      console.log(error)
+      this.alertService.alertError('Contacto','Error al agregar contacto')
+    })
   }
 
 }
