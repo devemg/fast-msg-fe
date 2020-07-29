@@ -3,6 +3,7 @@ import { ChatService } from '../../../services/chat.service';
 import { Contact } from '../../../models/contact.model';
 import { AlertService } from 'src/app/services/alert.service';
 import { UserService } from 'src/app/chat/services/user.service';
+import { getUrlImage } from 'src/assets/extra-functions';
 
 @Component({
   selector: 'list-contacts',
@@ -10,6 +11,8 @@ import { UserService } from 'src/app/chat/services/user.service';
   styleUrls: ['./list-contacts.component.scss']
 })
 export class ListContactsComponent implements OnInit {
+  getUrlImage=getUrlImage;
+  
   @Output('chat')
   sendChatId = new EventEmitter<string>();
   

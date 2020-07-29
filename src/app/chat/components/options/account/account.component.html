@@ -1,7 +1,7 @@
 <div class="container-account">
         <!----
         <div class="polaroid">
-                <img src="{{profile.image}}" alt="img-profile" />
+                <img src="{{getUrlImage(profile.image)}}" alt="img-profile" />
                 <p>{{profile.name}}</p>
         </div>
         -->
@@ -26,7 +26,7 @@
                         <h3>Foto de perfil</h3>
                         <label for="file">
                                 <p>Cambiar Imagen</p>
-                                <img src="{{selectedImage.src}}" />
+                                <img src="{{getUrlImageSelectable(selectedImage.src)}}" />
                         </label>
                         <input #imageInput name="file" id="file" 
                         type="file" 

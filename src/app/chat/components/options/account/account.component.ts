@@ -3,6 +3,7 @@ import { Profile } from '../../../models/profile.model';
 import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/chat/services/user.service';
 import { ImgFile } from 'src/app/chat/models/ImgFile.model';
+import { getUrlImage } from 'src/assets/extra-functions';
 
 @Component({
   selector: 'app-account',
@@ -10,7 +11,7 @@ import { ImgFile } from 'src/app/chat/models/ImgFile.model';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-
+  
   profile: Profile = new Profile('', '', '');
   selectedImage: ImgFile;
   name = new FormControl('');
@@ -84,6 +85,13 @@ export class AccountComponent implements OnInit {
   myReader.readAsDataURL(file);
   }
 
+  getUrlImageSelectable(content){
+    if(this.selectedImage.file){
+        return content;
+    }else{
+      return getUrlImage(content)
+    }
+  }
 
 
 }

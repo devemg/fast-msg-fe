@@ -1,4 +1,5 @@
 import { FormGroup, ValidationErrors, ValidatorFn, AbstractControl } from "@angular/forms";
+import { environment } from 'src/environments/environment';
 
 /**
   * Muestra los errores del formulario por los cuales no es valido
@@ -31,3 +32,7 @@ export function passwordMatchValidator(control: AbstractControl) {
       control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
     }
   }
+
+export function getUrlImage(name){
+    return environment.ENDPOINT_IMAGES+'/'+name;
+}
