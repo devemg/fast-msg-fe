@@ -12,17 +12,17 @@ import { AlertService } from 'src/app/services/alert.service';
 })
 export class CommunityComponent implements OnInit {
   //paginator 
-  pageSize:number = 5;
+  pageSize: number = 5;
   currentPage: Contact[] = [];
   contacts: Contact[] = [];
-  errorSearchMessage='';
+  errorSearchMessage = '';
 
   searchText: FormControl;
-  
+
   constructor(
     public dialog: MatDialog,
     public userService: UserService,
-    public alertService:AlertService
+    public alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -35,16 +35,16 @@ export class CommunityComponent implements OnInit {
   async searchByEmail() {
     this.currentPage = [];
     this.errorSearchMessage = '';
-    if (this.searchText.valid){
+    if (this.searchText.valid) {
       this.contacts = await this.userService.getContactsByEmail(this.searchText.value);
-      if(this.contacts.length == 0 ){
-        this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
-      }else{
-       this.handlePages(0, this.pageSize)
+      if (this.contacts.length == 0) {
+        this.errorSearchMessage = 'No se ha encontrado usuarios que conincidan con la búsqueda'
+      } else {
+        this.handlePages(0, this.pageSize)
       }
-    }else{
-      if(!this.searchText.value){
-        this.errorSearchMessage='Debe ingresar un correo electrónico'
+    } else {
+      if (!this.searchText.value) {
+        this.errorSearchMessage = 'Debe ingresar un correo electrónico'
       }
     }
   }
@@ -55,16 +55,17 @@ export class CommunityComponent implements OnInit {
   async searchByName() {
     this.currentPage = [];
     this.errorSearchMessage = '';
-    if (this.searchText.valid){
+    if (this.searchText.valid) {
       this.contacts = await this.userService.getContactsByName(this.searchText.value);
-      if(this.contacts.length == 0 ){
-        this.errorSearchMessage='No se ha encontrado usuarios que conincidan con la búsqueda'
-      }else{
-       this.handlePages(0, this.pageSize)
+      console.log(this.contacts)
+      if (this.contacts.length == 0) {
+        this.errorSearchMessage = 'No se ha encontrado usuarios que conincidan con la búsqueda'
+      } else {
+        this.handlePages(0, this.pageSize)
       }
-    }else{
-      if(!this.searchText.value){
-        this.errorSearchMessage='Debe ingresar un nombre'
+    } else {
+      if (!this.searchText.value) {
+        this.errorSearchMessage = 'Debe ingresar un nombre'
       }
     }
   }
@@ -90,7 +91,7 @@ export class CommunityComponent implements OnInit {
   /**
    * Limpiar elementos en paginator de usuarios
    */
-  clearSearchUsers(){
+  clearSearchUsers() {
     this.searchText.setValue('');
     this.currentPage = [];
     this.errorSearchMessage = '';
@@ -101,13 +102,13 @@ export class CommunityComponent implements OnInit {
   */
   addContact(id) {
     this.userService.addContact(id)
-    .then(res=>{
-      this.alertService.alertSuccess('Contacto','Contacto agregado con éxito')
-    },
-    error=>{
-      console.log(error)
-      this.alertService.alertError('Contacto','Error al agregar contacto')
-    })
+      .then(res => {
+        this.alertService.alertSuccess('Contacto', 'Contacto agregado con éxito')
+      },
+        error => {
+          console.log(error)
+          this.alertService.alertError('Contacto', 'Error al agregar contacto')
+        })
   }
 
 }
