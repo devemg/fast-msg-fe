@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { AlertService } from '../services/alert.service';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AlertService } from '../services/alert.service';
     HttpClientModule,
     MaterialAngularModule
   ],
-  providers:[AuthService,AlertService]
+  providers:[AuthService,AlertService,
+    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'}]
 })
 export class PublicModule { }

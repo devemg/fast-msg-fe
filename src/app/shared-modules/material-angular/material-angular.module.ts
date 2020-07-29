@@ -16,7 +16,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 @NgModule({
   declarations: [],
   imports: [
@@ -37,7 +38,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatExpansionModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ]
 })
 export class MaterialAngularModule { }

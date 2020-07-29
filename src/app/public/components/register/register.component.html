@@ -19,6 +19,16 @@
                     <mat-radio-button class="radio-button" [value]="0">Mujer</mat-radio-button>
                 </mat-radio-group>
             </div>
+            <!-----fecha de nacimiento----->
+            <mat-form-field appearance="fill">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput formControlName="dateBirth" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+                <mat-error *ngIf="handleError(registerForm,'dateBirth','required')">
+                    La fecha de nacimiento es <strong>requerida</strong>
+                </mat-error>
+            </mat-form-field>
             <!-------correo-------->
             <mat-form-field class="field" appearance="fill">
                 <mat-label>Correo Electrónico</mat-label>
