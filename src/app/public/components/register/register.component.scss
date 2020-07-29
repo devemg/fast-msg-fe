@@ -35,7 +35,8 @@
     margin-bottom: 20px;
 }
 
-mat-form-field {
+mat-form-field,
+.form-field {
     width: 100%;
     display: flex;
     flex-flow: column wrap;
@@ -44,6 +45,18 @@ mat-form-field {
     border-radius: 10px;
     font-family: fonts.$middle-text;
 
+}
+
+.form-field {
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .radio-button {
+        font-family: fonts.$middle-text;
+        margin: 5px;
+      }
 }
 
 .btn-submit {

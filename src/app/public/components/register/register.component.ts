@@ -27,7 +27,8 @@ export class RegisterComponent implements OnInit {
       name:['',[Validators.required]],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(8)]],
-      confirmPassword:['',[Validators.required,]]
+      confirmPassword:['',[Validators.required,]],
+      gender:['',[Validators.required]]
     },{
       validator: passwordMatchValidator
    }
@@ -38,7 +39,6 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.valid){
       this.authService.register(this.registerForm.value)
       .subscribe(data=>{
-        console.log(data)
         this.alertService.alertSuccess('Registro Éxitoso',
         'Revise su correo electrónico para realizar la confirmación de su cuenta')
         .then(res=>{
@@ -49,6 +49,7 @@ export class RegisterComponent implements OnInit {
         this.alertService.alertError('Registro',error.error.message)
       })
     }else{
+      console.log(this.registerForm.value)
       getFormValidationErrors(this.registerForm)
     }
   }
