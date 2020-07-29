@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ChatItemList } from '../../../models/chat-item-list.model';
 import { ChatService } from '../../../services/chat.service';
 import { SesionService } from '../../../services/sesion.service';
+import { getUrlImage } from 'src/assets/extra-functions';
 
 @Component({
   selector: 'list-chats',
@@ -9,6 +10,7 @@ import { SesionService } from '../../../services/sesion.service';
   styleUrls: ['./list-chats.component.scss']
 })
 export class ListChatsComponent implements OnInit {
+  getUrlImage=getUrlImage;
   @Output('chatId')
   sendChatId = new EventEmitter<string>();
 
