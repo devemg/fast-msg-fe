@@ -1,5 +1,10 @@
+//******************************************************************************************/
+//Emely Yecenia García Monge
+//Ultima actualización: 30 julio 2020
+//******************************************************************************************/
 import { FormGroup, ValidationErrors, ValidatorFn, AbstractControl } from "@angular/forms";
 import { environment } from 'src/environments/environment';
+import { HttpHeaders } from '@angular/common/http';
 
 /**
   * Muestra los errores del formulario por los cuales no es valido
@@ -35,4 +40,10 @@ export function passwordMatchValidator(control: AbstractControl) {
 
 export function getUrlImage(name){
     return environment.ENDPOINT_IMAGES+'/'+name;
+}
+
+export function getHttpHeaders(token){
+    return {headers:new HttpHeaders(
+        { 'Content-Type':  'application/json',
+        'Authorization':token})}
 }

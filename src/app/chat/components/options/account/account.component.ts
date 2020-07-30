@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from '../../../models/profile.model';
 import { FormControl } from '@angular/forms';
-import { UserService } from 'src/app/chat/services/user.service';
 import { ImgFile } from 'src/app/chat/models/ImgFile.model';
-import { getUrlImage } from 'src/assets/extra-functions';
+import { getUrlImage } from 'src/assets/scripts/extra-functions';
+import { UserService } from 'src/app/chat/services/user/user.service';
 
 @Component({
   selector: 'app-account',

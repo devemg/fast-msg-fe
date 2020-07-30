@@ -4,6 +4,7 @@ import { ChatItemList } from '../../models/chat-item-list.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SesionService } from '../sesion/sesion.service';
 import { environment } from 'src/assets/environments/environment';
+import { getHttpHeaders } from 'src/assets/scripts/extra-functions';
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +18,18 @@ export class ChatService {
   ) {}
 
   async getChats(): Promise<ChatItemList[]> {
-    return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user?id='+this.sesionService.getUserID()).toPromise()
-
+    return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user',
+    getHttpHeaders(this.sesionService.getUserID())).toPromise()
   }
 
   async getChat(id: string): Promise<Chat> {
-    return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id).toPromise();
+    return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id,
+    getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
   async getOrCreateChat(to: string): Promise<any> {
     return this.http.post<any>(environment.ENDPOINT_CHAT,
-      JSON.stringify({to,from:this.sesionService.getUserID()}),
-      {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+      JSON.stringify({to}),getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
 }

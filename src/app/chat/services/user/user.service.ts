@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Profile } from '../../models/profile.model';
 import { environment } from 'src/assets/environments/environment';
 import { Contact } from '../../models/contact.model';
 import { SesionService } from '../sesion/sesion.service';
+import { getHttpHeaders } from 'src/assets/scripts/extra-functions';
+import { Profile } from '../../models/profile.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class UserService {
    * Obtiene el perfil del usuario
    */
   async getProfile(): Promise<Profile> {
-    return this.http.get<Profile>(environment.ENDPOINT_USER + '?id='+this.sesionService.getUserID())
+    return this.http.get<Profile>(environment.ENDPOINT_USER,getHttpHeaders(this.sesionService))
       .toPromise();
   }
 
@@ -29,7 +30,7 @@ export class UserService {
    * @param value 
    */
   async editUser(value): Promise<any> {
-    return this.http.put(environment.ENDPOINT_USER + '?id='+this.sesionService.getUserID(), value)
+    return this.http.put(environment.ENDPOINT_USER, value,getHttpHeaders(this.sesionService.getUserID()))
       .toPromise();
   }
 
@@ -40,16 +41,17 @@ export class UserService {
   async editImage(image): Promise<any> {
     const formData = new FormData();
     formData.append('image', image);
-    return this.http.post<any>(`${environment.ENDPOINT_USER}/upload-image?id=${this.sesionService.getUserID()}`,formData)
+    return this.http.post<any>(`${environment.ENDPOINT_USER}/upload-image`,formData,
+    getHttpHeaders(this.sesionService.getUserID()))
     .toPromise();
-
   }
 
   /**
    * Obtiene la lista de contactos del usuario en sesion
    */
   async getContacts(): Promise<Contact[]> {
-    return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts?id='+this.sesionService.getUserID()).toPromise();
+    return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts',
+    getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
   /**
@@ -60,7 +62,7 @@ export class UserService {
   async getContactsByEmail(email):Promise<Contact[]>{
     return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/email',
     JSON.stringify({email}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+    getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
   /**
@@ -70,8 +72,7 @@ export class UserService {
    */
   async getContactsByName(name):Promise<Contact[]>{
     return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/name',
-    JSON.stringify({name}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+    JSON.stringify({name}),getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
   /**
@@ -80,8 +81,8 @@ export class UserService {
    */
   async addContact(idContact):Promise<any>{
     return this.http.put<any>(environment.ENDPOINT_USER+'/contacts/add',
-    JSON.stringify({idUser:this.sesionService.getUserID(),idContact}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+    JSON.stringify({idContact}),
+    getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
 
   /**
@@ -90,8 +91,8 @@ export class UserService {
    */
   async deleteContact(idContact):Promise<any>{
     return this.http.put<any>(environment.ENDPOINT_USER+'/contacts/del',
-    JSON.stringify({idUser:this.sesionService.getUserID(),idContact}),
-    {headers:new HttpHeaders({ 'Content-Type':  'application/json'})}).toPromise();
+    JSON.stringify({idContact}),
+    getHttpHeaders(this.sesionService.getUserID())).toPromise();
   }
   
 }
