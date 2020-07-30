@@ -3,7 +3,7 @@ import { Contact } from 'src/app/chat/models/contact.model';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from 'src/app/chat/services/user.service';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-community',

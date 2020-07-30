@@ -13,7 +13,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth/auth.service';
-import { AlertService } from '../services/alert.service';
+import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 

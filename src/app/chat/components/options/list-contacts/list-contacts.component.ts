@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChatService } from '../../../services/chat/chat.service';
 import { Contact } from '../../../models/contact.model';
 import { getUrlImage } from 'src/assets/extra-functions';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 import { UserService } from 'src/app/chat/services/user/user.service';
 
 @Component({
