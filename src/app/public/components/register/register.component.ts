@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError, passwordMatchValidator } from 'src/assets/extra-functions';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { Router } from '@angular/router';
 
