@@ -19,17 +19,17 @@ export class ChatService {
 
   async getChats(): Promise<ChatItemList[]> {
     return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user',
-    getHttpHeaders(this.sesionService.getUserID())).toPromise()
+    getHttpHeaders(this.sesionService.getToken())).toPromise()
   }
 
   async getChat(id: string): Promise<Chat> {
     return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id,
-    getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   async getOrCreateChat(to: string): Promise<any> {
     return this.http.post<any>(environment.ENDPOINT_CHAT,
-      JSON.stringify({to}),getHttpHeaders(this.sesionService.getUserID())).toPromise();
+      JSON.stringify({to}),getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
 }

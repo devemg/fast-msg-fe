@@ -11,4 +11,7 @@ export class SesionService {
     return "5f13218c8cb953232d4c4af0";
   }
 
+  getToken(){
+    return "5f13218c8cb953232d4c4af0";
+  }
 }

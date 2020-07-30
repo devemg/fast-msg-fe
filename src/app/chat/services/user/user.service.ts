@@ -30,7 +30,7 @@ export class UserService {
    * @param value 
    */
   async editUser(value): Promise<any> {
-    return this.http.put(environment.ENDPOINT_USER, value,getHttpHeaders(this.sesionService.getUserID()))
+    return this.http.put(environment.ENDPOINT_USER, value,getHttpHeaders(this.sesionService.getToken()))
       .toPromise();
   }
 
@@ -42,7 +42,7 @@ export class UserService {
     const formData = new FormData();
     formData.append('image', image);
     return this.http.post<any>(`${environment.ENDPOINT_USER}/upload-image`,formData,
-    getHttpHeaders(this.sesionService.getUserID()))
+    getHttpHeaders(this.sesionService.getToken()))
     .toPromise();
   }
 
@@ -51,7 +51,7 @@ export class UserService {
    */
   async getContacts(): Promise<Contact[]> {
     return this.http.get<Contact[]>(environment.ENDPOINT_USER+'/contacts',
-    getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   /**
@@ -62,7 +62,7 @@ export class UserService {
   async getContactsByEmail(email):Promise<Contact[]>{
     return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/email',
     JSON.stringify({email}),
-    getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   /**
@@ -72,7 +72,7 @@ export class UserService {
    */
   async getContactsByName(name):Promise<Contact[]>{
     return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/name',
-    JSON.stringify({name}),getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    JSON.stringify({name}),getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   /**
@@ -82,7 +82,7 @@ export class UserService {
   async addContact(idContact):Promise<any>{
     return this.http.put<any>(environment.ENDPOINT_USER+'/contacts/add',
     JSON.stringify({idContact}),
-    getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   /**
@@ -92,7 +92,7 @@ export class UserService {
   async deleteContact(idContact):Promise<any>{
     return this.http.put<any>(environment.ENDPOINT_USER+'/contacts/del',
     JSON.stringify({idContact}),
-    getHttpHeaders(this.sesionService.getUserID())).toPromise();
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
   
 }
