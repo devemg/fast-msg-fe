@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Chat } from '../../models/chat.model';
-import { ChatService } from '../../services/chat.service';
+import { ChatService } from '../../services/chat/chat.service';
 import { FormControl } from '@angular/forms';
-import { SocketChatService } from '../../services/socket-chat.service';
-import { SesionService } from '../../services/sesion.service';
+import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
+import { SesionService } from '../../services/sesion/sesion.service';
 
 @Component({
   selector: 'app-chat',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Chat } from '../models/chat.model';
+import { Chat } from '../../models/chat.model';
 import { ChatItemList } from '../models/chat-item-list.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SesionService } from './sesion.service';

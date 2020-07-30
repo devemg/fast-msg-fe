@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Profile } from '../models/profile.model';
+import { Profile } from '../../models/profile.model';
 import { environment } from 'src/assets/environments/environment';
-import { Contact } from '../models/contact.model';
-import { SesionService } from './sesion.service';
+import { Contact } from '../../models/contact.model';
+import { SesionService } from '../sesion/sesion.service';
 
 @Injectable({
   providedIn: 'root'

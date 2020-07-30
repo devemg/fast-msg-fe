@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
-import { SocketChatService } from '../../services/socket-chat.service';
+import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { Router } from '@angular/router';
 
 @Component({
