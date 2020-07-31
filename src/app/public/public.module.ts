@@ -12,9 +12,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth/auth.service';
 import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { PublicService } from './services/public/public.service';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     HttpClientModule,
     MaterialAngularModule
   ],
-  providers:[AuthService,AlertService,
+  providers:[PublicService,AlertService,
     {provide: MAT_DATE_LOCALE, useValue: 'es-ES'}]
 })
 export class PublicModule { }

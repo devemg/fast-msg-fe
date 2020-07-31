@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { handleError } from 'src/assets/scripts/extra-functions';
-import { AuthService } from '../../services/auth/auth.service';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { Router } from '@angular/router';
 import { SesionService } from 'src/app/chat/services/sesion/sesion.service';
+import { PublicService } from '../../services/public/public.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBulder:FormBuilder,
-    private authService:AuthService,
+    private publicService:PublicService,
     private alertService:AlertService,
     private sesionService:SesionService,
     private router:Router
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   submit(){
     if(this.loginForm.valid){
-      this.authService.login(this.loginForm.value)
+      this.publicService.login(this.loginForm.value)
       .subscribe(data=>{
         this.sesionService.setToken(data);
         this.router.navigate(['../chat'])

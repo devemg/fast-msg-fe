@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError } from 'src/assets/scripts/extra-functions';
-import { AuthService } from '../../services/auth/auth.service';
 import { AlertService } from 'src/app/services/alert/alert.service';
+import { PublicService } from '../../services/public/public.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private authService:AuthService,
+    private publicService:PublicService,
     private alertSevice:AlertService
   ) { }
 
@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
 
   submit(){
     if(this.contactForm.valid){
-      this.authService.contact(this.contactForm.value)
+      this.publicService.contact(this.contactForm.value)
       .subscribe(data=>{
         this.alertSevice.alertSuccess('Contacto',
         'Mensaje Envíado con éxito. <br/> ¡Espera nuestra respuesta pronto!')
