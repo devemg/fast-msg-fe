@@ -56,8 +56,7 @@ export class CommunityComponent implements OnInit {
     this.currentPage = [];
     this.errorSearchMessage = '';
     if (this.searchText.valid) {
-      this.contacts = await this.userService.getContactsByName(this.searchText.value);
-      console.log(this.contacts)
+      this.contacts = await this.userService.getContactsByName(this.searchText.value);     
       if (this.contacts.length == 0) {
         this.errorSearchMessage = 'No se ha encontrado usuarios que conincidan con la búsqueda'
       } else {
@@ -104,6 +103,9 @@ export class CommunityComponent implements OnInit {
     this.userService.addContact(id)
       .then(res => {
         this.alertService.alertSuccess('Contacto', 'Contacto agregado con éxito')
+        .then(res=>{
+          this.clearSearchUsers()
+        })
       },
         error => {
           console.log(error)
