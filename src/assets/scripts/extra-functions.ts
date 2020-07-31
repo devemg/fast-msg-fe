@@ -45,5 +45,5 @@ export function getUrlImage(name){
 export function getHttpHeaders(token){
     return {headers:new HttpHeaders(
         { 'Content-Type':  'application/json',
-        'Authorization':token})}
+        'Authorization':`Bearer ${token}`})}
 }

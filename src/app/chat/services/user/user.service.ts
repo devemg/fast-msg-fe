@@ -14,14 +14,17 @@ export class UserService {
   constructor(
     private http: HttpClient,
     private sesionService:SesionService
-  ) { }
+  ) {
+   }
+
+
 
   /**
    * Obtiene el perfil del usuario
    */
   async getProfile(): Promise<Profile> {
-    return this.http.get<Profile>(environment.ENDPOINT_USER,getHttpHeaders(this.sesionService))
-      .toPromise();
+    return this.http.get<Profile>(environment.ENDPOINT_USER,
+      getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
 
@@ -30,7 +33,8 @@ export class UserService {
    * @param value 
    */
   async editUser(value): Promise<any> {
-    return this.http.put(environment.ENDPOINT_USER, value,getHttpHeaders(this.sesionService.getToken()))
+    return this.http.put(environment.ENDPOINT_USER, value,
+      getHttpHeaders(this.sesionService.getUserID()))
       .toPromise();
   }
 
@@ -72,7 +76,8 @@ export class UserService {
    */
   async getContactsByName(name):Promise<Contact[]>{
     return this.http.post<Contact[]>(environment.ENDPOINT_USER+'/contacts/name',
-    JSON.stringify({name}),getHttpHeaders(this.sesionService.getToken())).toPromise();
+    JSON.stringify({name}),
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
   /**

@@ -4,6 +4,7 @@ import { handleError } from 'src/assets/scripts/extra-functions';
 import { AuthService } from '../../services/auth/auth.service';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { Router } from '@angular/router';
+import { SesionService } from 'src/app/chat/services/sesion/sesion.service';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
     private formBulder:FormBuilder,
     private authService:AuthService,
     private alertService:AlertService,
+    private sesionService:SesionService,
     private router:Router
   ) { }
 
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.authService.login(this.loginForm.value)
       .subscribe(data=>{
-        console.log(data)
+        this.sesionService.setToken(data);
         this.router.navigate(['../chat'])
       },
       error=>{
