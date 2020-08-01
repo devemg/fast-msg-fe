@@ -8,9 +8,15 @@ export class AuthService {
 
   constructor(public jwtHelper: JwtHelperService) { }
 
-  public isAuthenticated(): boolean {    
-    const token = localStorage.getItem('userTk');    
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem('userTk');
     return !this.jwtHelper.isTokenExpired(token);
   }
+
+  getDecodedToken(token: string): any {
+    let payload = this.jwtHelper.decodeToken(token);
+    return payload.sub;
+  }
+
 
 }

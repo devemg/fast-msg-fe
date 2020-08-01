@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { handleError } from 'src/assets/scripts/extra-functions';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { Router } from '@angular/router';
-import { SesionService } from 'src/app/chat/services/sesion/sesion.service';
+import { SesionService } from 'src/app/services/sesion/sesion.service';
 import { PublicService } from '../../services/public/public.service';
 
 @Component({

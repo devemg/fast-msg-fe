@@ -3,7 +3,7 @@ import { Chat } from '../../models/chat.model';
 import { ChatService } from '../../services/chat/chat.service';
 import { FormControl } from '@angular/forms';
 import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
-import { SesionService } from '../../services/sesion/sesion.service';
+import { SesionService } from '../../../services/sesion/sesion.service';
 
 @Component({
   selector: 'app-chat',

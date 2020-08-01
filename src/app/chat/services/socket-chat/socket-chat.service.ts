@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { environment } from 'src/assets/environments/environment';
-import { SesionService } from '../sesion/sesion.service';
+import { SesionService } from '../../../services/sesion/sesion.service';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/assets/environments/environment';
 import { Contact } from '../../models/contact.model';
-import { SesionService } from '../sesion/sesion.service';
+import { SesionService } from '../../../services/sesion/sesion.service';
 import { getHttpHeaders } from 'src/assets/scripts/extra-functions';
 import { Profile } from '../../models/profile.model';
 

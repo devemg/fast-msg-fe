@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
 import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { Router } from '@angular/router';
-import { SesionService } from '../../services/sesion/sesion.service';
+import { SesionService } from '../../../services/sesion/sesion.service';
 
 @Component({
   selector: 'app-main-chat',
