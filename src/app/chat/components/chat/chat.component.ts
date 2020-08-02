@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { Chat } from '../../models/chat.model';
 import { ChatService } from '../../services/chat/chat.service';
 import { FormControl } from '@angular/forms';
@@ -10,10 +10,11 @@ import { SesionService } from '../../../services/sesion/sesion.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
+export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   @Input() idChat: string;
   //scroll
-  @ViewChild('scrollMe') scroll : ElementRef;
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+
 
   chat: Chat;
   idUser: string;
@@ -22,7 +23,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
 
   constructor(
     private chatService: ChatService,
-    private sesionService:SesionService,
+    private sesionService: SesionService,
     private socketService: SocketChatService
   ) { }
 
@@ -38,7 +39,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(){
+  ngAfterViewChecked() {
     this.updateScroll();
   }
 
@@ -47,14 +48,13 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
    */
   async getChat() {
     this.chat = await this.chatService.getChat(this.idChat);
-    console.log(this.scroll)
   }
 
   /**
    * envía el mensaje por sockets
    */
   send() {
-    if (this.mesg.valid && this.mesg.value!='') {
+    if (this.mesg.valid && this.mesg.value != '') {
       this.socketService.sendMessage(this.mesg.value, this.chat._id)
       this.mesg.reset()
     }
@@ -78,26 +78,26 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewInit {
   /**
    * Elimina el chat de la lista del usuario
    */
-  deleteChat(){
+  deleteChat() {
     console.log(this.chat._id)
   }
 
-  clearChat(){
+  clearChat() {
     console.log(this.chat._id)
   }
 
-  onNotifications(){
+  onNotifications() {
 
   }
 
-  offNotifications(){
+  offNotifications() {
 
   }
 
- updateScroll(){
-    if(this.scroll){
-     // this.scrolltop = this.scroll.nativeElement.scrollHeight;
-    }
+  updateScroll() {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
   }
 
 }

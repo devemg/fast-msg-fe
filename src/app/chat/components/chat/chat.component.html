@@ -1,4 +1,4 @@
-<div class="container-chat" *ngIf="chat">
+<div #containerChat class="container-chat" *ngIf="chat">
     <mat-toolbar id="header-chat">
         <div class="left">
             <div class="avatar" style="background-image: url({{chat.image}});"></div>
@@ -32,7 +32,7 @@
         </mat-menu>
     </mat-toolbar>
     <!------->
-    <div id="container-messages" #scrollMe>
+    <div #scrollMe id="scrollMe" class="container-messages">
         <div *ngFor="let message of chat.messages" class="message">
             <div class="content" [ngClass]="idUser == message.owner?'own-message':'contact-message'">
                 <p>{{message.content}}
