@@ -7,12 +7,15 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { GuardPublicRoutesService } from './services/guard-public-routes/guard-public-routes.service';
 
 
 const routes: Routes = [
   {
     path:'',
         component: MainPageComponent,
+        canActivate:[GuardPublicRoutesService],
+        canActivateChild:[GuardPublicRoutesService],
         children: [
           {
             path:'',
