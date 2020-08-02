@@ -14,10 +14,13 @@
     <mat-list-option *ngFor="let chat of chats" [value]="chat._id">
       <img src="getUrlImage(chat.image)" class="icon-chat" mat-list-icon />
       <div mat-line class="name">{{chat.name}}</div>
+      <!-------
       <div mat-line class="message" *ngIf="chat.lastMessage">
         <p><span>{{chat.lastMessage.owner!=idUser?chat.name:'Yo'}}:</span>{{chat.lastMessage.content}}</p>
         <span class="date">{{chat.lastMessage.date | date:'short'}}</span>
       </div>
+      -->
+      
     </mat-list-option>
   </mat-selection-list>
 </div>

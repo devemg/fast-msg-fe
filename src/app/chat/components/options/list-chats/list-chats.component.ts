@@ -16,7 +16,7 @@ export class ListChatsComponent implements OnInit {
 
   
   chats:ChatItemList[];
-  idUser:string;
+  //idUser:string;
   constructor(
     private chatService:ChatService,
     private sesionService:SesionService
@@ -29,7 +29,7 @@ export class ListChatsComponent implements OnInit {
 
   async getChats(){
     this.chats = await this.chatService.getChats();
-    this.idUser = this.sesionService.getUserID();
+    //this.idUser = this.sesionService.getUserID();
   }
 
   onSelection(event){

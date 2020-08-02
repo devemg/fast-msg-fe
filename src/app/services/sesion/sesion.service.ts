@@ -13,7 +13,6 @@ export class SesionService {
 
   getUserID() {
     let id =this.authService.getDecodedToken(this.getToken())
-    console.log(id)
     return id;
   }
 
