@@ -2,27 +2,47 @@
     <mat-toolbar id="header-chat">
         <div class="left">
             <div class="avatar" style="background-image: url({{chat.image}});"></div>
-        <div id="info">
-            <p class="name">{{chat.name}}</p>
-            <span class="status">En línea...</span>
+            <div id="info">
+                <p class="name">{{chat.name}}</p>
+                <span class="status">En línea...</span>
+            </div>
         </div>
-        </div>
-        <button mat-icon-button >
+        <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <!-----
+                <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Silenciar Notificaciones</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>notifications_on</mat-icon>
+                <span>Activar Notificaciones</span>
+            </button>
+            -->
+            <button mat-menu-item (click)="deleteChat()">
+                <mat-icon>delete_sweep</mat-icon>
+                <span>Vaciar Chat</span>
+            </button>
+            <button mat-menu-item (click)="clearChat()">
+                <mat-icon>delete</mat-icon>
+                <span>Eliminar Chat</span>
+            </button>
+        </mat-menu>
     </mat-toolbar>
-    <!-----[scrollTop]="scrolltop"-->
-    <div id="container-messages" #scrollMe >
+    <!------->
+    <div id="container-messages" #scrollMe>
         <div *ngFor="let message of chat.messages" class="message">
             <div class="content" [ngClass]="idUser == message.owner?'own-message':'contact-message'">
                 <p>{{message.content}}
                 </p>
-                <span class="date">{{message.date | date:'shortTime' }}</span> 
-            </div> 
+                <span class="date">{{message.date | date:'shortTime' }}</span>
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>
-   <div class="clearfix"></div>
+    <div class="clearfix"></div>
     <div id="send-message">
         <input type="text" placeholder="mensaje..." [formControl]="mesg" />
         <button mat-icon-button (click)="send()">

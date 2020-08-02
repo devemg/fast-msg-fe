@@ -18,6 +18,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import {MatMenuModule} from '@angular/material/menu';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -40,7 +42,8 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatPaginatorModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatMenuModule,
   ]
 })
 export class MaterialAngularModule { }
