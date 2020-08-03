@@ -24,7 +24,7 @@
                 <mat-label>Fecha de Nacimiento</mat-label>
                 <input matInput formControlName="dateBirth" [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+                <mat-datepicker touchUi #picker startView="multi-year"></mat-datepicker>
                 <mat-error *ngIf="handleError(registerForm,'dateBirth','required')">
                     La fecha de nacimiento es <strong>requerida</strong>
                 </mat-error>
