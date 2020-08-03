@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { themes } from './themes';
 
 @Component({
   selector: 'app-settings',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
+  themes = themes;
 
   constructor() { }
 

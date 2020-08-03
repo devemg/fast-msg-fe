@@ -1,0 +1,34 @@
+export const themes = [
+    {
+        name:'Rosa',
+        color:'#FCC8B2'
+    },
+    {
+        name:'Salmon',
+        color:'#EFA48B'
+    },
+    {
+        name:'Celeste',
+        color:'#63CCCA'
+    },
+    {
+        name:'Azul',
+        color:'#4A7B9D'
+    },
+    {
+        name:'Morado',
+        color:'#8151ac'
+    },
+    {
+        name:'Amarillo',
+        color:'#E8BD01'
+    },
+    {
+        name:'Naranja',
+        color:'#F26419'
+    },
+    {
+        name:'Verde',
+        color:'#c0db53'
+    },
+]
