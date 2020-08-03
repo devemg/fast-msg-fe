@@ -1,17 +1,17 @@
 
 <mat-sidenav-container class="draw-container" autosize>
-  <mat-sidenav #drawer mode="over" class="container-menu">
+  <mat-sidenav #sidenav mode="over" class="container-menu">
     <mat-selection-list [multiple]="false">
       <div mat-subheader>Fast Messages</div>
-      <mat-list-option [routerLink]="['/login']">
+      <mat-list-option [routerLink]="['/login']" (click)="closeSideNav()">
         <mat-icon mat-list-icon>supervisor_account</mat-icon>
         <div mat-line>Iniciar Sesión</div>
       </mat-list-option>
-      <mat-list-option [routerLink]="['/register']">
+      <mat-list-option [routerLink]="['/register']" (click)="closeSideNav()" >
         <mat-icon mat-list-icon>  face </mat-icon>
         <div mat-line>Registrarse</div>
       </mat-list-option>
-      <mat-list-option [routerLink]="['/contact']">
+      <mat-list-option [routerLink]="['/contact']" (click)="closeSideNav()">
         <mat-icon mat-list-icon>email</mat-icon>
         <div mat-line>Contacto</div>
       </mat-list-option>
@@ -21,7 +21,7 @@
   <div class="sidenav-content container-alll" >
     <div id="header">
       <div id="btn-menu">
-        <button mat-icon-button (click)="drawer.toggle()">
+        <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
