@@ -1,17 +1,60 @@
+<!-----
 <div class="container-alll">
-    <div id="header">
-   
-        <ul id="menu">
-            <li><a href="" [routerLink]="['/login']">Iniciar Sesión</a></li>
-            <li><a href="" [routerLink]="['/register']">Registrarse</a></li>
-            <li><a href="" [routerLink]="['/contact']">Contacto</a></li>
-        </ul>
-        <div id="logo">
-            <a href="" [routerLink]="['/']">
-                <img src="../../../../assets/img/icon.svg" alt="Fast Messages" />
-            </a>
-        </div>
-    </div>
     
-    <router-outlet></router-outlet>
+    <mat-sidenav-container >
+        <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="false">
+            Start
+        </mat-sidenav>
+        <mat-sidenav-content>
+            Content
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    
+       
+       
+    
 </div>
+ ----->
+<mat-sidenav-container class="draw-container" autosize>
+  <mat-sidenav #drawer mode="over" class="container-menu">
+    <mat-selection-list [multiple]="false">
+      <div mat-subheader>Fast Messages</div>
+      <mat-list-option [routerLink]="['/login']">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <div mat-line>Iniciar Sesión</div>
+      </mat-list-option>
+      <mat-list-option [routerLink]="['/register']">
+        <mat-icon mat-list-icon>  face </mat-icon>
+        <div mat-line>Registrarse</div>
+      </mat-list-option>
+      <mat-list-option [routerLink]="['/contact']">
+        <mat-icon mat-list-icon>email</mat-icon>
+        <div mat-line>Contacto</div>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav>
+
+  <div class="sidenav-content">
+    <div id="header">
+      <div id="btn-menu">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <ul id="menu">
+        <li><a href="" [routerLink]="['/login']">Iniciar Sesión</a></li>
+        <li><a href="" [routerLink]="['/register']">Registrarse</a></li>
+        <li><a href="" [routerLink]="['/contact']">Contacto</a></li>
+      </ul>
+      <div id="logo">
+        <a href="" [routerLink]="['/']">
+          <img src="../../../../assets/img/icon.svg" alt="Fast Messages" />
+        </a>
+      </div>
+    </div>
+    <!-----contenido -->
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>
