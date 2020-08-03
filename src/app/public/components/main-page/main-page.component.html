@@ -1,21 +1,5 @@
-<!-----
-<div class="container-alll">
-    
-    <mat-sidenav-container >
-        <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="false">
-            Start
-        </mat-sidenav>
-        <mat-sidenav-content>
-            Content
-        </mat-sidenav-content>
-      </mat-sidenav-container>
-    
-       
-       
-    
-</div>
- ----->
-<mat-sidenav-container class="draw-container" autosize>
+
+<mat-sidenav-container class="container-alll" class="draw-container" autosize>
   <mat-sidenav #drawer mode="over" class="container-menu">
     <mat-selection-list [multiple]="false">
       <div mat-subheader>Fast Messages</div>
