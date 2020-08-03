@@ -71,6 +71,10 @@ export class MainChatComponent implements OnInit {
     this.idChat = event;
   }
 
+  closeChat(){
+    this.idChat = null;
+  }
+
   closeSesion(){
     this.sesionService.clearToken()
     this.router.navigate(['../'])

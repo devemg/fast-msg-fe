@@ -35,7 +35,7 @@
                 </ul>
             </div>
             <div id="chat">
-                <app-chat [idChat]="idChat"></app-chat>
+                <app-chat [idChat]="idChat" (chat)="closeChat()"></app-chat>
             </div>
         </div>
     </mat-sidenav-content>

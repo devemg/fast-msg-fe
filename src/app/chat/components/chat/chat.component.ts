@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, ViewChildren, QueryList, Output, EventEmitter } from '@angular/core';
 import { Chat } from '../../models/chat.model';
 import { ChatService } from '../../services/chat/chat.service';
 import { FormControl } from '@angular/forms';
 import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { SesionService } from '../../../services/sesion/sesion.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-chat',
@@ -14,7 +15,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   @Input() idChat: string;
   //scroll
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
-
+  @Output('chat') sendChatId = new EventEmitter<string>();
 
   chat: Chat;
   idUser: string;
@@ -24,7 +25,8 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   constructor(
     private chatService: ChatService,
     private sesionService: SesionService,
-    private socketService: SocketChatService
+    private socketService: SocketChatService,
+    private alertService:AlertService
   ) { }
 
   ngOnInit(): void {
@@ -79,7 +81,15 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
    * Elimina el chat de la lista del usuario
    */
   deleteChat() {
-    console.log(this.chat._id)
+    this.chatService.deleteChatUser(this.chat._id)
+    .then(res=>{
+      this.chat = null;
+      this.sendChatId.emit(null);
+    })
+    .catch(err=>{
+      console.log(err)
+      this.alertService.alertError('Chat',"No se ha podido al eliminar el la conversación");
+    })
   }
 
   clearChat() {

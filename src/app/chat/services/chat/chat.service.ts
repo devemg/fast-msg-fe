@@ -32,4 +32,14 @@ export class ChatService {
       JSON.stringify({to}),getHttpHeaders(this.sesionService.getToken())).toPromise();
   }
 
+  async deleteChatUser(idchat){
+    return this.http.delete(environment.ENDPOINT_CHAT+'?id='+idchat,
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
+  }
+
+  async emptyChat(idchat){
+    return this.http.delete(environment.ENDPOINT_CHAT+'/empty'+'?id='+idchat,
+    getHttpHeaders(this.sesionService.getToken())).toPromise();
+  }
+
 }
