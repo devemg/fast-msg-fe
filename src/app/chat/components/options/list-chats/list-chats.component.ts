@@ -14,12 +14,10 @@ export class ListChatsComponent implements OnInit {
   @Output('chatId')
   sendChatId = new EventEmitter<string>();
 
-  
   chats:ChatItemList[];
-  //idUser:string;
+
   constructor(
     private chatService:ChatService,
-    private sesionService:SesionService
   ) { 
     this.getChats();
   }
@@ -29,7 +27,6 @@ export class ListChatsComponent implements OnInit {
 
   async getChats(){
     this.chats = await this.chatService.getChats();
-    //this.idUser = this.sesionService.getUserID();
   }
 
   onSelection(event){

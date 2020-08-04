@@ -93,7 +93,14 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   }
 
   clearChat() {
-    console.log(this.chat._id)
+    this.chatService.emptyChat(this.chat._id)
+    .then(res=>{
+      this.chat.messages = [];
+    })
+    .catch(err=>{
+      console.log(err)
+      this.alertService.alertError('Chat',"No se ha podido al vaciar la conversación");
+    })
   }
 
   onNotifications() {

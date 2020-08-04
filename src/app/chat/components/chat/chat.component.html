@@ -7,10 +7,9 @@
                 <span class="status">En línea...</span>
             </div>
         </div>
-        <button mat-icon-button>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <!----- [matMenuTriggerFor]="menu"
         <mat-menu #menu="matMenu" xPosition="before">
             
                 <button mat-menu-item>
@@ -31,7 +30,6 @@
                 <span>Eliminar Chat</span>
             </button>
         </mat-menu>
-        -->
     </mat-toolbar>
     <!------->
     <div #scrollMe id="scrollMe" class="container-messages">
