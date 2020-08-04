@@ -12,7 +12,7 @@
   <mat-selection-list [multiple]="false" 
   (selectionChange)="onSelection($event)">
     <mat-list-option *ngFor="let chat of chats" [value]="chat._id">
-      <img src="getUrlImage(chat.image)" class="icon-chat" mat-list-icon />
+      <img [src]="chat?getUrlImage(chat.image):''" alt='imagen' class="icon-chat" mat-list-icon />
       <div mat-line class="name">{{chat.name}}</div>
       <!-------
       <div mat-line class="message" *ngIf="chat.lastMessage">
