@@ -6,6 +6,7 @@ import { SocketChatService } from '../../services/socket-chat/socket-chat.servic
 import { SesionService } from '../../../services/sesion/sesion.service';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { getUrlImage } from 'src/assets/scripts/extra-functions';
 
 @Component({
   selector: 'app-chat',
@@ -53,7 +54,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   async getChat() {
     this.chat = await this.chatService.getChat(this.idChat);
     //cambiar imagen
-    this.imgChat=this.sanitizer.bypassSecurityTrustStyle('url("'+this.chat.image+'")');
+    this.imgChat=this.sanitizer.bypassSecurityTrustStyle('url("'+getUrlImage(this.chat.image)+'")');
   }
 
   /**
