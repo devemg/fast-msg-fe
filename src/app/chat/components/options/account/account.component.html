@@ -26,7 +26,7 @@
                         <h3>Foto de perfil</h3>
                         <label for="file">
                                 <p>Cambiar Imagen</p>
-                                <img src="{{getUrlImageSelectable(selectedImage.src)}}" />
+                                <img src="{{selectedImage?getUrlImageSelectable(selectedImage.src):''}}" />
                         </label>
                         <input #imageInput name="file" id="file" 
                         type="file" 
