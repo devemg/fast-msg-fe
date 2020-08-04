@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { SesionService } from '../../../services/sesion/sesion.service';
 import { AlertService } from 'src/app/services/alert/alert.service';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-chat',
@@ -16,7 +17,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   //scroll
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
   @Output('chat') sendChatId = new EventEmitter<string>();
-
+  imgChat:SafeStyle;
   chat: Chat;
   idUser: string;
 
@@ -26,7 +27,8 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
     private chatService: ChatService,
     private sesionService: SesionService,
     private socketService: SocketChatService,
-    private alertService:AlertService
+    private alertService:AlertService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -50,6 +52,8 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
    */
   async getChat() {
     this.chat = await this.chatService.getChat(this.idChat);
+    //cambiar imagen
+    this.imgChat=this.sanitizer.bypassSecurityTrustStyle('url("'+this.chat.image+'")');
   }
 
   /**
