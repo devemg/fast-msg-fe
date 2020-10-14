@@ -8,7 +8,7 @@ import { SesionService } from '../../../services/sesion/sesion.service';
 @Component({
   selector: 'app-main-chat',
   templateUrl: './main-chat.component.html',
-  styleUrls: ['./main-chat.component.scss']
+  styleUrls: ['./main-chat.component.scss','./main-chat-resp.component.scss']
 })
 export class MainChatComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
