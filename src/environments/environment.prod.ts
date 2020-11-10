@@ -1,4 +1,9 @@
-const api = 'http://172.17.0.2:8080';
+const be_config = {
+  host: '104.154.119.100',
+  port:8080
+};
+
+const api = `http://${be_config.host}:${be_config.port}`;
 
 export const environment = {
   production: true,

@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   submit(){
     if(this.loginForm.valid){
+      console.log("Iniciando sesion....")
       this.publicService.login(this.loginForm.value)
       .subscribe(data=>{
         this.sesionService.setToken(data);
