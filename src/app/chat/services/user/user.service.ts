@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/assets/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Contact } from '../../models/contact.model';
 import { SesionService } from '../../../services/sesion/sesion.service';
 import { getHttpHeaders } from 'src/assets/scripts/extra-functions';

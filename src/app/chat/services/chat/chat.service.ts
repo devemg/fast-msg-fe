@@ -3,8 +3,8 @@ import { Chat } from '../../models/chat.model';
 import { ChatItemList } from '../../models/chat-item-list.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SesionService } from '../../../services/sesion/sesion.service';
-import { environment } from 'src/assets/environments/environment';
 import { getHttpHeaders } from 'src/assets/scripts/extra-functions';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
