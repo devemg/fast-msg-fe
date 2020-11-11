@@ -15,7 +15,7 @@ export const environment = {
   ENDPOINT_CHAT : api+'/chat',
   ENDPOINT_USER : api+'/user',
   ENDPOINT_PUBLIC : api+'/public',
-  ENDPOINT_IMAGES:api+'/images'
+  ENDPOINT_IMAGES:'https://res.cloudinary.com/devemg/image/upload/v1605105665/fastmsg/'
 };
 
 /*
