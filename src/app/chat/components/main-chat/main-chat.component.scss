@@ -72,13 +72,12 @@
    
 
 #sidenav {
-    width: 30%;
+    width: 25%;
     background-color: colors.$bg-color;
     color: colors.$primary-color;
 
         #header {
             flex-basis: 15%;
-          
             display: flex;
             flex-flow: wrap row;
             justify-content: space-between;

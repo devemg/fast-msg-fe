@@ -73,6 +73,8 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   subscribeAll() {
     this.socketService.onMessage()
       .subscribe(data => {
+        //console.log("mensaje...")
+        //console.log(data)
         if (data) {
           if (data.chat == this.chat._id) {
             this.chat.messages.push(data.message);

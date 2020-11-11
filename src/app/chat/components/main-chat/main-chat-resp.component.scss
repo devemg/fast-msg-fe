@@ -9,10 +9,14 @@
     }
 }
 
-@media (max-width:333px){
-    .container-options{
-        position: absolute;
-        top: 0;
-        right: 0;
+@media(max-width:864px){
+    #sidenav {
+        width: 50%;
+    }
+}
+
+@media(max-width:648px){
+    #sidenav {
+        width: 100%;
     }
 }

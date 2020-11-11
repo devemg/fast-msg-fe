@@ -11,6 +11,7 @@ import { SettingsComponent } from './components/options/settings/settings.compon
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommunityComponent } from './components/options/community/community.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommunityComponent } from './components/options/community/community.com
     CommonModule,
     ReactiveFormsModule,
     ChatRoutingModule,
-    MaterialAngularModule 
+    MaterialAngularModule,
+    LayoutModule 
   ]
 })
 export class ChatModule { }
