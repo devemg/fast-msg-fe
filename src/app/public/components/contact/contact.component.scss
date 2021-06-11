@@ -32,3 +32,15 @@ form {
         padding-bottom: 1em;
     }
 }
+
+@media screen and (max-width:640px) {
+    .container-form {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .container-form {
+        width: 80%;
+    }
+}
