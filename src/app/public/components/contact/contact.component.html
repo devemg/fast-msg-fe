@@ -33,7 +33,7 @@
             <mat-form-field class="field" appearance="fill">
                 <mat-label>Mensaje</mat-label>
                 <textarea matInput placeholder="Mensaje" 
-                formControlName="message" required></textarea>
+                formControlName="message" rows="7" required></textarea>
                 <!------errores----->
                 <mat-error *ngIf="handleError(contactForm,'message','required')">
                     El mensaje es <strong>requerido</strong>
