@@ -1,8 +1,6 @@
-@use '../../../../../assets/css/colors' as colors;
-@use '../../../../../assets/css/fonts' as fonts;
 
 .mat-list-item {
-    color: colors.$text-neutral;
+    //color: colors.$text-neutral;
     transition: all 300ms;
 
     .image {
@@ -26,7 +24,6 @@
 
     .name {
         font-size: 16px;
-        font-family: fonts.$name;
     }
 
     .date {
@@ -35,8 +32,8 @@
 }
 
 .mat-list-item:hover {
-    background-color: colors.$primary-color;
-    color: colors.$bg-color;
+    //background-color: colors.$primary-color;
+    //color: colors.$bg-color;
 }
 
 #search{
@@ -50,7 +47,7 @@
     }
 
     button {
-        color: colors.$primary-color;
+        //color: colors.$primary-color;
     }
 
 

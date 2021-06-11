@@ -1,9 +1,7 @@
-@use '../../../../../assets/css/colors' as colors;
-@use '../../../../../assets/css/fonts' as fonts;
 
 
 .mat-list-item {
-    color: colors.$text-neutral;
+   // color: colors.$text-neutral;
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
     padding-top: 10px;
@@ -23,23 +21,22 @@
     }
 
     .btn-del{
-        background-color: colors.$warning-color;
+      //  background-color: colors.$warning-color;
     }
 
     .btn-msg {
-        background-color: colors.$secondary-color;
+      //  background-color: colors.$secondary-color;
     }
 
     .name {
         font-size: 16px;
-        font-family: fonts.$name;
     }
 
 }
 
 .mat-list-item:hover {
-    background-color: colors.$primary-color;
-    color: colors.$bg-color;
+   // background-color: colors.$primary-color;
+  //  color: colors.$bg-color;
 }
 
 #options {
@@ -59,16 +56,16 @@
     }
 
     button:active {
-        background-color: colors.$primary-color;
+      //  background-color: colors.$primary-color;
     }
 }
 
 .btn-toggle-active {
-    background-color: colors.$primary-color;
+  //  background-color: colors.$primary-color;
 }
 
 .btn-toggle {
-    background-color: colors.$bg-light-color;
+  //  background-color: colors.$bg-light-color;
 }
 
 #search{
@@ -82,7 +79,7 @@
     }
 
     button {
-        color: colors.$primary-color;
+      //  color: colors.$primary-color;
     }
 
 

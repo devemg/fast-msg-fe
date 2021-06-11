@@ -1,18 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@use './assets/css/fonts' as fonts;
-@use './assets/css/colors' as colors;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: fonts.$text; }
+body { margin: 0; }
 
 .icon {
     cursor: pointer;
-}
-
-//estilos de inputs en public 
-.mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: transparent;
-    font-family: fonts.$middle-text;
 }
 
 .full-width {

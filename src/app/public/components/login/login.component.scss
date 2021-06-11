@@ -1,10 +1,7 @@
-@use '../../../../assets/css/colors' as colors;
-@use '../../../../assets/css/fonts' as fonts;
-
 
 
 .container-login {
-    background-color: colors.$bg-color;
+   // background-color: colors.$bg-color;
     background-image: url('/assets/img/backgrounds/square_bg.png');
     padding: 0;
     margin: 0;   
@@ -16,7 +13,6 @@
     align-items: center;
     
     h1 {
-        font-family: fonts.$big-title;
         font-size: 40px;
         letter-spacing: 3px;
     }
@@ -25,7 +21,7 @@
 .container-form {
     width: 50%;
     margin: 0 auto;
-    background-color: colors.$bg-light-color;
+    //background-color: colors.$bg-light-color;
     padding: 25px;
     border-radius: 10px;
     -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
@@ -40,14 +36,8 @@ mat-form-field {
     margin-top: 15px;
     padding: 5px;
     border-radius: 10px;
-    font-family: fonts.$middle-text;
 }
 
-.btn-submit {
-    margin-top: 15px;
-    background-color: #00BDBA;;
-    color: black;
-}
 
 .options {
     padding-top: 1em;

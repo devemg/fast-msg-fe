@@ -1,5 +1,3 @@
-@use '../../../../assets/css/colors' as colors;
-@use '../../../../assets/css/fonts' as fonts;
 
 #container-page {
     height: 100%;
@@ -44,14 +42,12 @@
 
             h1 {
                 font-size: 60px;
-                font-family: fonts.$big-title;
                 font-weight: bold;
                 letter-spacing: 5px;
             }
 
             h2 {
                 text-align: justify;
-                font-family: fonts.$middle-text;
             }
 
         }
@@ -60,7 +56,7 @@
 
     #content-second {
         height: 100vh;
-        background-color: colors.$bg-color;
+       // background-color: colors.$bg-color;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
@@ -179,16 +175,12 @@
         h3 {
             width: 100%;
             text-align: center;
-            font-family: fonts.$middle-text;
             font-weight: bold;
             letter-spacing: 3px;
             font-size: 27px;
             margin: 0;
         }
 
-        p {
-            font-family: fonts.$middle-text;
-        }
 
     }
 
@@ -259,7 +251,7 @@
 }
 
 #footer {
-    background-color: colors.$bg-color;
+  //  background-color: colors.$bg-color;
     min-height: 33vh;
     color: white;
     padding-left: 15px;
@@ -270,12 +262,10 @@
     justify-content: space-between;
 
     p {
-        font-family: fonts.$middle-text;
         width: 100%;
 
         a {
             color: white;
-            font-family: fonts.$middle-text;
             width: 100%;
                 text-decoration: none;
                 font-weight: bold;
@@ -289,7 +279,6 @@
 
     a {
         color: white;
-        font-family: fonts.$middle-text;
         width: 100%;
             text-decoration: none;
             font-weight: bold;
@@ -302,7 +291,6 @@
 
     h3 {
         width: 100%;
-        font-family: fonts.$middle-text;
         font-weight: bold;
         font-size: 18px;
     }

@@ -1,5 +1,3 @@
-@use '../../../../../assets/css/colors' as colors;
-@use '../../../../../assets/css/fonts' as fonts;
 
 .container-account {
     color: black;
@@ -27,7 +25,6 @@
             padding-right: 6px;
             background-color: white;
             text-align: center;
-            font-family:fonts.$polaroid;
             font-size: 25px;
             padding-bottom: 15px;
             padding-top: 10px;
@@ -55,14 +52,13 @@
             h3 {
                 flex-basis: 100%;
                 border-bottom: 1px solid gray;
-                font-family:fonts.$title;
             }
     
             input[type="text"],
             input[type="email"] {
                 border-radius: 0;
                 background-color: transparent;
-                color: colors.$primary-color;
+               // color: colors.$primary-color;
                 flex-basis: 85%;
                 border: 1px solid gray;
                 padding-bottom: 5px;
@@ -83,8 +79,8 @@
             }
 
             label[for="file"]{
-                background-color: colors.$primary-color;
-                color: colors.$bg-color;
+               // background-color: colors.$primary-color;
+              //  color: colors.$bg-color;
                 
                 font-weight: 600;
                 display: inline-block;

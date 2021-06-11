@@ -1,5 +1,4 @@
-@use '../../../../assets/css/colors' as colors;
-@use '../../../../assets/css/fonts' as fonts;
+
 .draw-container {
     height: 100vh;
 
@@ -22,14 +21,14 @@
 
 #btn-menu{
     display: none;
-    color: colors.$bg-light-color;
+  //  color: colors.$bg-light-color;
 }
 
 .container-menu {
-    background-color: colors.$bg-color;
+   // background-color: colors.$bg-color;
     .mat-list-item,
     .mat-subheader {
-    color: colors.$bg-light-color;
+ //   color: colors.$bg-light-color;
     }
 }
 
@@ -63,7 +62,6 @@
     padding: 0;
     list-style: none;
     height: 85px;
-    font-family: fonts.$middle-text;
     transition: all 300ms;
     
     display: flex;
