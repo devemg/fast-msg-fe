@@ -10,7 +10,8 @@ export class HighlightComponent implements OnInit {
   @Input() title: string;  
   @Input() text: string;
   @Input() image: string; 
-  @Input() aligment: string;     
+  @Input() aligment: string;  
+  @Input() color: string;     
 
   constructor() { }
 
