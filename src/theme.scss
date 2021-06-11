@@ -1,16 +1,16 @@
-@use './node_modules/@angular/material' as mat;
+@use '~@angular/material' as mat;
 
 $primary-palette: (
- 50: #f1e2eb,
- 100: #ddb6cf,
- 200: #c787b0,
- 300: #ae5992,
- 400: #9c377d,
- 500: #8a146b,
- 600: #7f0f66,
- 700: #70075f,
- 800: #620357,
- 900: #480048,
+ 50: #fdf7e1,
+ 100: #f9eab2,
+ 200: #f5dc81,
+ 300: #f2cf4f,
+ 400: #f0c429,
+ 500: #eeba0e,
+ 600: #eead04,
+ 700: #ee9b00,
+ 800: #ee8a00,
+ 900: #ed6d00,
  contrast: (
    900: white,
    800: white,
@@ -26,16 +26,16 @@ $primary-palette: (
 );
 
 $secondary-palette: (
- 50: #faecef,
- 100: #f5d1d6,
- 200: #e1a1a4,
- 300: #d37e82,
- 400: #dd6465,
- 500: #e15852,
- 600: #d2504f,
- 700: #c04848,
- 800: #b24342,
- 900: #a13c39,
+ 50: #e3f6ff,
+ 100: #b8e9fe,
+ 200: #8adcfc,
+ 300: #5ecdf7,
+ 400: #43c3f1,
+ 500: #3ab9e9,
+ 600: #32a9d5,
+ 700: #2695ba,
+ 800: #1a82a0,
+ 900: #006073,
  contrast: (
     900: white,
     800: white,
@@ -52,8 +52,8 @@ $secondary-palette: (
 
 @include mat.core();
 
-$my-primary: mat.define-palette($primary-palette, 900);
-$my-accent: mat.define-palette($secondary-palette, 700);
+$my-primary: mat.define-palette($primary-palette, 700);
+$my-accent: mat.define-palette($secondary-palette, 900);
 
 // The "warn" palette is optional and defaults to red if not specified.
 $my-warn: mat.define-palette(mat.$red-palette);
@@ -65,6 +65,5 @@ $my-theme: mat.define-light-theme((
    warn: $my-warn,
  )
 ));
-@include mat.core-color($light-theme);
-//@include mat.button-theme($my-theme);
-//@include mat.all-component-themes($my-theme);
+@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);
