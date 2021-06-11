@@ -1,5 +1,5 @@
 <div class="container-login">
-    <div class="container-form">
+    <mat-card class="container-form">
         <h1>Inicia Sesión</h1>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
             <!-------correo-------->
@@ -28,11 +28,9 @@
             </mat-form-field>
             <button mat-raised-button color="primary" class="full-width" >Entrar</button>
             <div class="options">
-                <!-----
-                <p>¿Olvidaste tu contraseña?<br/> <a [routerLink]="['/reset-password']">Recuperar Contraseña</a> </p>
-            -->
-                <p>¿No tienes una cuenta?<br/> <a [routerLink]="['/register']">Crea una cuenta</a> </p>
+                <p>¿Olvidaste tu contraseña?<a [routerLink]="['/reset-password']">Recuperar Contraseña</a> </p>
+                <p>¿No tienes una cuenta? <a [routerLink]="['/register']">Crea una cuenta</a> </p>
             </div>
         </form> 
-    </div>
+    </mat-card>
 </div>

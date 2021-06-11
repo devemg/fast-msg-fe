@@ -1,3 +1,12 @@
+@import '/src/colors.scss';
+/*
+.sidenav-content {
+    background-color: $background-color;
+    background-image: url('/assets/img/backgrounds/square_bg.png');
+    min-height: 100vh;
+    height: 100%;
+}*/
+
 
 .draw-container {
     height: 100vh;
@@ -8,11 +17,10 @@
 } 
 #header {
     background-color: rgba(0, 0, 0, 0.1);
-    width: 100%;
     position: fixed;
     top: 0;
-    right: 16px !important;
-
+    width: 100%;
+    z-index: 1;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
@@ -21,15 +29,6 @@
 
 #btn-menu{
     display: none;
-  //  color: colors.$bg-light-color;
-}
-
-.container-menu {
-   // background-color: colors.$bg-color;
-    .mat-list-item,
-    .mat-subheader {
- //   color: colors.$bg-light-color;
-    }
 }
 
 #logo {
@@ -97,3 +96,36 @@
 #header:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+@media (max-width:502px){
+    #header {
+        justify-content: space-between;
+    }
+    #menu {
+        display: none;
+    }
+
+    #header:hover {
+        #btn-menu {
+            opacity: 1;
+        }
+    }
+
+    #btn-menu{
+        display: initial;
+        
+        button {
+            width: 75px;
+            height: 75px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        mat-icon {
+            font-size: 35px;
+            margin-left: -12px;
+        }
+    }
+}
+

@@ -1,7 +1,8 @@
+@import "/src/colors.scss";
 
 
 .container-login {
-   // background-color: colors.$bg-color;
+    background-color: $background-color;
     background-image: url('/assets/img/backgrounds/square_bg.png');
     padding: 0;
     margin: 0;   
@@ -47,15 +48,6 @@ mat-form-field {
         padding: 0;
         font-family: "Montserrat", sans-serif;
         text-align: center;
-    }
-
-    a {
-        text-decoration: none;
-        color: #015a57;
-    }
-
-    a:hover {
-        color: #00BDBA;
     }
 }
 
