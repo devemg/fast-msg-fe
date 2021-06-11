@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageComponent } from './components/page/page.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -8,6 +7,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { GuardPublicRoutesService } from './services/guard-public-routes/guard-public-routes.service';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
         children: [
           {
             path:'',
-            component:PageComponent
+            component:LandingPageComponent
           },
           {
             path:'login',

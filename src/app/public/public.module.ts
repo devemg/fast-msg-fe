@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { LoginComponent } from './components/login/login.component';
-import { PageComponent } from './components/page/page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
@@ -15,10 +14,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { PublicService } from './services/public/public.service';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, PageComponent, RegisterComponent, ResetPasswordComponent, ConfirmAccountComponent, ContactComponent, MainPageComponent],
+  declarations: [
+    LoginComponent, 
+    LandingPageComponent, 
+    RegisterComponent, 
+    ResetPasswordComponent, 
+    ConfirmAccountComponent, 
+    ContactComponent, 
+    MainPageComponent
+  ],
   imports: [
     CommonModule,
     PublicRoutingModule,
