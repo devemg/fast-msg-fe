@@ -15,6 +15,10 @@ import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { PublicService } from './services/public/public.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { HomeComponent } from './components/landing-page/landing-page-components/home/home.component';
+import { BannerComponent } from './components/landing-page/landing-page-components/banner/banner.component';
+import { FooterInfoComponent } from './components/landing-page/landing-page-components/footer-info/footer-info.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     ResetPasswordComponent, 
     ConfirmAccountComponent, 
     ContactComponent, 
-    MainPageComponent
+    MainPageComponent, 
+    HomeComponent, 
+    BannerComponent, 
+    FooterInfoComponent, 
+    FooterComponent
   ],
   imports: [
     CommonModule,
