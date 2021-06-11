@@ -1,0 +1,17 @@
+.container-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0 1em 0;
+    min-height: 80vh;
+}
+
+.container-form {
+    width: 50%;
+}
+
+button {
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
