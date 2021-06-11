@@ -3,10 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; }
 
-.icon {
-    cursor: pointer;
-}
 
 .full-width {
     width: 100%;
+}
+
+.clickable:hover {
+    cursor: pointer;
 }
