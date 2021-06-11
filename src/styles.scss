@@ -15,25 +15,6 @@ body { margin: 0; font-family: fonts.$text; }
     font-family: fonts.$middle-text;
 }
 
-
-//estilo de boton de public
-.btn-submit {
-    -webkit-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-        -moz-box-shadow: 10px 11px 9px -5px rgba(0,0,0,0.75);
-        box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.75);
-        font-family: fonts.$middle-text;
-        font-weight: bold;
-        font-size: 15px;
-        height: 60px;
-        border: none;
-        cursor: pointer;
-        transition: all 300ms;
-        width: 100%;
+.full-width {
+    width: 100%;
 }
-
-.btn-submit:active {
-    -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-}
-

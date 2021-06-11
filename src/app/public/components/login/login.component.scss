@@ -69,6 +69,11 @@ mat-form-field {
     }
 }
 
+button {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 @media screen and (max-width:495px) {
     .container-form {
         width: 70%;
