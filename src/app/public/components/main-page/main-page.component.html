@@ -29,12 +29,6 @@
 
       <ul id="menu">
         <li>
-          <a href="" [routerLink]="['/']">
-            <mat-icon mat-list-icon>home</mat-icon>
-            <span>Inicio</span>
-          </a>
-        </li>
-        <li>
           <a href="" [routerLink]="['/login']">
             <mat-icon mat-list-icon>face </mat-icon>
             <span>Iniciar Sesión</span>
@@ -55,6 +49,7 @@
       </ul>
     </div>
     <!-----contenido -->
+    <router-outlet></router-outlet>
   </div>
 
 </mat-sidenav-container>

@@ -3,7 +3,7 @@
         <h1>Inicia Sesión</h1>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
             <!-------correo-------->
-            <mat-form-field class="field" appearance="fill">
+            <mat-form-field class="field" appearance="legacy">
                 <mat-label>Correo Electrónico</mat-label>
                 <input matInput placeholder="correo@example.com" formControlName="email" required>
                 <!------errores----->
@@ -15,7 +15,7 @@
                 </mat-error>
             </mat-form-field>
             <!-------contraseña----->
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="legacy">
                 <mat-label>Contraseña</mat-label>
                 <input matInput placeholder="constraseña" formControlName="password" type="password" required>
                 <!-----errores----->
@@ -28,7 +28,7 @@
             </mat-form-field>
             <button mat-raised-button color="primary" class="full-width" >Entrar</button>
             <div class="options">
-                <p>¿Olvidaste tu contraseña?<a [routerLink]="['/reset-password']">Recuperar Contraseña</a> </p>
+                <p>¿Olvidaste tu contraseña? <a [routerLink]="['/reset-password']">Recupera la Contraseña</a> </p>
                 <p>¿No tienes una cuenta? <a [routerLink]="['/register']">Crea una cuenta</a> </p>
             </div>
         </form> 
