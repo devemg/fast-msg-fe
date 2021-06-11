@@ -15,10 +15,11 @@ import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { PublicService } from './services/public/public.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { HomeComponent } from './components/landing-page/landing-page-components/home/home.component';
-import { BannerComponent } from './components/landing-page/landing-page-components/banner/banner.component';
-import { FooterInfoComponent } from './components/landing-page/landing-page-components/footer-info/footer-info.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HighlightComponent } from './components/landing-page/sections/highlight/highlight.component';
+import { HomeComponent } from './components/landing-page/sections/home/home.component';
+import { BannerComponent } from './components/landing-page/sections/banner/banner.component';
+import { FooterInfoComponent } from './components/landing-page/sections/footer-info/footer-info.component';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent, 
     BannerComponent, 
     FooterInfoComponent, 
-    FooterComponent
+    FooterComponent, HighlightComponent
   ],
   imports: [
     CommonModule,
