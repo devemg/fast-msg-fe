@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/chat/models/contact.model';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { AlertService } from 'src/app/services/alert/alert.service';
 import { UserService } from 'src/app/chat/services/user/user.service';
 
 @Component({
@@ -21,8 +20,7 @@ export class CommunityComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    public userService: UserService,
-    public alertService: AlertService
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -102,14 +100,14 @@ export class CommunityComponent implements OnInit {
   addContact(id) {
     this.userService.addContact(id)
       .then(res => {
-        this.alertService.alertSuccess('Contacto', 'Contacto agregado con éxito')
+       /* this.alertService.alertSuccess('Contacto', 'Contacto agregado con éxito')
         .then(res=>{
           this.clearSearchUsers()
-        })
+        })*/
       },
         error => {
           console.log(error)
-          this.alertService.alertError('Contacto', 'Error al agregar contacto')
+         // this.alertService.alertError('Contacto', 'Error al agregar contacto')
         })
   }
 

@@ -3,10 +3,9 @@ import { Chat } from '../../models/chat.model';
 import { ChatService } from '../../services/chat/chat.service';
 import { FormControl } from '@angular/forms';
 import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
-import { SesionService } from '../../../services/sesion/sesion.service';
-import { AlertService } from 'src/app/services/alert/alert.service';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { getUrlImage } from 'src/assets/scripts/extra-functions';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-chat',
@@ -26,9 +25,8 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
 
   constructor(
     private chatService: ChatService,
-    private sesionService: SesionService,
+    private sesionService: LocalStorageService,
     private socketService: SocketChatService,
-    private alertService:AlertService,
     private sanitizer: DomSanitizer
   ) { }
 
@@ -95,7 +93,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
     })
     .catch(err=>{
       console.log(err)
-      this.alertService.alertError('Chat',"No se ha podido al eliminar el la conversación");
+      //this.alertService.alertError('Chat',"No se ha podido al eliminar el la conversación");
     })
   }
 
@@ -106,7 +104,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
     })
     .catch(err=>{
       console.log(err)
-      this.alertService.alertError('Chat',"No se ha podido al vaciar la conversación");
+      //this.alertService.alertError('Chat',"No se ha podido al vaciar la conversación");
     })
   }
 

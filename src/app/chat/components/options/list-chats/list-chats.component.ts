@@ -1,8 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ChatItemList } from '../../../models/chat-item-list.model';
-import { ChatService } from '../../../services/chat/chat.service';
-import { SesionService } from '../../../../services/sesion/sesion.service';
 import { getUrlImage } from 'src/assets/scripts/extra-functions';
+import { ChatService } from 'src/app/chat/services/chat/chat.service';
 
 @Component({
   selector: 'list-chats',

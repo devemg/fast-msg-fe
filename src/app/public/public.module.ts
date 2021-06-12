@@ -11,9 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AlertService } from '../services/alert/alert.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { PublicService } from './services/public/public.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HighlightComponent } from './components/landing-page/sections/highlight/highlight.component';
@@ -44,7 +42,6 @@ import { OptionsComponent } from './components/landing-page/sections/options/opt
     HttpClientModule,
     MaterialAngularModule
   ],
-  providers:[PublicService,AlertService,
-    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'}]
+  providers:[{provide: MAT_DATE_LOCALE, useValue: 'es-ES'}]
 })
 export class PublicModule { }

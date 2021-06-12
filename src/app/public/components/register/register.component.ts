@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getFormValidationErrors, handleError, passwordMatchValidator } from 'src/assets/scripts/extra-functions';
-import { AlertService } from 'src/app/services/alert/alert.service';
 import { Router } from '@angular/router';
-import { PublicService } from '../../services/public/public.service';
 
 @Component({
   selector: 'app-register',
@@ -17,8 +15,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private publicService:PublicService,
-    private alertService:AlertService,
     private router:Router
   ) { }
 
@@ -38,17 +34,7 @@ export class RegisterComponent implements OnInit {
 
   submit(){
     if(this.registerForm.valid){
-      this.publicService.register(this.registerForm.value)
-      .subscribe(data=>{
-        this.alertService.alertSuccess('Registro Éxitoso',
-        'Revise su correo electrónico para realizar la confirmación de su cuenta')
-        .then(res=>{
-          this.router.navigate(['/'])
-        })
-      },
-      error=>{
-        this.alertService.alertError('Registro',error.error.message)
-      })
+      
     }else{
       console.log(this.registerForm.value)
       getFormValidationErrors(this.registerForm)

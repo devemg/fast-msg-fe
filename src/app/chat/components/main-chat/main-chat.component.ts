@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
-import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { Router } from '@angular/router';
-import { SesionService } from '../../../services/sesion/sesion.service';
+import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-main-chat',
@@ -19,9 +19,9 @@ export class MainChatComponent implements OnInit {
   idChat:string;
 
   constructor(
-    private socketService:SocketChatService,
+    //private socketService:SocketChatService,
     private router:Router,
-    private sesionService:SesionService
+    private sesionService:LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class MainChatComponent implements OnInit {
     this.options = options;
     this.title_option='';
     this.idChat=null;
-    this.socketService.registerInSocketChat()
+    //this.socketService.registerInSocketChat()
   }
 
   /**

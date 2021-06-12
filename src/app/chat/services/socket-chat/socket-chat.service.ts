@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
-import { SesionService } from '../../../services/sesion/sesion.service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class SocketChatService {
   socket: any;
 
   constructor(
-    private sesionService: SesionService
+    private sesionService: LocalStorageService
   ) { }
 
 

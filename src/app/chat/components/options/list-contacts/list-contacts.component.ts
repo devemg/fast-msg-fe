@@ -1,9 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ChatService } from '../../../services/chat/chat.service';
 import { Contact } from '../../../models/contact.model';
 import { getUrlImage } from 'src/assets/scripts/extra-functions';
-import { AlertService } from 'src/app/services/alert/alert.service';
 import { UserService } from 'src/app/chat/services/user/user.service';
+import { ChatService } from 'src/app/chat/services/chat/chat.service';
 
 @Component({
   selector: 'list-contacts',
@@ -19,11 +18,7 @@ export class ListContactsComponent implements OnInit {
   contacts:Contact[]; 
   showSearch:boolean;
 
-  constructor(
-    public chatService:ChatService,
-    public alertService:AlertService,
-    public userService:UserService
-  ) { }
+  constructor(public userService:UserService, private chatService: ChatService) { }
 
   ngOnInit(): void {
     this.showSearch = false;
@@ -45,11 +40,11 @@ export class ListContactsComponent implements OnInit {
   deleteContact(id){
     this.userService.deleteContact(id)
     .then(response=>{
-      this.alertService.alertSuccess('Contacto','Contacto eliminado con éxito')
+      //this.alertService.alertSuccess('Contacto','Contacto eliminado con éxito')
       this.fillContacts();
     })
     .catch(error=>{
-      this.alertService.alertError('Contacto','El contacto no pudo ser eliminado')
+      //this.alertService.alertError('Contacto','El contacto no pudo ser eliminado')
     })
   }
 

@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Chat } from '../../models/chat.model';
 import { ChatItemList } from '../../models/chat-item-list.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SesionService } from '../../../services/sesion/sesion.service';
-import { getHttpHeaders } from 'src/assets/scripts/extra-functions';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,34 +8,41 @@ import { environment } from 'src/environments/environment';
 export class ChatService {
 
 
-  constructor(
-    private http:HttpClient,
-    private sesionService:SesionService
-  ) {}
+  constructor() {}
 
   async getChats(): Promise<ChatItemList[]> {
-    return this.http.get<ChatItemList[]>(environment.ENDPOINT_CHAT+'/user',
-    getHttpHeaders(this.sesionService.getToken())).toPromise()
+    return new Promise((resolve,reject)=>{
+      resolve([]);
+    });
   }
 
   async getChat(id: string): Promise<Chat> {
-    return this.http.get<Chat>(environment.ENDPOINT_CHAT+'?id='+id,
-    getHttpHeaders(this.sesionService.getToken())).toPromise();
+    return new Promise((resolve,reject)=>{
+      resolve({
+        _id:1234,
+        image:'',
+        messages:[],
+        name:'',
+      });
+    });
   }
 
   async getOrCreateChat(to: string): Promise<any> {
-    return this.http.post<any>(environment.ENDPOINT_CHAT,
-      JSON.stringify({to}),getHttpHeaders(this.sesionService.getToken())).toPromise();
+    return new Promise((resolve,reject)=>{
+      resolve([]);
+    });
   }
 
   async deleteChatUser(idchat){
-    return this.http.delete(environment.ENDPOINT_CHAT+'?id='+idchat,
-    getHttpHeaders(this.sesionService.getToken())).toPromise();
+    return new Promise((resolve,reject)=>{
+      resolve([]);
+    });
   }
 
   async emptyChat(idchat){
-    return this.http.delete(environment.ENDPOINT_CHAT+'/empty'+'?id='+idchat,
-    getHttpHeaders(this.sesionService.getToken())).toPromise();
+    return new Promise((resolve,reject)=>{
+      resolve([]);
+    });
   }
 
 }

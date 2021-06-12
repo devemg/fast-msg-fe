@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { handleError } from 'src/assets/scripts/extra-functions';
-import { AlertService } from 'src/app/services/alert/alert.service';
 import { Router } from '@angular/router';
-import { SesionService } from 'src/app/services/sesion/sesion.service';
-import { PublicService } from '../../services/public/public.service';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +15,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBulder:FormBuilder,
-    private publicService:PublicService,
-    private alertService:AlertService,
-    private sesionService:SesionService,
     private router:Router
   ) { }
 
@@ -34,15 +28,8 @@ export class LoginComponent implements OnInit {
   submit(){
     if(this.loginForm.valid){
       console.log("Iniciando sesion....")
-      this.publicService.login(this.loginForm.value)
-      .subscribe(data=>{
-        this.sesionService.setToken(data);
-        this.router.navigate(['../chat'])
-      },
-      error=>{
-        //objeto de error del server = error.error 
-        this.alertService.alertError('Inicio de Sesión',error.error.message)
-      })
+      this.router.navigate(['/chat'])
+
     }else{
       //getFormValidationErrors(this.loginForm)
     }
