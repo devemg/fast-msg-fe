@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-landing-page',
@@ -31,7 +32,9 @@ export class LandingPageComponent implements OnInit {
       color: '#9B2226'
     }
   ];
-  constructor() { }
+  constructor() {
+    AOS.init();
+   }
 
   ngOnInit(): void {
   }
