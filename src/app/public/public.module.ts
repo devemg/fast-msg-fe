@@ -20,6 +20,7 @@ import { HighlightComponent } from './components/landing-page/sections/highlight
 import { HomeComponent } from './components/landing-page/sections/home/home.component';
 import { BannerComponent } from './components/landing-page/sections/banner/banner.component';
 import { FooterInfoComponent } from './components/landing-page/sections/footer-info/footer-info.component';
+import { OptionsComponent } from './components/landing-page/sections/options/options.component';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { FooterInfoComponent } from './components/landing-page/sections/footer-i
     HomeComponent, 
     BannerComponent, 
     FooterInfoComponent, 
-    FooterComponent, HighlightComponent
+    FooterComponent, HighlightComponent, OptionsComponent
   ],
   imports: [
     CommonModule,
