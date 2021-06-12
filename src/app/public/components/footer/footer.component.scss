@@ -1,4 +1,8 @@
+@import "/src/colors.scss";
+
 footer {
+    background-color: $background-color;
+    background-image: url('/assets/img/backgrounds/square_bg.png');
     color: white;
     text-align: center;
     width: 100%;
