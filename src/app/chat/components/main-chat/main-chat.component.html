@@ -1,42 +1,11 @@
-<mat-sidenav-container class="example-container" (backdropClick)="closeSideNav()">
+<mat-sidenav-container  class="example-container" (backdropClick)="closeSideNav()">
 
-    <mat-sidenav id="sidenav" #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="false">
-        <div class="no-v-scroll">
-            <div id="header">
-                <h3>{{title_option}}</h3>
-                <button mat-icon-button color="accent" (click)="closeSideNav()">
-                    <mat-icon>close</mat-icon>
-                </button>
+    <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="true">
 
-            </div>
-            <div class="container-options">
-                <app-community class="full-width" *ngIf="indexOption === getIndex('Comunidad')"></app-community>
-                <list-contacts (chat)="changeChat($event)" class="full-width" *ngIf="indexOption === getIndex('Contactos')"></list-contacts>
-                <list-chats (chatId)="changeChat($event)" class="full-width" *ngIf="indexOption === getIndex('Chats')"></list-chats>
-                <app-account class="full-width" *ngIf="indexOption === getIndex('Cuenta')"></app-account>
-                <app-settings class="full-width" *ngIf="indexOption === getIndex('Configuración')"></app-settings>
-            </div>
-        </div>
-
+        side
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <div id="container-all">
-            <div id="options">
-                <ul>
-                    <li *ngFor="let option of options; let index = index">
-                        <mat-icon class="icon" (click)="openSideNav(index)" matTooltip="{{option.title}}"
-                            matTooltipPosition="right">{{option.icon}}</mat-icon>
-                    </li>
-                    <li>
-                        <mat-icon class="icon" (click)="closeSesion()" matTooltip="Salir"
-                            matTooltipPosition="right">meeting_room</mat-icon>
-                    </li>
-                </ul>
-            </div>
-            <div id="chat">
-                <app-chat [idChat]="idChat" (chat)="closeChat()"></app-chat>
-            </div>
-        </div>
+        <app-chat [idChat]="idChat" (chat)="closeChat()"></app-chat>
     </mat-sidenav-content>
 </mat-sidenav-container>

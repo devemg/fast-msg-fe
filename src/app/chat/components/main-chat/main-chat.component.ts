@@ -2,13 +2,12 @@ import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { options } from './options';
 import { Router } from '@angular/router';
-import { SocketChatService } from '../../services/socket-chat/socket-chat.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-main-chat',
   templateUrl: './main-chat.component.html',
-  styleUrls: ['./main-chat.component.scss','./main-chat-resp.component.scss']
+  styleUrls: ['./main-chat.component.scss']
 })
 export class MainChatComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;

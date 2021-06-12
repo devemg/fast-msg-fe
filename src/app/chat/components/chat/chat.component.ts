@@ -26,14 +26,14 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
   constructor(
     private chatService: ChatService,
     private sesionService: LocalStorageService,
-    private socketService: SocketChatService,
+    //private socketService: SocketChatService,
     private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
     this.mesg = new FormControl('');
     this.idUser = this.sesionService.getUserID();
-    this.subscribeAll();
+    //this.subscribeAll();
   }
 
   ngOnChanges(): void {
@@ -60,7 +60,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
    */
   send() {
     if (this.mesg.valid && this.mesg.value != '') {
-      this.socketService.sendMessage(this.mesg.value, this.chat._id)
+      //this.socketService.sendMessage(this.mesg.value, this.chat._id)
       this.mesg.reset()
     }
   }
@@ -69,7 +69,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
    * suscripción a los eventos enviados por el socket
    */
   subscribeAll() {
-    this.socketService.onMessage()
+    /*this.socketService.onMessage()
       .subscribe(data => {
         //console.log("mensaje...")
         //console.log(data)
@@ -79,7 +79,7 @@ export class ChatComponent implements OnInit, OnChanges, AfterViewChecked {
             this.updateScroll();
           }
         }
-      })
+      })*/
   }
 
   /**
