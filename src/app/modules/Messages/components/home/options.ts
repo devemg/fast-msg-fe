@@ -1,25 +1,31 @@
 export interface MenuOption {
     title: string; 
     icon: string; 
+    route: string;
 }
 export const options: MenuOption[] = [
     {
         title:'Comunidad',
-        icon:'public'
+        icon:'public',
+        route: './community'
     },
     {
         title: "Cuenta",
-        icon: "account_circle"
+        icon: "account_circle",
+        route: './account'
     },
     {
         title: "Contactos",
-        icon: "contacts"
+        icon: "contacts",
+        route: './contacts'
     },
     {
         title: "Chats",
-        icon: "chat"
+        icon: "chat",
+        route: './chat'
     },
     {
         title: "Configuración",
-        icon: "settings"
+        icon: "settings",
+        route: './settings'
     }];

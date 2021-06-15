@@ -1,6 +1,8 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ContactService } from '../../Services/contact.service';
 import { dummyContactList } from '../../Services/mock-data.spec';
 
@@ -14,7 +16,9 @@ describe('CommunityComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CommunityComponent ],
-      providers: [ MatSnackBar, Overlay ]
+      imports: [ RouterTestingModule ],
+      providers: [ MatSnackBar, Overlay, 
+      ActivatedRoute ]
     })
     .compileComponents();
   });
@@ -28,6 +32,18 @@ describe('CommunityComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show community', () => {
+    fixture.detectChanges();
+    expect(component.isContacts).toBeFalse();
+  });
+
+  it('should call load comunity', () => {
+    fixture.detectChanges();
+    let spy = spyOn(component,'loadCommunity');
+    component.ngOnInit();
+    expect(spy).toHaveBeenCalled();
   });
 
   it('should call service to contacts', () => {

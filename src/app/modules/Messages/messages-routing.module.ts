@@ -12,6 +12,10 @@ const routes: Routes = [
       {
         path:'community',
         component: CommunityComponent
+      },
+      {
+        path:'contacts',
+        component: CommunityComponent
       }
     ]
   },

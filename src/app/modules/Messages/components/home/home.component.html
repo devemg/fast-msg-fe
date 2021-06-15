@@ -7,7 +7,7 @@
     <mat-sidenav  class="sidenav" #sidenav (keydown.escape)="sidenav.toggle()" disableClose mode="side" opened>
         <div class="options">
             <div class="option" *ngFor="let item of options; let i = index;" >
-                <button matRipple (click)="sidenav.toggle(i)"><mat-icon color="primary">{{item.icon}}</mat-icon></button>
+                <button matRipple [routerLink]="item.route"><mat-icon color="primary">{{item.icon}}</mat-icon></button>
             </div>
         </div>
     </mat-sidenav>

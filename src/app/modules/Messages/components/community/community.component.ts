@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../../models/contact';
 import { ContactService } from '../../Services/contact.service';
 
@@ -10,15 +11,25 @@ import { ContactService } from '../../Services/contact.service';
 })
 export class CommunityComponent implements OnInit {
 
-  title = 'Comunidad'; 
 
   contactList: Contact[] = [];
 
-  constructor(private contactService: ContactService, private snackBar: MatSnackBar) { }
+  isContacts = false;
+  constructor(
+    private contactService: ContactService, 
+    private snackBar: MatSnackBar, 
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   
   ngOnInit(): void {
-    this.loadCommunity();
+    let url = this.activatedRoute.snapshot.url[0].path;
+    if(url.includes('community')){
+      this.loadCommunity();
+    } else {
+      this.isContacts = true;
+      this.getContactsFromUser();
+    }
   }
 
   /**
@@ -39,6 +50,7 @@ export class CommunityComponent implements OnInit {
       this.contactService.addContact(contact).then(res=>{
         // success message
         this.snackBar.open('Contacto Agregado','Ok',{duration:3000});
+        this.router.navigate(['../contacts'],{relativeTo:this.activatedRoute});
       })
       .catch(err=>console.log(err));
     }
