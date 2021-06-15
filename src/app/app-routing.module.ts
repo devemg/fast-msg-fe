@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path:'user',
-    loadChildren: () => import('./modules/users/chat.module').then(m => m.ChatModule)
+    loadChildren: () => import('./modules/messages/messages.module').then(m => m.MessagesModule)
   }
 ];
 

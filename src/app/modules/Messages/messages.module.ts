@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ChatRoutingModule } from './chat-routing.module';
 import { HomeComponent } from './components/home/home.component';
-import { AngularMaterialModule } from '../angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
+import { AngularMaterialModule } from 'src/app/angular-material.module';
+import { MessagesRoutingModule } from './messages-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ChatRoutingModule,
+    MessagesRoutingModule,
     AngularMaterialModule,
     LayoutModule 
   ]
 })
-export class ChatModule { }
+export class MessagesModule { }
