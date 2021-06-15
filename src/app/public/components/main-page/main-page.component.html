@@ -3,15 +3,15 @@
   <mat-sidenav #sidenav mode="over" class="container-menu">
     <mat-selection-list [multiple]="false">
       <div mat-subheader>Fast Messages</div>
-      <mat-list-option [routerLink]="['/login']" (click)="closeSideNav()">
+      <mat-list-option [routerLink]="['/login']" (click)="sidenav.close()">
         <mat-icon mat-list-icon>supervisor_account</mat-icon>
         <div mat-line>Iniciar Sesión</div>
       </mat-list-option>
-      <mat-list-option [routerLink]="['/register']" (click)="closeSideNav()" >
+      <mat-list-option [routerLink]="['/register']" (click)="sidenav.close()" >
         <mat-icon mat-list-icon>  face </mat-icon>
         <div mat-line>Registrarse</div>
       </mat-list-option>
-      <mat-list-option [routerLink]="['/contact']" (click)="closeSideNav()">
+      <mat-list-option [routerLink]="['/contact']" (click)="sidenav.close()">
         <mat-icon mat-list-icon>email</mat-icon>
         <div mat-line>Contacto</div>
       </mat-list-option>

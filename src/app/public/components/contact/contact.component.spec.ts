@@ -24,6 +24,7 @@ describe('ContactComponent', () => {
   });
 
   it('should create', () => {
+    component.submit();
     expect(component).toBeTruthy();
   });
 });

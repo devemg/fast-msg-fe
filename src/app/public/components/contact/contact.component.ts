@@ -25,11 +25,7 @@ export class ContactComponent implements OnInit {
   }
 
   submit(){
-    if(this.contactForm.valid){
-      
-    }else {
-      getFormValidationErrors(this.contactForm)
-    }
+    
   }
 
 }

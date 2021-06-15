@@ -7,15 +7,10 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MatSidenav;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  closeSideNav(){
-    this.sidenav.close()
   }
 
 }

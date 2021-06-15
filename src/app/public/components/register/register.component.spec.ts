@@ -1,12 +1,14 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { registerData } from 'src/app/services/mock-data-spec';
 
 import { RegisterComponent } from './register.component';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
+  let router: any = jasmine.createSpy('navigate');
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -26,4 +28,18 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not redirect', () => {
+    component.submit();
+    expect(router).not.toHaveBeenCalled();
+  });
+
+  it('should login and redirect', () => {
+    component.registerForm.patchValue(registerData);
+    component.submit();
+    //expect(router).toHaveBeenCalled();
+    expect(component.registerForm.valid).toBeTrue();
+  });
+
+
 });

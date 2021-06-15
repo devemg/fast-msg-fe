@@ -29,9 +29,6 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       console.log("Iniciando sesion....")
       this.router.navigate(['/chat'])
-
-    }else{
-      //getFormValidationErrors(this.loginForm)
     }
   }
 

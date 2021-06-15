@@ -24,4 +24,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should fill options', () => {
+    expect(component.options.length).toBeGreaterThan(0);
+  });
+
 });

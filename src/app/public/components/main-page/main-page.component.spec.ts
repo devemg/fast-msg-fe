@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { MainPageComponent } from './main-page.component';
 
@@ -21,5 +22,10 @@ describe('MainPageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should not show left menu', () => {
+    let menu = fixture.debugElement.query(By.css('container-menu'));
+    expect(menu).toBeNull();
   });
 });
