@@ -8,7 +8,7 @@ import { AccountComponent } from './components/options/account/account.component
 import { ListChatsComponent } from './components/options/list-chats/list-chats.component';
 import { ListContactsComponent } from './components/options/list-contacts/list-contacts.component';
 import { SettingsComponent } from './components/options/settings/settings.component';
-import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
+import { MaterialAngularModule } from '../material-angular.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommunityComponent } from './components/community/community.component';
 import { LayoutModule } from '@angular/cdk/layout';

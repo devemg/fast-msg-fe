@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ConfirmAccountComponent } from './components/confirm-account/confirm-account.component';
-import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
+import { MaterialAngularModule } from '../material-angular.module';
 import { ContactComponent } from './components/contact/contact.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
