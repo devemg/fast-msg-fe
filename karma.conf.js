@@ -18,7 +18,13 @@ module.exports = function (config) {
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/fast-msg-fe'),
       reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      check: {
+        statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
