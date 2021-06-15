@@ -13,4 +13,9 @@ describe('RandomDataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return list of random contacts', () => {
+    expect(service.getContacts(2).length).toBe(2);
+  });
+
 });

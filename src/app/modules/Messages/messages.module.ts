@@ -6,10 +6,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { MessagesRoutingModule } from './messages-routing.module';
+import { CommunityComponent } from './components/community/community.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CommunityComponent
   ],
   imports: [
     CommonModule,
