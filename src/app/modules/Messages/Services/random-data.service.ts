@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Contact } from '../models/contact';
-import { Chance } from 'chance';
+import { name, internet, random, image } from 'faker';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,14 +11,13 @@ export class RandomDataService {
   }
 
   getContacts(qty: number): Contact[] {
-    let chance = new Chance();;
     let list: Contact[] = [];
     for(let i = 0; i < qty; i++ ){
       list.push({
-        _id: chance.guid(),
-        image: chance.avatar(),
-        name: chance.name({ nationality : 'en' }),
-        email: chance.email({domain:'fastmessages.com'})
+        _id: random.uuid(),
+        image: image.avatar(),
+        name: name.findName(),
+        email: internet.email()
       });
     }
     return list;

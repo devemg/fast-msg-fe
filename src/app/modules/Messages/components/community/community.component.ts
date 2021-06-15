@@ -10,11 +10,15 @@ import { ContactService } from '../../Services/contact.service';
 })
 export class CommunityComponent implements OnInit {
 
-  constructor(private contactService: ContactService, private snackBar: MatSnackBar) { }
+  title = 'Comunidad'; 
 
   contactList: Contact[] = [];
 
+  constructor(private contactService: ContactService, private snackBar: MatSnackBar) { }
+
+  
   ngOnInit(): void {
+    this.loadCommunity();
   }
 
   /**
