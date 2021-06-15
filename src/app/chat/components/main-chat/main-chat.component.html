@@ -1,18 +1,16 @@
-<mat-sidenav-container  class="example-container" (backdropClick)="closeSideNav()">
-
-    <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="false">
-
-        side
-    </mat-sidenav>
-
-    <mat-sidenav-content>
+<mat-sidenav-container class="sidenav-container" (backdropClick)="closeSideNav()">
+    <mat-toolbar style="display: none;" color="primary">
+        <button (click)="sidenav.toggle()" mat-icon-button aria-label="icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+      </mat-toolbar>
+    <mat-sidenav  class="sidenav" #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened>
         <div class="options">
             <div class="option" *ngFor="let item of options; let i = index;" >
                 <button matRipple (click)="openSideNav(i)"><mat-icon color="primary">{{item.icon}}</mat-icon></button>
             </div>
         </div>
-        <div class="content">
-            content
-        </div>
-    </mat-sidenav-content>
+    </mat-sidenav>
+
+
 </mat-sidenav-container>
