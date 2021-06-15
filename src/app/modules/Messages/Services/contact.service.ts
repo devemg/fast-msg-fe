@@ -15,7 +15,7 @@ export class ContactService {
    */
   getCommunity(): Promise<Contact[]> {
     return new Promise((resolve,reject)=>{
-      resolve(this.randomService.getContacts(5));
+      resolve(this.randomService.getContacts(10));
     })
   }
 

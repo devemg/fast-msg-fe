@@ -9,7 +9,7 @@
 }
 
 .sidenav {
-    background-color: $background-color;;
+    background-color: $background-color;
     height: 100%;
     width: auto;
 }
@@ -73,4 +73,15 @@
 
 .top-menu {
     background-color: white;
+}
+
+@media screen and (max-width:425px) {
+
+    .option {
+        display: none;
+    }
+
+    mat-toolbar {
+        display: block;
+    }
 }
