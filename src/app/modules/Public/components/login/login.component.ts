@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   submit(){
     if(this.loginForm.valid){
       console.log("Iniciando sesion....")
-      this.router.navigate(['/chat'])
+      this.router.navigate(['/user'])
     }
   }
 

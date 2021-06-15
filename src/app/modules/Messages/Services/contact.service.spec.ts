@@ -36,7 +36,9 @@ describe('ContactService', () => {
 
   it('should return contact list in memory', () => {
     local.contactList = dummyContactList.slice(0,2);
-    expect(service.getContactsFromUser()).toEqual(local.contactList);
+    service.getContactsFromUser().then(res=>{
+      expect(res).toEqual(local.contactList);
+    })
   });
 
 });

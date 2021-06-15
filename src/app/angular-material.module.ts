@@ -20,6 +20,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRippleModule} from '@angular/material/core'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -44,7 +47,8 @@ import {MatRippleModule} from '@angular/material/core';
     MatDatepickerModule,
     MatMomentDateModule,
     MatMenuModule,
-    MatRippleModule
+    MatRippleModule,
+    MatSnackBarModule
   ]
 })
 export class AngularMaterialModule { }

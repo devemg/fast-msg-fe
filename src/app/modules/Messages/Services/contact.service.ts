@@ -23,23 +23,31 @@ export class ContactService {
    * add contact to list of user in memory
    * @param contact 
    */
-  addContact(contact: Contact){
-    this.localService.addContact(contact);
+  addContact(contact: Contact): Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.localService.addContact(contact);
+      resolve({});
+    });
   }
 
   /**
    * remove contact from user list in memory
    */
-  removeContact(id: string){
-    this.localService.removeContact(id);
+  removeContact(id: string):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.localService.removeContact(id);
+      resolve({});
+    });
   }
 
   /**
    * get contact list from memory
    * @returns 
    */
-  getContactsFromUser(): Contact[]{
-    return this.localService.getContacts();
+  getContactsFromUser(): Promise<Contact[]>{
+    return new Promise((resolve,reject)=>{
+      resolve(this.localService.getContacts());
+    });
   }
   
 }
