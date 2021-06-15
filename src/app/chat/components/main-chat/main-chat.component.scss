@@ -1,7 +1,11 @@
+@import "/src/colors.scss";
+
 mat-sidenav-container {
-    background-color: black;
     min-height: 100vh;
     height: 100%;
+    background-color: $background-color;
+    background-image: url('/assets/img/backgrounds/square_bg.png');
+    color: white;
 }
 
 mat-sidenav {
@@ -11,6 +15,44 @@ mat-sidenav {
 }
 
 mat-sidenav-content {
-    background-color: blue;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.options {
+    //background-color: rgba(0, 0, 0, 0.397);
+
+    width: auto;
+    .option {
+        padding: 0.5em;
+        
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            box-shadow: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            background-color: transparent;
+        }
+
+        button:hover {
+            cursor: pointer;
+
+            mat-icon {
+                color: white;
+            }
+        }
+
+        mat-icon {
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+        }
+    }
 }

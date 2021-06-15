@@ -1,4 +1,8 @@
-export const options = [
+export interface MenuOption {
+    title: string; 
+    icon: string; 
+}
+export const options: MenuOption[] = [
     {
         title:'Comunidad',
         icon:'public'

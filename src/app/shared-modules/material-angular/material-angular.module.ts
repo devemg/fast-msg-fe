@@ -19,7 +19,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import {MatMenuModule} from '@angular/material/menu';
-
+import {MatRippleModule} from '@angular/material/core'; 
 @NgModule({
   declarations: [],
   imports: [
@@ -44,6 +44,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDatepickerModule,
     MatMomentDateModule,
     MatMenuModule,
+    MatRippleModule
   ]
 })
 export class MaterialAngularModule { }

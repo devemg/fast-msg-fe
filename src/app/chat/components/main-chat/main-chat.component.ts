@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { options } from './options';
+import { MenuOption, options } from './options';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
@@ -11,7 +11,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class MainChatComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
-  options:any[];
+  options: MenuOption [];
   indexOption:number;
   title_option:string;
 
@@ -44,8 +44,8 @@ export class MainChatComponent implements OnInit {
    * @param index de opcion
    */
   openSideNav(index:number){
-    
-    if(index!=this.indexOption){
+    console.log(index)  
+   /* if(index!=this.indexOption){
       this.title_option = this.options[index].title;
       this.indexOption = index;
       this.sidenav.open();
@@ -53,7 +53,7 @@ export class MainChatComponent implements OnInit {
       this.title_option = '';
       this.indexOption = -1;
       this.sidenav.close();
-    }
+    }*/
 
   }
 

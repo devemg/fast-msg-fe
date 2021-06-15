@@ -1,11 +1,18 @@
 <mat-sidenav-container  class="example-container" (backdropClick)="closeSideNav()">
 
-    <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="true">
+    <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" disableClose mode="side" opened="false">
 
         side
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <app-chat [idChat]="idChat" (chat)="closeChat()"></app-chat>
+        <div class="options">
+            <div class="option" *ngFor="let item of options; let i = index;" >
+                <button matRipple (click)="openSideNav(i)"><mat-icon color="primary">{{item.icon}}</mat-icon></button>
+            </div>
+        </div>
+        <div class="content">
+            content
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
