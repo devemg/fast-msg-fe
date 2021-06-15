@@ -1,24 +1,27 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ContactService } from '../../Services/contact.service';
 import { dummyContactList } from '../../Services/mock-data.spec';
-
 import { CommunityComponent } from './community.component';
+
 
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
   let fixture: ComponentFixture<CommunityComponent>;
   let service: ContactService;
+  let mockSnapshot = { snapshot: { url: [ { path:'community' } ] } };
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommunityComponent ],
-      imports: [ RouterTestingModule ],
+      declarations: [ CommunityComponent ], 
+      imports: [ RouterTestingModule, NoopAnimationsModule ],
       providers: [ MatSnackBar, Overlay, 
-      ActivatedRoute ]
+        {provide:ActivatedRoute, useValue: mockSnapshot} ]
     })
     .compileComponents();
   });
@@ -35,15 +38,17 @@ describe('CommunityComponent', () => {
   });
 
   it('should show community', () => {
+    mockSnapshot.snapshot.url[0].path = 'community';
     fixture.detectChanges();
+    component.ngOnInit();
     expect(component.isContacts).toBeFalse();
   });
 
-  it('should call load comunity', () => {
+  it('should show contacts', () => {
+    mockSnapshot.snapshot.url[0].path = 'contacts';
     fixture.detectChanges();
-    let spy = spyOn(component,'loadCommunity');
     component.ngOnInit();
-    expect(spy).toHaveBeenCalled();
+    expect(component.isContacts).toBeTrue();
   });
 
   it('should call service to contacts', () => {
