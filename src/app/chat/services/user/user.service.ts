@@ -106,5 +106,11 @@ export class UserService {
       resolve([]);
     });
   }
+
+  async getProfileList() : Promise< Profile[]> {
+    return new Promise((resolve,reject)=>{
+      resolve([]);
+    });
+  }
   
 }

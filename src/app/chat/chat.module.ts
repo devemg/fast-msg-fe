@@ -10,7 +10,7 @@ import { ListContactsComponent } from './components/options/list-contacts/list-c
 import { SettingsComponent } from './components/options/settings/settings.component';
 import { MaterialAngularModule } from '../shared-modules/material-angular/material-angular.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CommunityComponent } from './components/options/community/community.component';
+import { CommunityComponent } from './components/community/community.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({

@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./public/public.module').then(m => m.PublicModule)
   },
   {
-    path:'chat',
+    path:'user',
     loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
   }
 ];
