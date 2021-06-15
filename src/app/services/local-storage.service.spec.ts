@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { dummyContactList } from '../modules/Messages/Services/mock-data.spec';
+import { dummyContactList, userProfile } from '../modules/Messages/Services/mock-data.spec';
 
 import { LocalStorageService } from './local-storage.service';
 
@@ -78,6 +78,11 @@ describe('LocalStorageService', () => {
     let list = dummyContactList.slice(0,2);
     service.contactList = list;
     expect(service.getContacts()).toEqual(list);
+  });
+
+  it('should get user profile', () => {
+    service.userProfile = userProfile;
+    expect(service.getUserProfile()).toEqual(userProfile);
   });
 
 });

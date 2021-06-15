@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ContactService } from '../../Services/contact.service';
+import { MessagesService } from '../../Services/messages.service';
 import { dummyContactList } from '../../Services/mock-data.spec';
 import { CommunityComponent } from './community.component';
 
@@ -12,7 +12,7 @@ import { CommunityComponent } from './community.component';
 describe('CommunityComponent', () => {
   let component: CommunityComponent;
   let fixture: ComponentFixture<CommunityComponent>;
-  let service: ContactService;
+  let service: MessagesService;
   let mockSnapshot = { snapshot: { url: [ { path:'community' } ] } };
 
 
@@ -29,7 +29,7 @@ describe('CommunityComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CommunityComponent);
     component = fixture.componentInstance;
-    service = TestBed.inject(ContactService);
+    service = TestBed.inject(MessagesService);
     fixture.detectChanges();
   });
 

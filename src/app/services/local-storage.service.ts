@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from '../modules/messages/models/contact';
+import { UserProfile } from '../modules/Messages/models/user';
+import { RandomDataService } from '../modules/Messages/Services/random-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,18 @@ export class LocalStorageService {
   };
 
   contactList: Contact[] = [];
+  userProfile: UserProfile;
 
-  constructor() { }
+  constructor(private randomService: RandomDataService) { 
+    this.userProfile = this.randomService.getUser();
+  }
+
+  /**
+   * Get user profile
+   */
+  getUserProfile(): UserProfile {
+    return this.userProfile;
+  }
 
   /**
    * return user id saved in ls

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountComponent } from './components/account/account.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path:'contacts',
         component: CommunityComponent
+      },
+      {
+        path: 'account',
+        component: AccountComponent
       }
     ]
   },

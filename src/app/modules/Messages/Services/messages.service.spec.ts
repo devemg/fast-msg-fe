@@ -1,17 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
-import { ContactService } from './contact.service';
+import { MessagesService } from './messages.service';
 import { dummyContactList } from './mock-data.spec';
 
-describe('ContactService', () => {
-  let service: ContactService;
+describe('MessagesService', () => {
+  let service: MessagesService;
   let local: LocalStorageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ContactService);
-    local = TestBed.inject(LocalStorageService);
+    service = TestBed.inject(MessagesService);
   });
 
   it('should be created', () => {

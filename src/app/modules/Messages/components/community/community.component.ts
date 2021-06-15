@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../../models/contact';
-import { ContactService } from '../../Services/contact.service';
+import { MessagesService } from '../../Services/messages.service';
 
 @Component({
   selector: 'app-community',
@@ -16,7 +16,7 @@ export class CommunityComponent implements OnInit {
 
   isContacts = false;
   constructor(
-    private contactService: ContactService, 
+    private contactService: MessagesService, 
     private snackBar: MatSnackBar, 
     private activatedRoute: ActivatedRoute,
     private router: Router) { }

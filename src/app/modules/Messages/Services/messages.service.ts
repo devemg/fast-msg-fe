@@ -6,8 +6,9 @@ import { RandomDataService } from './random-data.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class MessagesService {
 
+  
   constructor(private randomService: RandomDataService, private localService: LocalStorageService) { }
 
   /**

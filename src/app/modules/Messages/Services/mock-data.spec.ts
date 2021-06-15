@@ -1,4 +1,5 @@
 import { Contact } from "../models/contact";
+import { UserProfile } from "../models/user";
 
 export const dummyContactList: Contact[] = [
     {
@@ -32,3 +33,12 @@ export const dummyContactList: Contact[] = [
        "email":"omtal@fastmessages.com"
     }
  ];
+
+
+export const userProfile: UserProfile = {
+   "_id":"1ff2c8f3-ad5a-5f15-a003-d9be2b2de223",
+   "image":"//www.gravatar.com/avatar/c3f72afeceae817c75f3ff62cff3654b",
+   "name":"Verna Ruiz",
+   "email":"beof@fastmessages.com",
+   "password":"123456789"
+};

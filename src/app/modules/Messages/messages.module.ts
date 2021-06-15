@@ -7,11 +7,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { MessagesRoutingModule } from './messages-routing.module';
 import { CommunityComponent } from './components/community/community.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CommunityComponent
+    CommunityComponent,
+    AccountComponent
   ],
   imports: [
     CommonModule,

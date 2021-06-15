@@ -18,4 +18,8 @@ describe('RandomDataService', () => {
     expect(service.getContacts(2).length).toBe(2);
   });
 
+  it('should get user profile', () => {
+    expect(service.getUser()).toBeDefined();
+  });
+
 });
