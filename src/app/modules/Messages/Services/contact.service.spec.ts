@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ContactService } from './contact.service';
-import { dummyContact } from './mock-data.spec';
+import { dummyContactList } from './mock-data.spec';
 
 describe('ContactService', () => {
   let service: ContactService;
@@ -13,6 +13,12 @@ describe('ContactService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should return a list of contacts', () => {
+    service.getCommunity().then(res=>{
+      expect(res.length).toBeGreaterThan(0);
+    })
   });
 
 });

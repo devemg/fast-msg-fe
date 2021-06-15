@@ -33,10 +33,16 @@ describe('CommunityComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('should load contacts list', () => {
+  it('should load contacts list', async () => {
     spyOn(service,'getCommunity').and.resolveTo(dummyContactList);
+    await component.loadCommunity();
+    expect(component.contactList.length).toBeGreaterThan(0);
+  });
+
+  it('should not load contacts list', () => {
+    spyOn(service,'getCommunity').and.rejectWith({});
     component.loadCommunity();
-    expect(component.contactList).toBe(dummyContactList);
+    expect(component.contactList.length).toBe(0);
   });
 
 });
