@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { getFormValidationErrors, handleError, passwordMatchValidator } from 'src/assets/scripts/extra-functions';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  handleError=handleError;
 
   registerForm:FormGroup;
 
@@ -37,8 +35,24 @@ export class RegisterComponent implements OnInit {
       
     }else{
       console.log(this.registerForm.value)
-      getFormValidationErrors(this.registerForm)
     }
   }
 
+  /**
+  * Función que hace la validacion de el atributo del formulario según las restricciones
+  * retorna true si hay error
+  * retorna false si no hay error
+  */
+  handleError(form: FormGroup, controlName: string, errorName: string) {
+    return form.controls[controlName].hasError(errorName);
+  }
+
+}
+
+export function passwordMatchValidator(control: AbstractControl) {
+  const password: string = control.get('password').value; 
+  const confirmPassword: string = control.get('confirmPassword').value; 
+  if (password !== confirmPassword) {
+    control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
+  }
 }

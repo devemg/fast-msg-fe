@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { handleError } from 'src/assets/scripts/extra-functions';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,8 +8,6 @@ import { handleError } from 'src/assets/scripts/extra-functions';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  handleError=handleError;
-  
   loginForm:FormGroup;
 
   constructor(
@@ -26,5 +23,14 @@ export class ResetPasswordComponent implements OnInit {
   submit(){
     
   }
+
+    /**
+  * Función que hace la validacion de el atributo del formulario según las restricciones
+  * retorna true si hay error
+  * retorna false si no hay error
+  */
+     handleError(form: FormGroup, controlName: string, errorName: string) {
+      return form.controls[controlName].hasError(errorName);
+    }
 
 }

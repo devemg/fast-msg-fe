@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { handleError } from 'src/assets/scripts/extra-functions';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  handleError=handleError;
-  
+
   loginForm:FormGroup;
 
   constructor(
@@ -32,4 +30,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
+    /**
+  * Función que hace la validacion de el atributo del formulario según las restricciones
+  * retorna true si hay error
+  * retorna false si no hay error
+  */
+     handleError(form: FormGroup, controlName: string, errorName: string) {
+      return form.controls[controlName].hasError(errorName);
+    }
 }

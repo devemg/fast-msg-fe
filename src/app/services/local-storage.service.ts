@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
 
+  keys = {
+    USERID:'user-id',
+    TOKEN: 'user-token'
+  };
+
   constructor() { }
 
   /**
@@ -19,7 +24,7 @@ export class LocalStorageService {
    * delete token saved
    */
   clearToken(){
-
+    localStorage.removeItem(this.keys.TOKEN);
   }
 
 }

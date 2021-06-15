@@ -34,12 +34,18 @@ describe('RegisterComponent', () => {
     expect(router).not.toHaveBeenCalled();
   });
 
-  it('should login and redirect', () => {
+  it('should register and redirect', () => {
     component.registerForm.patchValue(registerData);
     component.submit();
     //expect(router).toHaveBeenCalled();
     expect(component.registerForm.valid).toBeTrue();
   });
 
+  it('should not be valid bc passwords are not equal', () => {
+    let object = {...registerData,confirmPassword:'987654321'};
+    component.registerForm.patchValue(object);
+    component.submit();
+    expect(component.registerForm.valid).toBeFalse();
+  });
 
 });

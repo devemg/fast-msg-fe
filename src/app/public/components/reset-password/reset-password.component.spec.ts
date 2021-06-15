@@ -24,6 +24,7 @@ describe('ResetPasswordComponent', () => {
   });
 
   it('should create', () => {
+    component.submit();
     expect(component).toBeTruthy();
   });
 });
