@@ -1,1 +1,53 @@
-<p>account works!</p>
+<div class="container-all">
+    <mat-card>
+        <mat-card-title>
+            <h1>Mi Cuenta</h1>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="content-profile">
+                <div class="options">
+                    <button (click)="updatePassword()" mat-icon-button color="accent">
+                        <mat-icon>vpn_key</mat-icon>
+                    </button>
+
+                    <button (click)="updateProfile()" mat-icon-button color="accent">
+                        <mat-icon>drive_file_rename_outline</mat-icon>
+                    </button>
+
+                </div>
+                <div class="container-form">
+                    <form>
+                        <h2>Mi Perfil</h2>
+                        <div class="image">
+                            <img [src]="profile.image" alt="profile" />
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input type="text" matInput placeholder="Nombre" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Correo eléctronico</mat-label>
+                            <input type="email" matInput placeholder="email@email.com" required>
+                        </mat-form-field>
+                        <!-----------------IMAGEN ---------------->
+
+                        <div *ngIf="canUpdatePassword">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Contraseña</mat-label>
+                                <input type="password" matInput placeholder="Contraseña">
+                            </mat-form-field>
+    
+                            <mat-form-field appearance="outline">
+                                <mat-label>Confirmar Contraseña</mat-label>
+                                <input type="password" matInput placeholder="Contraseña">
+                            </mat-form-field>
+                        </div>
+
+                        <button *ngIf="canUpdatePassword || canUpdateProfile" mat-flat-button color="primary">Actualizar Perfil</button>
+
+                    </form>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

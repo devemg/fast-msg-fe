@@ -13,8 +13,10 @@ export class UserService {
    * Get user profile
    * @returns 
    */
-  getProfile(): UserProfile {
-    return this.localService.getUserProfile();
+  getProfile(): Promise<UserProfile> {
+    return new Promise((resolve,reject)=>{
+      resolve(this.localService.getUserProfile());
+    });
   }
 
   updateProfile(profile: UserProfile){
