@@ -47,4 +47,4 @@ import {MatRippleModule} from '@angular/material/core';
     MatRippleModule
   ]
 })
-export class MaterialAngularModule { }
+export class AngularMaterialModule { }

@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
-  selector: 'app-main-chat',
-  templateUrl: './main-chat.component.html',
-  styleUrls: ['./main-chat.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class MainChatComponent implements OnInit {
+export class HomeComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   options: MenuOption [];
   indexOption:number;

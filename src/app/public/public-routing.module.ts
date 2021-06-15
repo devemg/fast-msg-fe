@@ -8,7 +8,6 @@ import { ConfirmAccountComponent } from './components/confirm-account/confirm-ac
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
-
 const routes: Routes = [
   {
     path:'',

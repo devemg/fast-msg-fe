@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainChatComponent } from './components/main-chat/main-chat.component';
-import { CommunityComponent } from './components/community/community.component';
+import { MainChatComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -9,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: MainChatComponent,
     children: [
-      {
-        path:'community',
-        component: CommunityComponent
-      }
     ]
   },
   {
