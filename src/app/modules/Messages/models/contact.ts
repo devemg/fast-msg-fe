@@ -1,5 +1,5 @@
 export interface Contact {
-    _id: string | number; 
+    _id: string; 
     name: string; 
     email?: string; 
     image: string;
