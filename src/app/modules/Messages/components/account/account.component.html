@@ -6,45 +6,53 @@
         <mat-card-content>
             <div class="content-profile">
                 <div class="options">
-                    <button (click)="updatePassword()" mat-icon-button color="accent">
-                        <mat-icon>vpn_key</mat-icon>
-                    </button>
-
-                    <button (click)="updateProfile()" mat-icon-button color="accent">
+                    <button (click)="toggleUpdate(1)" mat-icon-button color="accent"  
+                    matTooltip="Actualizar Perfil" matTooltipPosition="right">
                         <mat-icon>drive_file_rename_outline</mat-icon>
+                    </button>
+                    
+                    <button (click)="toggleUpdate(2)" mat-icon-button color="accent"  
+                    matTooltip="Actualizar Contraseña" matTooltipPosition="right">
+                        <mat-icon>vpn_key</mat-icon>
                     </button>
 
                 </div>
                 <div class="container-form">
-                    <form>
+                    <form [formGroup]="profileForm" #formProfile="ngForm" (ngSubmit)="submitProfile(formProfile)" >
                         <h2>Mi Perfil</h2>
                         <div class="image">
-                            <img [src]="profile.image" alt="profile" />
+                            <img [src]="ProfileImage" alt="profile" />
                         </div>
                         <mat-form-field appearance="outline">
                             <mat-label>Nombre</mat-label>
-                            <input type="text" matInput placeholder="Nombre" required>
+                            <input type="text" matInput placeholder="Nombre" required formControlName="name" [readonly]="!canUpdateProfile">
+                            <mat-error>El nombre es requerido</mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline">
                             <mat-label>Correo eléctronico</mat-label>
-                            <input type="email" matInput placeholder="email@email.com" required>
+                            <input type="email" matInput placeholder="email@email.com" required formControlName="email" [readonly]="!canUpdateProfile">
+                            <mat-error *ngIf="profileForm.controls.email.touched && profileForm.controls.email.hasError('required')">El correo eléctronico es requerido</mat-error>
+                            <mat-error *ngIf="profileForm.controls.email.touched && profileForm.controls.email.hasError('email')">El correo eléctronico es inválido</mat-error>
                         </mat-form-field>
                         <!-----------------IMAGEN ---------------->
 
-                        <div *ngIf="canUpdatePassword">
-                            <mat-form-field appearance="outline">
-                                <mat-label>Contraseña</mat-label>
-                                <input type="password" matInput placeholder="Contraseña">
-                            </mat-form-field>
-    
-                            <mat-form-field appearance="outline">
-                                <mat-label>Confirmar Contraseña</mat-label>
-                                <input type="password" matInput placeholder="Contraseña">
-                            </mat-form-field>
-                        </div>
+                        <button *ngIf="canUpdateProfile" class="full-width" type="submit" mat-flat-button color="primary">Actualizar Perfil</button>
 
-                        <button *ngIf="canUpdatePassword || canUpdateProfile" mat-flat-button color="primary">Actualizar Perfil</button>
+                    </form>
+                    <form  *ngIf="canUpdatePassword" [formGroup]="passwordForm" #formPassword="ngForm"  (ngSubmit)="submitPassword(formPassword)">
+                        <h2>Actualizar Contraseña</h2>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                            <input type="password" matInput placeholder="Contraseña" formControlName="password">
+                            <mat-error>La contraseña es requerida</mat-error>
+                        </mat-form-field>
 
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nueva Contraseña</mat-label>
+                            <input type="password" matInput placeholder="Contraseña" formControlName="newPassword">
+                            <mat-error>La nueva contraseña es requerida</mat-error>
+                        </mat-form-field>
+                        <button class="full-width" type="submit" mat-flat-button color="primary">Actualizar Contraseña</button>
                     </form>
                 </div>
             </div>

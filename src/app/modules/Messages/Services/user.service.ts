@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { UpdatePasswordDto } from '../dtos/update-password.dto';
 import { UserProfile } from '../models/user';
 
 @Injectable({
@@ -20,7 +21,14 @@ export class UserService {
   }
 
   updateProfile(profile: UserProfile){
-
+    return new Promise((resolve,reject)=>{
+      resolve({});
+    });
   }
-
+  
+  updatePassword(password: UpdatePasswordDto) {
+    return new Promise((resolve,reject)=>{
+      resolve({});
+    });
+  }
 }

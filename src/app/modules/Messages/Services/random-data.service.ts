@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Contact } from '../models/contact';
 import { name, internet, datatype, image } from 'faker';
 import { UserProfile } from '../models/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,8 +30,7 @@ export class RandomDataService {
       _id: datatype.uuid(),
       image: image.avatar(),
       name: name.findName(),
-      email: internet.email(),
-      password: internet.password()
+      email: internet.email()
     };
   }
 

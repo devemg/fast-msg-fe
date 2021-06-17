@@ -22,7 +22,7 @@
     display: flex;
 
     .options {
-        background-color: rgba(0, 0, 0, 0.185);
+        border-right: 1px solid rgba(0, 0, 0, 0.185);
         padding: 0.5em;
         margin: 0.5em;
         border-radius: 3px;
@@ -34,10 +34,20 @@
 mat-card {
     width: 80%;
 
+    .container-form {
+        width: 100%;
+    }
+
     form {
         width: 100%;
         mat-form-field {
             width: 100%;
+            padding-bottom: 5px;
+        }
+
+        button[type="submit"] {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
         }
     }
 }
