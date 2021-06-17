@@ -10,12 +10,10 @@
                     matTooltip="Actualizar Perfil" matTooltipPosition="right">
                         <mat-icon>drive_file_rename_outline</mat-icon>
                     </button>
-                    
                     <button (click)="toggleUpdate(2)" mat-icon-button color="accent"  
                     matTooltip="Actualizar Contraseña" matTooltipPosition="right">
                         <mat-icon>vpn_key</mat-icon>
                     </button>
-
                 </div>
                 <div class="container-form">
                     <form [formGroup]="profileForm" (ngSubmit)="submitProfile()" >

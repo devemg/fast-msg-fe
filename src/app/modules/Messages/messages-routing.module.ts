@@ -11,6 +11,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path:'',
+        component: CommunityComponent
+      },
+      {
         path:'community',
         component: CommunityComponent
       },
