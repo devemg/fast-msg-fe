@@ -10,11 +10,6 @@ export const options: MenuOption[] = [
         route: './community'
     },
     {
-        title: "Cuenta",
-        icon: "account_circle",
-        route: './account'
-    },
-    {
         title: "Contactos",
         icon: "contacts",
         route: './contacts'
@@ -25,7 +20,7 @@ export const options: MenuOption[] = [
         route: './chat'
     },
     {
-        title: "Configuración",
+        title: "Cuenta",
         icon: "settings",
-        route: './settings'
+        route: './account'
     }];

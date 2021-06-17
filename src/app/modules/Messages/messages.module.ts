@@ -8,12 +8,16 @@ import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { MessagesRoutingModule } from './messages-routing.module';
 import { CommunityComponent } from './components/community/community.component';
 import { AccountComponent } from './components/account/account.component';
+import { ContactChatListComponent } from './components/contact-chat-list/contact-chat-list.component';
+import { MainChatComponent } from './components/main-chat/main-chat.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CommunityComponent,
-    AccountComponent
+    AccountComponent,
+    ContactChatListComponent,
+    MainChatComponent
   ],
   imports: [
     CommonModule,
