@@ -11,6 +11,7 @@ describe('MessagesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(MessagesService);
+    local = TestBed.inject(LocalStorageService);
   });
 
   it('should be created', () => {

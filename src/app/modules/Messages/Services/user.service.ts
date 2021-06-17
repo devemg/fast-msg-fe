@@ -22,12 +22,14 @@ export class UserService {
 
   updateProfile(profile: UserProfile){
     return new Promise((resolve,reject)=>{
+      this.localService.updateProfile(profile);
       resolve({});
     });
   }
   
   updatePassword(password: UpdatePasswordDto) {
     return new Promise((resolve,reject)=>{
+      this.localService.updatePassword(password);
       resolve({});
     });
   }

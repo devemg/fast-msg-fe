@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UpdatePasswordDto } from '../modules/messages/dtos/update-password.dto';
 import { Contact } from '../modules/messages/models/contact';
 import { UserProfile } from '../modules/Messages/models/user';
 import { RandomDataService } from '../modules/Messages/Services/random-data.service';
@@ -25,6 +26,22 @@ export class LocalStorageService {
    */
   getUserProfile(): UserProfile {
     return this.userProfile;
+  }
+
+  /**
+   * Update Profile
+   * @param element 
+   */
+  updateProfile(element: UserProfile) {
+    this.userProfile = { ...this.userProfile, ...element };
+  }
+
+  /**
+   * update password
+   * @param newPassword 
+   */
+  updatePassword(newPassword: UpdatePasswordDto) {
+    this.userProfile.password = newPassword.newPassword;
   }
 
   /**

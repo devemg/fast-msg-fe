@@ -22,7 +22,8 @@ export class AccountComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private matSnackBar: MatSnackBar
+    private matSnackBar: MatSnackBar,
+    private formDirective: FormGroupDirective
     ) {
       this.profileForm = this.formBuilder.group({
         name: ['',Validators.required],
@@ -59,7 +60,7 @@ export class AccountComponent implements OnInit {
   }
 
 
-  submitProfile(formDirective: FormGroupDirective) {
+  submitProfile() {
     if(this.profileForm.valid){
       this.userService.updateProfile(this.profileForm.value).then(res=>{
         this.matSnackBar.open('Perfil Actualizado','Ok',{duration:2000});
@@ -72,18 +73,14 @@ export class AccountComponent implements OnInit {
     }
   }
 
-  submitPassword(formDirective: FormGroupDirective) {
+  submitPassword() {
     if(this.passwordForm.valid){
-      this.userService.updatePassword(this.passwordForm.value).then(res=>{
+      this.userService.updatePassword(this.passwordForm.value).then(()=>{
         this.matSnackBar.open('Contraseña Actualizada','Ok',{duration:2000});
-        this.passwordForm.reset();
-        formDirective.resetForm();
       })
       .catch(err=>console.log(err));
-      
       this.canUpdatePassword = false;
-    }else {
-      
+      this.passwordForm.reset();
     }
   }
 
