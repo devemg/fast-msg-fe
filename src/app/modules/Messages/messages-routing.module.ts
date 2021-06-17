@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './components/account/account.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
+import { MainChatComponent } from './components/main-chat/main-chat.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'account',
         component: AccountComponent
+      },
+      {
+        path: 'chat',
+        component: MainChatComponent
       }
     ]
   },
