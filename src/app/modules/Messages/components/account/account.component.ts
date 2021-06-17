@@ -23,7 +23,6 @@ export class AccountComponent implements OnInit {
     private userService: UserService,
     private formBuilder: FormBuilder,
     private matSnackBar: MatSnackBar,
-    private formDirective: FormGroupDirective
     ) {
       this.profileForm = this.formBuilder.group({
         name: ['',Validators.required],

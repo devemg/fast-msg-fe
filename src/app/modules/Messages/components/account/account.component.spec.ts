@@ -16,7 +16,7 @@ describe('AccountComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AccountComponent ],
-      providers: [ FormBuilder,MatSnackBar ,Overlay,FormGroupDirective ],
+      providers: [ FormBuilder,MatSnackBar ,Overlay ],
       imports: [ FormsModule, ReactiveFormsModule ]
     })
     .compileComponents();
