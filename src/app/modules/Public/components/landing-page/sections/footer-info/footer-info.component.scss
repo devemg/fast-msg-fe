@@ -24,3 +24,14 @@
     margin: 0;
 }
 
+@media (max-width:588px){
+   
+    .container-all {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+    }
+
+    .social {
+        padding-bottom: 1em;
+    }
+}
