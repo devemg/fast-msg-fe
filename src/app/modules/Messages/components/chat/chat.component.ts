@@ -71,7 +71,8 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
   * delete chat
   */
   deleteChat(){
-
+    this.messageService.removeChat(this.chat.id);
+    this.chat = null;
   }
 
 }

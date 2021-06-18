@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path:'user',
-    loadChildren: () => import('./modules/messages/messages.module').then(m => m.MessagesModule)
+    loadChildren: () => import('./modules/messages/messages.module').then(m => m.MessagesModule),
   }
 ];
 

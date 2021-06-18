@@ -113,4 +113,14 @@ export class MessagesService {
     }
   }
 
+  /**
+   * remove contact from user list in memory
+   */
+   removeChat(id: string):Promise<any>{
+    return new Promise((resolve,reject)=>{
+      this.localService.removeChat(id);
+      resolve({});
+    });
+  }
+  
 }

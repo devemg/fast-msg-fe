@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,20 +15,28 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBulder:FormBuilder,
-    private router:Router
+    private router:Router,
+    private authService:AuthService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBulder.group({
       email:['',[Validators.email,Validators.required]],
-      password:['',[Validators.required,Validators.minLength(8)]]
+      password:['',[Validators.required,Validators.minLength(4)]]
     })
   }
 
   submit(){
     if(this.loginForm.valid){
-      console.log("Iniciando sesion....")
-      this.router.navigate(['/user'])
+      this.authService.login(this.loginForm.value.email,this.loginForm.value.password).then(res=>{
+        this.router.navigate(['/user'])
+      }).catch(err=>{
+        console.log(err);
+        if(err.status == 400){
+         this.snackBar.open(err.error,'ok',{duration:2000});
+        }
+      });      
     }
   }
 

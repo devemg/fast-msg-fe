@@ -10,7 +10,7 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button disabled mat-menu-item (click)="deleteChat()">
           <mat-icon>delete_outline</mat-icon>
           <span>Eliminar Conversación</span>
         </button>

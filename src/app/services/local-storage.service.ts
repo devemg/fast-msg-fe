@@ -51,7 +51,31 @@ export class LocalStorageService {
    * @returns 
    */
   getUserID() {
-    return '123';
+    return localStorage.getItem(this.keys.USERID);
+  }
+
+  /**
+   * Set user Id
+   * @param userID 
+   */
+  setUserID(userID: string){
+    localStorage.setItem(this.keys.USERID,userID);
+  }
+
+  /**
+   * return user token
+   * @returns 
+   */
+  getUserToken(){
+    return localStorage.getItem(this.keys.TOKEN);
+  }
+
+  /**
+   * set token
+   * @param token 
+   */
+  setUserToken(token: string){
+    localStorage.setItem(this.keys.TOKEN,token);
   }
 
   /**
@@ -101,5 +125,16 @@ export class LocalStorageService {
    */
   addChat(chat:ChatPreview){
     this.chatList.push(chat);
+  }
+
+  /**
+   * remove contact in memory
+   * @param id 
+   */
+   removeChat(id: string){
+    let index = this.chatList.findIndex(element=>element.id == id); 
+    if(index > -1){
+      this.chatList.splice(index,1);
+    }
   }
 }

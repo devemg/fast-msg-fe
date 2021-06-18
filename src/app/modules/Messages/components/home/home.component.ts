@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { MenuOption, options } from './options';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +14,17 @@ export class HomeComponent implements OnInit {
   
   options: MenuOption [];
  
-  constructor() {
+  constructor(private authService: AuthService, private router: Router) {
     this.options = options;
   }
 
   ngOnInit() {
     
   }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
+
 }
