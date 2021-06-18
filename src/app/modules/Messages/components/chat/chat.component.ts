@@ -22,6 +22,25 @@ export class ChatComponent implements OnInit {
   loadChat() {
     this.messageService.getChat('1').then(res=>{
       this.chat = res;
+      this.chat.messages = [{
+        content:'Hola como estas',
+        date:new Date(),
+        id:'123',
+        isOwn:true
+      },
+      {
+        content:'bien, y tu?',
+        date:new Date(),
+        id:'1234',
+        isOwn:false
+      },
+      {
+        content:'?',
+        date:new Date(),
+        id:'1234',
+        isOwn:true
+      }
+    ];
     })
     .catch(err=>console.log(err));
   }

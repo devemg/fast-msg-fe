@@ -1,6 +1,6 @@
 <div class="container-all">
     <mat-toolbar color="primary">
-      <div class="info">
+      <div *ngIf="chat" class="info">
           <img [src]="chat.image" alt="image" />
           <div>{{chat.title}}</div>
       </div>
@@ -21,4 +21,13 @@
       </mat-menu>
 
     </mat-toolbar>
+
+    
+    <!---------------MESSAGES------------>
+    <div *ngIf="chat" class="container-messages">
+      <div class="container-message" *ngFor="let msg of chat.messages" [ngClass]="{'send-message':msg.isOwn}">
+        <div class="message"> <p>{{msg.content}} </p><span>{{msg.date | date:'short'}}</span> </div>
+      </div>
+    </div>
+
 </div>
