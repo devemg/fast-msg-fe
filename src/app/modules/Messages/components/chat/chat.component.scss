@@ -27,7 +27,7 @@
 
 .container-messages {
     width: 100%;
-    max-height: 85%;
+    max-height: 82.7%;
     background-color: rgba(0, 0, 0, 0.267);
     overflow-x: hidden;
     overflow-y: auto;
@@ -77,6 +77,31 @@
     color: white;
 }
 
+
+.container-input {
+  background-color: $background-dark-color;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  max-height: 7%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    height: 50%;
+    width: 90%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  input:focus{
+    border: none;
+  }
+
+}
 
 
 /*  SCROLLBAR */

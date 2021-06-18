@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
 import { RandomDataService } from '../../Services/random-data.service';
@@ -11,7 +12,11 @@ import { RandomDataService } from '../../Services/random-data.service';
 export class ChatComponent implements OnInit {
 
   chat: Chat;
-  constructor(private messageService: MessagesService, private randomService: RandomDataService) { }
+  messageControl: FormControl;
+
+  constructor(private messageService: MessagesService, private randomService: RandomDataService) { 
+    this.messageControl = new FormControl('');
+  }
 
   ngOnInit(): void {
     this.loadChat();
