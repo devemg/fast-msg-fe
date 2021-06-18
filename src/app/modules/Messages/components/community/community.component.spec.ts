@@ -37,25 +37,32 @@ describe('CommunityComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it('should show community', () => {
-    mockSnapshot.snapshot.url[0].path = 'community';
+  it('should show community', () => {
+    mockSnapshot.snapshot.url = [ { path : 'community' }];
     fixture.detectChanges();
     component.ngOnInit();
     expect(component.isContacts).toBeFalse();
-  });*/
+  });
 
   it('should show contacts', () => {
-    mockSnapshot.snapshot.url[0].path = 'contacts';
+    mockSnapshot.snapshot.url = [ { path : 'contacts' }];
     fixture.detectChanges();
     component.ngOnInit();
     expect(component.isContacts).toBeTrue();
+  });
+
+  it('should show contacts', () => {
+    mockSnapshot.snapshot.url = [];
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.isContacts).toBeFalse();
   });
 
   it('should call service to contacts', () => {
     let spy = spyOn(service,'getCommunity').and.resolveTo(dummyContactList);
     service.getCommunity();
     expect(spy).toHaveBeenCalled();
-  });
+  }); 
 
   it('should load contacts list', async () => {
     spyOn(service,'getCommunity').and.resolveTo(dummyContactList);

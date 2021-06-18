@@ -22,4 +22,8 @@ describe('RandomDataService', () => {
     expect(service.getUser()).toBeDefined();
   });
 
+  it('should get list of chats ', () => {
+    expect(service.getChatList(4).length).toBe(4);
+  });
+
 });

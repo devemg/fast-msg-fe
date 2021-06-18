@@ -41,4 +41,10 @@ describe('MessagesService', () => {
     })
   });
 
+  it('should return a list of chats', () => {
+    service.getChatList().then(res=>{
+      expect(res.length).toBeGreaterThan(0);
+    })
+  });
+
 });

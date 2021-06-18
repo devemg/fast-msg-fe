@@ -25,6 +25,7 @@ export class CommunityComponent implements OnInit {
   ngOnInit(): void {
     let url = this.activatedRoute.snapshot.url.length>0?this.activatedRoute.snapshot.url[0].path:'community';
     if(url.includes('community')){
+      this.isContacts = false;
       this.loadCommunity();
     } else {
       this.isContacts = true;
