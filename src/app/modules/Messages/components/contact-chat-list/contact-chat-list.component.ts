@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MatSelectionListChange } from '@angular/material/list';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
 import { ChatPreview } from '../../models/chat-preview';
 import { MessagesService } from '../../Services/messages.service';
 
@@ -9,12 +9,15 @@ import { MessagesService } from '../../Services/messages.service';
   styleUrls: ['./contact-chat-list.component.scss']
 })
 export class ContactChatListComponent implements OnInit {
-  
+
   chatList: ChatPreview[] = [];
 
   constructor(private messageService: MessagesService) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
     this.loadList();
   }
 
@@ -40,7 +43,5 @@ export class ContactChatListComponent implements OnInit {
       this.messageService.changeChat(chat);
     }
   }
-
-
 
 }

@@ -51,10 +51,27 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
     }
   }
 
+  /**
+   * Update scroll to bottom
+   */
   updateScroll() {
     try {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
     } catch (err) { }
+  }
+
+  /**
+   * Clear Messages
+    */
+  clearMessages(){
+    this.chat.messages = [];
+  }
+  
+  /**
+  * delete chat
+  */
+  deleteChat(){
+
   }
 
 }

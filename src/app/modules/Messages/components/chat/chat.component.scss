@@ -4,7 +4,9 @@
     width: 100%;
     height: 100%;
     background-color: $background-dark-color;
-    background-image: url(https://image.freepik.com/vector-gratis/doodle-inconsutil-patron-redes-sociales_98292-4274.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-image: url(https://image.freepik.com/vector-gratis/doodle-inconsutil-social_1284-4665.jpg);
 }
 
@@ -31,6 +33,7 @@
     background-color: rgba(0, 0, 0, 0.267);
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100%;
 
     .container-message {
         padding: 10px;

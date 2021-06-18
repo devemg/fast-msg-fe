@@ -14,14 +14,13 @@
           <mat-icon>delete_outline</mat-icon>
           <span>Eliminar Conversación</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="clearMessages()">
           <mat-icon>clear_all</mat-icon>
           <span>Eliminar Mensajes</span>
         </button>
       </mat-menu>
 
     </mat-toolbar>
-
     
     <!---------------MESSAGES------------>
     <div  #scrollMe id="scrollMe" *ngIf="chat" class="container-messages">
