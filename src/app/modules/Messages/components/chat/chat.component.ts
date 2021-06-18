@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
@@ -9,8 +9,8 @@ import { RandomDataService } from '../../Services/random-data.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
-  @ViewChild('container') container: ElementRef;
+export class ChatComponent implements OnInit, AfterViewChecked {
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
   chat: Chat;
   messageControl: FormControl;
@@ -21,6 +21,10 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadChat();
+  }
+
+  ngAfterViewChecked() {
+    this.updateScroll();
   }
 
   /**
@@ -46,17 +50,14 @@ export class ChatComponent implements OnInit {
         isOwn:true
       });
       this.messageControl.reset();
-      this.scrollToBottom();
+      this.updateScroll();
     }
   }
 
-  /**
-   * move scroll of messages to bottom
-   */
-     scrollToBottom() {
-      try {
-        console.log('scrollToBottom called');
-        
-      } catch (err) {}
-    }
+  updateScroll() {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
+
 }

@@ -24,7 +24,7 @@
 
     
     <!---------------MESSAGES------------>
-    <div *ngIf="chat" class="container-messages"  #container>
+    <div  #scrollMe id="scrollMe" *ngIf="chat" class="container-messages">
       <div class="container-message" *ngFor="let msg of chat.messages" [ngClass]="{'send-message':msg.isOwn}">
         <div class="message"> <p>{{msg.content}} </p><span>{{msg.date | date:'short'}}</span> </div>
       </div>
