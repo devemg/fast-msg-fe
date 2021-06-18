@@ -12,7 +12,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HighlightComponent } from './components/landing-page/sections/highlight/highlight.component';
 import { HomeComponent } from './components/landing-page/sections/home/home.component';
 import { BannerComponent } from './components/landing-page/sections/banner/banner.component';
@@ -33,7 +32,7 @@ import { AngularMaterialModule } from 'src/app/angular-material.module';
     HomeComponent, 
     BannerComponent, 
     FooterInfoComponent, 
-    FooterComponent, HighlightComponent, OptionsComponent
+    HighlightComponent, OptionsComponent
   ],
   imports: [
     CommonModule,
