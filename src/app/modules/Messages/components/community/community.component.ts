@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../../models/contact';
 import { MessagesService } from '../../Services/messages.service';
+import { RandomDataService } from '../../Services/random-data.service';
 
 @Component({
   selector: 'app-community',
@@ -19,6 +20,7 @@ export class CommunityComponent implements OnInit {
     private contactService: MessagesService, 
     private snackBar: MatSnackBar, 
     private activatedRoute: ActivatedRoute,
+    private randomService: RandomDataService,
     private router: Router) { }
 
   
@@ -60,11 +62,15 @@ export class CommunityComponent implements OnInit {
      * remove contact from user list
      */
     removeContact(id: string){
-      this.contactService.removeContact(id).then(res=>{
+      //this.contactService.removeContact(id).then(res=>{
         // success message
+      let index = this.contactList.findIndex(element=>element._id == id); 
+      if(index > -1){
+        this.contactList.splice(index,1);
+      }
         this.snackBar.open('Contacto Eliminado','Ok',{duration:3000});
-      })
-      .catch(err=>console.log(err));
+      //})
+      //.catch(err=>console.log(err));
     }
   
     /**
@@ -73,7 +79,7 @@ export class CommunityComponent implements OnInit {
      */
     getContactsFromUser(){
       this.contactService.getContactsFromUser().then(res=>{
-        this.contactList = res;
+        this.contactList = [...res].concat(this.randomService.getContacts(2));
       })
       .catch(err=>{
         this.contactList = [];
