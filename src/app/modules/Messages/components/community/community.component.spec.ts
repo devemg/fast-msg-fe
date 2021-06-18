@@ -101,12 +101,6 @@ describe('CommunityComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('should not remove contact', () => {
-    let spy = spyOn(service,'removeContact').and.rejectWith({});
-    component.removeContact(dummyContactList[0]._id);
-    expect(spy).toHaveBeenCalled();
-  });
-
   it('should not get list of contacts user', () => {
     let spy = spyOn(service,'getContactsFromUser').and.rejectWith([]);
     component.getContactsFromUser();

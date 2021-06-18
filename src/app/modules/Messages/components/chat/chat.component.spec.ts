@@ -27,19 +27,5 @@ describe('ChatComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get the chat', async () => {
-    let random: RandomDataService = new RandomDataService();
-    let chat = random.getChat();
-    spyOn(service,'getChat').and.resolveTo(chat);
-    await component.loadChat();
-    expect(component.chat).toEqual(chat);
-  });
-
-  it('should not get the chat', async () => {
-    spyOn(service,'getChat').and.rejectWith({});
-    await component.loadChat();
-    expect(component.chat).toBeUndefined();
-  });
-
 
 });

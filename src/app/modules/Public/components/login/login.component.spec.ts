@@ -1,5 +1,8 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { loginData } from 'src/app/services/mock-data-spec';
 
@@ -13,8 +16,8 @@ describe('LoginComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      providers: [ FormBuilder ],
-      imports: [ RouterTestingModule ]
+      providers: [ FormBuilder, MatSnackBar,Overlay ],
+      imports: [ RouterTestingModule,NoopAnimationsModule ]
     })
     .compileComponents();
   }));

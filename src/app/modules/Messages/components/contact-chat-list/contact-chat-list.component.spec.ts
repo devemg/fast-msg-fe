@@ -27,7 +27,7 @@ describe('ContactChatListComponent', () => {
   });
 
   it('should load chat list', () => {
-    spyOn(service,'getChatList').and.resolveTo([{id:'2',image:'',lastMessage:'',title:''}]);
+    spyOn(service,'getChatList').and.resolveTo([{id:'2',image:'',lastMessage:'',title:'',contactId:''}]);
     component.loadList();
     expect(component.chatList.length).toBeGreaterThanOrEqual(0);
   });
