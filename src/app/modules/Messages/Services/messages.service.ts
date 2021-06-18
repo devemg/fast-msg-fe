@@ -58,7 +58,7 @@ export class MessagesService {
    */
   getChatList(): Promise<ChatPreview[]>{
     return new Promise((resolve,reject)=>{
-      resolve(this.randomService.getChatList(5));
+      resolve(this.randomService.getChatList(15));
     });
   }
 

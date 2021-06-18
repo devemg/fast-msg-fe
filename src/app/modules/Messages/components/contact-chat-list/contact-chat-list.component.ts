@@ -20,7 +20,6 @@ export class ContactChatListComponent implements OnInit {
   loadList() {
     this.messageService.getChatList().then(res=>{
       this.chatList = res;
-      console.log(this.chatList)
     })
     .catch(err=>console.log(err));
   }

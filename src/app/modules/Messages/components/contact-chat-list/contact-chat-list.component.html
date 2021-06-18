@@ -2,7 +2,7 @@
   <mat-selection-list [multiple]="false">
     <div mat-subheader>Conversaciones</div>
         <mat-list-option  *ngFor="let item of chatList" [value]="item.id">
-          <mat-icon mat-list-icon>note</mat-icon>
+          <img mat-list-icon [src]="item.image" alt="image" />
           <div mat-line>{{item.title}}</div>
           <div mat-line> {{item.lastMessage}} </div>
         </mat-list-option>
