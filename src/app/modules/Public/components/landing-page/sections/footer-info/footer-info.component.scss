@@ -32,10 +32,47 @@
 .container-all * {
     margin: 0;
 }
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
 
+.social {
+
+    a {
+        color: white;
+    }
+}
 
 a:hover {
     color: #e6cc9d;
+}
+
+.dev {
+    padding-top: 15px;
+}
+
+/* social colors */
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-instagram {
+    color: #c32aa3;
+}
+
+.fa-gitlab{
+    color: rgb(255, 136, 0);
+}
+
+.fa-code{
+    color: rgb(102, 151, 197);
 }
 
 @media (max-width:588px){
