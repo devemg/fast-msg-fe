@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Chat } from '../models/chat';
+import { ChatMessage } from '../models/chat-message';
 import { ChatPreview } from '../models/chat-preview';
 import { Contact } from '../models/contact';
 import { RandomDataService } from './random-data.service';
@@ -19,7 +20,7 @@ export class MessagesService {
     this.subject.next(chat);  
   }  
   
-  getChatObservable(): Observable<any> {  
+  getChatObservable(): Observable<ChatPreview> {  
     return this.subject.asObservable();  
   }
 
@@ -85,16 +86,30 @@ export class MessagesService {
   }
 
   /**
+   * Get messages from chat
+   * @param id 
+   * @returns 
+   */
+  getChatMessages(id: string): Promise<ChatMessage[]> {
+    return new Promise((resolve,reject)=>{
+      resolve(this.randomService.getRandomMessages(this.randomService.getRandomNumber()));
+    });
+  }
+
+  /**
    * Add new Chat
    * @param contact 
    */
-  adnewChat(contact: Contact){
-    let index = this.localService.getChatList().findIndex(element=>element.contactId == contact._id);
-    if(index < 0){
+  createChat(contact: Contact){
+    let elementChat = this.localService.getChatList().find(element=>element.contactId == contact._id);
+    if(!elementChat){
       //create chat
-      this.localService.addChat({id:this.randomService.getId(),title:contact.name,image:contact.image, contactId:contact._id});
+      let chat = {id:this.randomService.getId(),title:contact.name,image:contact.image, contactId:contact._id};
+      this.localService.addChat(chat);
+      this.subject.next(chat);
     }else {
       //select chat
+      this.subject.next(elementChat);
     }
   }
 

@@ -89,7 +89,7 @@ export class CommunityComponent implements OnInit {
     
 
   createChat(contact: Contact){
-    this.contactService.adnewChat(contact);
+    let chat = this.contactService.createChat(contact);
     this.router.navigate(['../chat'],{relativeTo:this.activatedRoute});
   }
 }

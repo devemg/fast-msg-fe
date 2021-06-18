@@ -1,49 +1,38 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
-import { RandomDataService } from '../../Services/random-data.service';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
+export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+  @Input('chat') chat:Chat;
 
-  chat: Chat;
   messageControl: FormControl;
 
-  private destroy$: Subject<void> = new Subject();
 
-  constructor(private messageService: MessagesService, private randomService: RandomDataService) { 
+  constructor(private messageService: MessagesService) { 
     this.messageControl = new FormControl('',[Validators.required]);
   }
 
   ngOnInit(): void {
-    this.loadChat();
   }
 
   ngAfterViewChecked() {
     this.updateScroll();
   }
 
-  ngOnDestroy(){
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  /**
-   * load chat
-   */
-  loadChat() {
-    this.messageService.getChatObservable().pipe(takeUntil(this.destroy$)).subscribe(response => {  
-      this.chat = response;
-      this.chat.messages = this.randomService.getRandomMessages(this.randomService.getRandomNumber());      
-    });
+  ngOnChanges(){
+    if(this.chat){
+      this.messageService.getChatMessages(this.chat.id).then(res=>{
+        this.chat.messages = res;
+      })
+      .catch(err=>console.log(err));
+    }
   }
 
   /**
