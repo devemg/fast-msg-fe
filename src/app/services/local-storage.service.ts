@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UpdatePasswordDto } from '../modules/messages/dtos/update-password.dto';
+import { ChatPreview } from '../modules/Messages/models/chat-preview';
 import { Contact } from '../modules/messages/models/contact';
 import { UserProfile } from '../modules/Messages/models/user';
 import { RandomDataService } from '../modules/Messages/Services/random-data.service';
@@ -15,6 +16,7 @@ export class LocalStorageService {
   };
 
   contactList: Contact[] = [];
+  chatList: ChatPreview[] = [];
   userProfile: UserProfile;
 
   constructor(private randomService: RandomDataService) { 
@@ -59,30 +61,45 @@ export class LocalStorageService {
     localStorage.removeItem(this.keys.TOKEN);
   }
 
-    /**
-   * Add contact in memory
+  /**
+  * Add contact in memory
+  */
+  addContact(contact: Contact){
+    this.contactList.push(contact);
+  }
+  
+  /**
+   * remove contact in memory
+   * @param id 
    */
-     addContact(contact: Contact){
-      this.contactList.push(contact);
+  removeContact(id: string){
+    let index = this.contactList.findIndex(element=>element._id == id); 
+    if(index > -1){
+      this.contactList.splice(index,1);
     }
+  }
   
-    /**
-     * remove contact in memory
-     * @param id 
-     */
-    removeContact(id: string){
-      let index = this.contactList.findIndex(element=>element._id == id); 
-      if(index > -1){
-        this.contactList.splice(index,1);
-      }
-    }
-  
-    /**
-     * Return a list of contacts 
-     * @returns 
-     */
-    getContacts(): Contact[] {
-      return this.contactList;
-    }
+  /**
+   * Return a list of contacts 
+   * @returns 
+   */
+  getContacts(): Contact[] {
+    return this.contactList;
+  }
 
+  /**
+   * Get chat list
+   * @returns 
+   */
+  getChatList(): ChatPreview[] {
+    return this.chatList;
+  }
+
+  /**
+   * add chat to list
+   * @param chat 
+   */
+  addChat(chat:ChatPreview){
+    this.chatList.push(chat);
+  }
 }

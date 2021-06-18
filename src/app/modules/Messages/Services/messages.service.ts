@@ -69,7 +69,8 @@ export class MessagesService {
    */
   getChatList(): Promise<ChatPreview[]>{
     return new Promise((resolve,reject)=>{
-      resolve(this.randomService.getChatList(5));
+      let list = this.localService.getChatList().concat(this.randomService.getChatList(5));
+      resolve(list);
     });
   }
 
@@ -81,6 +82,20 @@ export class MessagesService {
     return new Promise((resolve,reject)=>{
       resolve(this.randomService.getChat());
     });
+  }
+
+  /**
+   * Add new Chat
+   * @param contact 
+   */
+  adnewChat(contact: Contact){
+    let index = this.localService.getChatList().findIndex(element=>element.contactId == contact._id);
+    if(index < 0){
+      //create chat
+      this.localService.addChat({id:this.randomService.getId(),title:contact.name,image:contact.image, contactId:contact._id});
+    }else {
+      //select chat
+    }
   }
 
 }

@@ -12,6 +12,10 @@
                 <button *ngIf="isContacts" (click)="removeContact(item._id)" mat-icon-button color="primary">
                     <mat-icon>person_remove</mat-icon>
                 </button>
+                <button *ngIf="isContacts" (click)="createChat(item)" mat-icon-button color="primary">
+                    <mat-icon>message</mat-icon>
+                </button>
+
             </div>
         </mat-card>
     </div>

@@ -79,7 +79,7 @@ export class CommunityComponent implements OnInit {
      */
     getContactsFromUser(){
       this.contactService.getContactsFromUser().then(res=>{
-        this.contactList = [...res].concat(this.randomService.getContacts(2));
+        this.contactList = res; //.concat(this.randomService.getContacts(2));
       })
       .catch(err=>{
         this.contactList = [];
@@ -88,4 +88,8 @@ export class CommunityComponent implements OnInit {
     }
     
 
+  createChat(contact: Contact){
+    this.contactService.adnewChat(contact);
+    this.router.navigate(['../chat'],{relativeTo:this.activatedRoute});
+  }
 }

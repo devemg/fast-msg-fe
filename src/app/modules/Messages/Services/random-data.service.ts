@@ -56,7 +56,8 @@ export class RandomDataService {
         id: datatype.uuid(),
         image: image.avatar(),
         title: name.findName(),
-        lastMessage: lorem.sentence()
+        lastMessage: lorem.sentence(),
+        contactId:datatype.uuid(),
       });
     }
     return list;
@@ -71,6 +72,7 @@ export class RandomDataService {
       id:datatype.uuid(),
       image:image.avatar(),
       title: name.findName(),
+      contactId:datatype.uuid(),
       messages: []
     }
   }
@@ -90,6 +92,11 @@ export class RandomDataService {
     }
     return list;
   }
+
+  /**
+   * Get random number between 10 and 25
+   * @returns 
+   */
   getRandomNumber(): number {
     return datatype.number({
     'min': 10,
@@ -97,4 +104,12 @@ export class RandomDataService {
     });
   }
 
+  /**
+   * return random UUID
+   * @returns 
+   */
+  getId(){
+    return datatype.uuid();
+  }
+  
 }
