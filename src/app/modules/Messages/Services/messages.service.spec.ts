@@ -47,4 +47,10 @@ describe('MessagesService', () => {
     })
   });
 
+  it('should return the chat', () => {
+    service.getChat('12345').then(res=>{
+      expect(res).toBeDefined();
+    })
+  });
+
 });

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Chat } from '../models/chat';
 import { ChatPreview } from '../models/chat-preview';
 import { Contact } from '../models/contact';
 import { RandomDataService } from './random-data.service';
@@ -58,7 +59,17 @@ export class MessagesService {
    */
   getChatList(): Promise<ChatPreview[]>{
     return new Promise((resolve,reject)=>{
-      resolve(this.randomService.getChatList(15));
+      resolve(this.randomService.getChatList(5));
+    });
+  }
+
+  /**
+   * Get chat
+   * @param id 
+   */
+   getChat(id: string): Promise<Chat> {
+    return new Promise((resolve,reject)=>{
+      resolve(this.randomService.getChat());
     });
   }
 

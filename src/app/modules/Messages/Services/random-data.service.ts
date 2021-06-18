@@ -3,6 +3,7 @@ import { Contact } from '../models/contact';
 import { name, internet, datatype, image, lorem } from 'faker';
 import { UserProfile } from '../models/user';
 import { ChatPreview } from '../models/chat-preview';
+import { Chat } from '../models/chat';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,19 @@ export class RandomDataService {
       });
     }
     return list;
+  }
+
+  /**
+   * Get random chat
+   * @returns 
+   */
+  getChat(): Chat{
+    return {
+      id:datatype.uuid(),
+      image:image.avatar(),
+      title: name.findName(),
+      messages: []
+    }
   }
 
 }
