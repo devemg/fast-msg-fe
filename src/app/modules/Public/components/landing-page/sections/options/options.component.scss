@@ -1,0 +1,50 @@
+.container-circles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 50%;
+    }
+
+}
+
+.border-red {
+    border: 5px solid #9B2226;
+
+}
+
+.border-blue {
+    border: 5px solid #005F73;
+
+}
+
+.border-yell {
+    border: 5px solid #ee8a00;
+
+}
+
+@media screen and (max-width:508px) {
+    .container-circles{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .circle {
+        margin-top: 2em;
+    }
+}
