@@ -5,3 +5,20 @@
     height: 100%;
     background-color: $background-dark-color;
 }
+
+.info {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 3px solid white;
+        margin-right: 10px;
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }

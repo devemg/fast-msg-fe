@@ -1,12 +1,24 @@
 <div class="container-all">
-    <mat-toolbar>
-        <!------------
-        <mat-list>
-            <img mat-list-icon [src]="item.image" alt="image" />
-          <div mat-line>{{item.title}}</div>
-          <div mat-line> {{item.lastMessage}} </div>
-          </mat-list>
+    <mat-toolbar color="primary">
+      <div class="info">
+          <img [src]="chat.image" alt="image" />
+          <div>{{chat.title}}</div>
+      </div>
+      <span class="spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
 
-        -->
-      </mat-toolbar>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>delete_outline</mat-icon>
+          <span>Eliminar Conversación</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>clear_all</mat-icon>
+          <span>Eliminar Mensajes</span>
+        </button>
+      </mat-menu>
+
+    </mat-toolbar>
 </div>

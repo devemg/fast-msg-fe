@@ -13,7 +13,7 @@ export class ChatComponent implements OnInit {
   constructor(private messageService: MessagesService) { }
 
   ngOnInit(): void {
-
+    this.loadChat();
   }
 
   /**
