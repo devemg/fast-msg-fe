@@ -2,7 +2,7 @@
 
 .container-all {
     background-color: $background-dark-color;
-    padding: 5em;
+    padding: 5em 10em 5em 10em;
     display: flex;
     justify-content: space-between;
     color: rgb(255, 255, 255);
@@ -43,6 +43,7 @@ a:hover {
     .container-all {
         flex-direction: column-reverse;
         justify-content: flex-start;
+        padding: 5em;
     }
 
     .social {
