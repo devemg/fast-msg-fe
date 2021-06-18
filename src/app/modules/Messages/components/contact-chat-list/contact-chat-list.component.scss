@@ -7,3 +7,8 @@
     overflow-x: hidden;
     background-color: $background-color;
 }
+
+.mat-list-base .mat-list-option,
+.mat-list-base .mat-subheader{
+    color: rgb(243, 243, 243);
+}

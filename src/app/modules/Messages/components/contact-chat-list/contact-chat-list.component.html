@@ -1,7 +1,10 @@
 <div class="container-list">
-    <mat-selection-list #shoes [multiple]="false">
-        <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
-          {{shoe}}
+  <mat-selection-list [multiple]="false">
+    <div mat-subheader>Conversaciones</div>
+        <mat-list-option  *ngFor="let item of chatList" [value]="item.id">
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>{{item.title}}</div>
+          <div mat-line> {{item.lastMessage}} </div>
         </mat-list-option>
-      </mat-selection-list>
+  </mat-selection-list>
 </div>
