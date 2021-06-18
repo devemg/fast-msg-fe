@@ -1,15 +1,25 @@
+.container-all {
+    padding-top: 5em;
+    padding-bottom: 10em;
+}
+
+h1 {
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+}
+
 .container-circles {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 5em;
 }
 
 .circle {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     border-radius: 100%;
     background-color: white;
     color: black;
@@ -36,6 +46,17 @@
 .border-yell {
     border: 5px solid #ee8a00;
 
+}
+
+@media screen and (max-width:816px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media screen and (max-width:508px) {
