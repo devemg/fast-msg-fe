@@ -21,6 +21,10 @@
     flex-wrap: nowrap;
 }
 
+mat-toolbar {
+    display: none;
+}
+
 .options {
     //background-color: rgba(0, 0, 0, 0.397);
 
@@ -77,11 +81,9 @@
 
 @media screen and (max-width:425px) {
 
-    .option {
+    mat-toolbar {
         display: none;
     }
-
-    mat-toolbar {
-        display: block;
-    }
 }
+
+//https://www.digitalocean.com/community/tutorials/detect-responsive-screen-sizes-in-angular

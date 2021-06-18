@@ -10,6 +10,7 @@ import { CommunityComponent } from './components/community/community.component';
 import { AccountComponent } from './components/account/account.component';
 import { ContactChatListComponent } from './components/contact-chat-list/contact-chat-list.component';
 import { MainChatComponent } from './components/main-chat/main-chat.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MainChatComponent } from './components/main-chat/main-chat.component';
     CommunityComponent,
     AccountComponent,
     ContactChatListComponent,
-    MainChatComponent
+    MainChatComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
