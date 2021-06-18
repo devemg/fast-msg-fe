@@ -53,7 +53,7 @@ $secondary-palette: (
 @include mat.core();
 
 $my-primary: mat.define-palette($primary-palette, 700);
-$my-accent: mat.define-palette($secondary-palette, 900);
+$my-accent: mat.define-palette($secondary-palette, 800);
 
 // The "warn" palette is optional and defaults to red if not specified.
 $my-warn: mat.define-palette(mat.$red-palette);
