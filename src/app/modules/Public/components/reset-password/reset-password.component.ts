@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -11,7 +12,8 @@ export class ResetPasswordComponent implements OnInit {
   loginForm:FormGroup;
 
   constructor(
-    private formBulder:FormBuilder
+    private formBulder:FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -21,7 +23,9 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   submit(){
-    
+    if(this.loginForm.valid){
+      this.router.navigate(['']);
+    }
   }
 
     /**

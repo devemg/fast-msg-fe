@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,8 @@ export class ContactComponent implements OnInit {
   contactForm:FormGroup;
 
   constructor(
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +25,9 @@ export class ContactComponent implements OnInit {
   }
 
   submit(){
-    
+    if(this.contactForm.valid){
+      this.router.navigate(['']);
+    }
   }
 
     /**

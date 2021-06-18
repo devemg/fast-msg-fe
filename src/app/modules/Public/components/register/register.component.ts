@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
 
   submit(){
     if(this.registerForm.valid){
-      
+      this.router.navigate(['']);
     }else{
       console.log(this.registerForm.value)
     }
