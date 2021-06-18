@@ -15,6 +15,21 @@
         flex-direction: column;
         justify-content: center;
         padding: 2em;
+
+
+        h2 {
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif !important;
+        }   
+
+        p {
+            font-size: 20px;
+            font-family: 'Roboto','sans-serif';
+            font-weight: lighter;
+            text-align: justify;
+            letter-spacing: 2px;
+        }
+
     }
 
     .element-image {
