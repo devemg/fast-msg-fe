@@ -1,0 +1,26 @@
+@import '/src/colors.scss';
+
+.container-all {
+    background-color: $background-dark-color;
+    padding: 5em;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    font-family: 'Oswald','sans-serif';
+    letter-spacing: 1px;
+
+    p {
+        padding-top: 5px;
+    }
+}
+
+.aclarations {
+    padding-top: 15px;
+    font-size: 12px;
+    color: rgba(225, 230, 255, 0.308);
+}
+
+.container-all * {
+    margin: 0;
+}
+
