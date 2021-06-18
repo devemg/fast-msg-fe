@@ -7,16 +7,9 @@ import { ChatPreview } from '../../models/chat-preview';
   styleUrls: ['./main-chat.component.scss']
 })
 export class MainChatComponent implements OnInit {
-
-  selectedChatId: number;
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  catchSelectedChat(value: ChatPreview){
-    console.log(value);
   }
 
 }

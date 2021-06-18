@@ -90,5 +90,11 @@ export class RandomDataService {
     }
     return list;
   }
+  getRandomNumber(): number {
+    return datatype.number({
+    'min': 10,
+    'max': 25
+    });
+  }
 
 }

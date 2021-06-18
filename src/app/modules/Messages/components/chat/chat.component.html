@@ -1,6 +1,6 @@
 <div class="container-all">
-    <mat-toolbar color="primary">
-      <div *ngIf="chat" class="info">
+    <mat-toolbar color="primary" *ngIf="chat">
+      <div class="info">
           <img [src]="chat.image" alt="image" />
           <div>{{chat.title}}</div>
       </div>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <!------input message -->
-    <div class="container-input">
+    <div class="container-input" *ngIf="chat">
       <input type="text" placeholder="Escribe un mensaje..."  [formControl]="messageControl" name="message" (keyup.enter)="sendMessage()">
       <button color="primary" mat-icon-button (click)="sendMessage()">
         <mat-icon>send</mat-icon>

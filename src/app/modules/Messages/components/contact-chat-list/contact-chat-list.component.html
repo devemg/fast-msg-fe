@@ -4,7 +4,7 @@
         <mat-list-option  *ngFor="let item of chatList" [value]="item.id" >
           <img mat-list-icon [src]="item.image" alt="image" />
           <div mat-line>{{item.title}}</div>
-          <div mat-line> {{item.lastMessage}} </div>
+          <div *ngIf="item.lastMessage" mat-line> {{item.lastMessage}} </div>
         </mat-list-option>
   </mat-selection-list>
 </div>

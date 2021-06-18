@@ -1,8 +1,6 @@
 import { ChatMessage } from "./chat-message";
+import { ChatPreview } from "./chat-preview";
 
-export interface Chat {
-    id: string; 
-    image: string; 
-    title: string; 
+export interface Chat extends ChatPreview{
     messages: Array<ChatMessage>;
 }

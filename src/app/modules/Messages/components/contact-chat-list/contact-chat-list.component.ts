@@ -9,7 +9,6 @@ import { MessagesService } from '../../Services/messages.service';
   styleUrls: ['./contact-chat-list.component.scss']
 })
 export class ContactChatListComponent implements OnInit {
-  @Output('selectedChat') emitChat: EventEmitter<ChatPreview> = new EventEmitter();
   
   chatList: ChatPreview[] = [];
 
@@ -38,7 +37,7 @@ export class ContactChatListComponent implements OnInit {
     //just for random data 
     let chat = this.chatList.find(element=>element.id == id);
     if(chat){
-      this.emitChat.emit(chat);
+      this.messageService.changeChat(chat);
     }
   }
 

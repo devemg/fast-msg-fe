@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Chat } from '../models/chat';
 import { ChatPreview } from '../models/chat-preview';
@@ -10,8 +11,17 @@ import { RandomDataService } from './random-data.service';
 })
 export class MessagesService {
 
-  
+  private subject = new Subject<any>();  
+
   constructor(private randomService: RandomDataService, private localService: LocalStorageService) { }
+
+  changeChat(chat: ChatPreview) {  
+    this.subject.next(chat);  
+  }  
+  
+  getChatObservable(): Observable<any> {  
+    return this.subject.asObservable();  
+  }
 
   /**
    * Get random contacts to add
