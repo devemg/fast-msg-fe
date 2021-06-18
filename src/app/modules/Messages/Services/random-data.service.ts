@@ -4,6 +4,7 @@ import { name, internet, datatype, image, lorem } from 'faker';
 import { UserProfile } from '../models/user';
 import { ChatPreview } from '../models/chat-preview';
 import { Chat } from '../models/chat';
+import { ChatMessage } from '../models/chat-message';
 
 @Injectable({
   providedIn: 'root'
@@ -72,6 +73,22 @@ export class RandomDataService {
       title: name.findName(),
       messages: []
     }
+  }
+
+  /**
+   * Get random messages
+   */
+  getRandomMessages(qty: number): ChatMessage[]{
+    let list: ChatMessage[] = [];
+    for(let i = 0; i < qty; i++ ){
+      list.push({
+        id: datatype.uuid(),
+        content:lorem.sentence(),
+        date:datatype.datetime(),
+        isOwn:datatype.boolean()
+      });
+    }
+    return list;
   }
 
 }

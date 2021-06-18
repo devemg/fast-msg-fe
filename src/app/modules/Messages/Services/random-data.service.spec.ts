@@ -30,4 +30,8 @@ describe('RandomDataService', () => {
     expect(service.getChat()).toBeDefined();
   });
 
+  it('should get list of messages ', () => {
+    expect(service.getRandomMessages(4).length).toBe(4);
+  });
+
 });

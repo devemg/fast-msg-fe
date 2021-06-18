@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
+import { RandomDataService } from '../../Services/random-data.service';
 
 @Component({
   selector: 'app-chat',
@@ -10,7 +11,7 @@ import { MessagesService } from '../../Services/messages.service';
 export class ChatComponent implements OnInit {
 
   chat: Chat;
-  constructor(private messageService: MessagesService) { }
+  constructor(private messageService: MessagesService, private randomService: RandomDataService) { }
 
   ngOnInit(): void {
     this.loadChat();
@@ -22,25 +23,7 @@ export class ChatComponent implements OnInit {
   loadChat() {
     this.messageService.getChat('1').then(res=>{
       this.chat = res;
-      this.chat.messages = [{
-        content:'Hola como estas',
-        date:new Date(),
-        id:'123',
-        isOwn:true
-      },
-      {
-        content:'bien, y tu?',
-        date:new Date(),
-        id:'1234',
-        isOwn:false
-      },
-      {
-        content:'?',
-        date:new Date(),
-        id:'1234',
-        isOwn:true
-      }
-    ];
+      this.chat.messages = this.randomService.getRandomMessages(20);
     })
     .catch(err=>console.log(err));
   }
