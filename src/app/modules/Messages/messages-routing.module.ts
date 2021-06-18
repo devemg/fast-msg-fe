@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { AccountComponent } from './components/account/account.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+   // canActivate: [ AuthService ],
     children: [
       {
         path:'',
