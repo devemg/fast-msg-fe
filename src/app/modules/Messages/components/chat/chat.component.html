@@ -24,15 +24,15 @@
 
     
     <!---------------MESSAGES------------>
-    <div *ngIf="chat" class="container-messages">
+    <div *ngIf="chat" class="container-messages"  #container>
       <div class="container-message" *ngFor="let msg of chat.messages" [ngClass]="{'send-message':msg.isOwn}">
         <div class="message"> <p>{{msg.content}} </p><span>{{msg.date | date:'short'}}</span> </div>
       </div>
     </div>
     <!------input message -->
     <div class="container-input">
-      <input type="text" placeholder="Escribe un mensaje...">
-      <button color="primary" mat-icon-button>
+      <input type="text" placeholder="Escribe un mensaje..."  [formControl]="messageControl" name="message" (keyup.enter)="sendMessage()">
+      <button color="primary" mat-icon-button (click)="sendMessage()">
         <mat-icon>send</mat-icon>
       </button>
     </div>

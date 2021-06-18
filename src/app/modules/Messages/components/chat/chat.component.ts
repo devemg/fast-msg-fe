@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
@@ -10,6 +10,7 @@ import { RandomDataService } from '../../Services/random-data.service';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  @ViewChild('container') container: ElementRef;
 
   chat: Chat;
   messageControl: FormControl;
@@ -33,4 +34,29 @@ export class ChatComponent implements OnInit {
     .catch(err=>console.log(err));
   }
 
+  /**
+   * send message in chat
+   */
+  sendMessage(){
+    if(this.messageControl.value != '') {
+      this.chat.messages.push({
+        content:this.messageControl.value,
+        date: new Date(),
+        id:'1234',
+        isOwn:true
+      });
+      this.messageControl.reset();
+      this.scrollToBottom();
+    }
+  }
+
+  /**
+   * move scroll of messages to bottom
+   */
+     scrollToBottom() {
+      try {
+        console.log('scrollToBottom called');
+        
+      } catch (err) {}
+    }
 }

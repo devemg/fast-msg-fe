@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatPreview } from '../../models/chat-preview';
 
 @Component({
   selector: 'app-main-chat',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainChatComponent implements OnInit {
 
+  selectedChatId: number;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  catchSelectedChat(value: ChatPreview){
+    console.log(value);
   }
 
 }

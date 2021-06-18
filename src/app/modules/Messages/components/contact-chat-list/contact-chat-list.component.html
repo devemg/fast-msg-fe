@@ -1,7 +1,7 @@
 <div class="container-list">
-  <mat-selection-list [multiple]="false">
+  <mat-selection-list [multiple]="false" (selectionChange)="selectChat($event)">
     <div mat-subheader>Conversaciones</div>
-        <mat-list-option  *ngFor="let item of chatList" [value]="item.id">
+        <mat-list-option  *ngFor="let item of chatList" [value]="item.id" >
           <img mat-list-icon [src]="item.image" alt="image" />
           <div mat-line>{{item.title}}</div>
           <div mat-line> {{item.lastMessage}} </div>
