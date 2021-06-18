@@ -3,7 +3,7 @@
     <div class="grid">
         <mat-card *ngFor="let item of contactList" class="contact">
             <img [src]="item.image" alt="contact" />
-            <h2>{{item.name}}</h2>
+            <h3>{{item.name}}</h3>
             <p *ngIf="item.email" >{{item.email}}</p>
             <div>
                 <button *ngIf="!isContacts" (click)="addContact(item)" mat-icon-button color="primary">
