@@ -40,7 +40,7 @@
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true,
-            "allowedCommonJsDependencies":[
+            "allowedCommonJsDependencies": [
               "faker"
             ]
           },
@@ -134,6 +134,10 @@
               "devServerTarget": "fast-msg-fe:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
