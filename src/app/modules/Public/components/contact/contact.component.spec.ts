@@ -27,4 +27,11 @@ describe('ContactComponent', () => {
     component.submit();
     expect(component).toBeTruthy();
   });
+
+  it('should redirect', () => {
+    component.contactForm.patchValue({name:'name',email:'email@email.com',message:'message'})
+    component.submit();
+      expect(component.contactForm.valid).toBeTrue();
+  });
+
 });

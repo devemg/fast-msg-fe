@@ -12,7 +12,7 @@ import { RandomDataService } from './random-data.service';
 })
 export class MessagesService {
 
-  private subject = new Subject<any>();  
+  subject = new Subject<any>();  
 
   constructor(private randomService: RandomDataService, private localService: LocalStorageService) { }
 

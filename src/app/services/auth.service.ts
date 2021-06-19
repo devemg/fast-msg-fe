@@ -13,7 +13,8 @@ export class AuthService {
    * CLose the sesion
    */
   logout(){
-
+    this.localservice.removeUserID();
+    this.localservice.removeUserToken();
   }
 
   /**

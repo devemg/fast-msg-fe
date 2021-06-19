@@ -34,4 +34,9 @@ describe('RandomDataService', () => {
     expect(service.getRandomMessages(4).length).toBe(4);
   });
 
+  it('should get random number between 10 and 25', () => {
+    expect(service.getRandomNumber()).toBeGreaterThanOrEqual(10);
+    expect(service.getRandomNumber()).toBeLessThanOrEqual(25);
+  });
+
 });

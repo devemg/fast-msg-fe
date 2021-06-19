@@ -1,3 +1,4 @@
+import { ChatPreview } from "../models/chat-preview";
 import { Contact } from "../models/contact";
 import { UserProfile } from "../models/user";
 
@@ -42,3 +43,41 @@ export const userProfile: UserProfile = {
    "email":"beof@fastmessages.com",
    "password":"123456789"
 };
+
+export const chatList: ChatPreview[] = [
+   {
+      "id":"a6cfb627-810c-49be-837d-b8815937cd4a",
+      "image":"https://cdn.fakercloud.com/avatars/sydlawrence_128.jpg",
+      "title":"Dr. Toni Cronin",
+      "lastMessage":"Hic exercitationem odit quod rem repudiandae laborum enim laudantium.",
+      "contactId":"1ff2c8f3-ad5a-5f15-a003-d9be2b2de223"
+   },
+   {
+      "id":"0314d7eb-82c1-4337-a46f-739adfaf58fb",
+      "image":"https://cdn.fakercloud.com/avatars/souperphly_128.jpg",
+      "title":"Guy Sauer",
+      "lastMessage":"Sed molestiae qui quasi.",
+      "contactId":"b372ea1d-cfe4-466c-989d-8b165bb8870a"
+   },
+   {
+      "id":"61acfcf5-f297-43e3-a1b2-b57123632add",
+      "image":"https://cdn.fakercloud.com/avatars/n3dmax_128.jpg",
+      "title":"Kelli Ledner",
+      "lastMessage":"Iure quod iusto blanditiis sunt.",
+      "contactId":"7b3539ce-d92f-4b88-9dca-6bc8ebf118e4"
+   },
+   {
+      "id":"0549510c-8bd2-4076-b901-7801de1c5b9b",
+      "image":"https://cdn.fakercloud.com/avatars/osvaldas_128.jpg",
+      "title":"Melanie Champlin",
+      "lastMessage":"Aliquam ea voluptas aut quae.",
+      "contactId":"de47df57-b869-4b35-91f2-5fac162d421d"
+   },
+   {
+      "id":"8eac0163-11bd-4db9-91a1-bc62b7ce4fb0",
+      "image":"https://cdn.fakercloud.com/avatars/byryan_128.jpg",
+      "title":"Timmy Quitzon",
+      "lastMessage":"Dolorem corporis in unde voluptas nesciunt.",
+      "contactId":"146926b1-8055-45fd-92bf-ceb2066183e0"
+   }
+];

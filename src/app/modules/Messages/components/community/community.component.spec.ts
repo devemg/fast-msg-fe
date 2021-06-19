@@ -113,4 +113,16 @@ describe('CommunityComponent', () => {
     expect(component.contactList.length).toBe(0);
   });
 
+  it('should remove contact list', () => {
+    component.contactList.push(dummyContactList[0]);
+    component.removeContact(dummyContactList[0]._id);
+    expect(component.contactList.length).toBe(0);
+  });
+
+  it('should create chat', () => {
+    let spy = spyOn(service,'createChat');
+    component.createChat(dummyContactList[0]);
+    expect(spy).toHaveBeenCalled();
+  });
+
 });

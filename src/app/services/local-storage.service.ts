@@ -63,6 +63,20 @@ export class LocalStorageService {
   }
 
   /**
+   * remove user id
+   */
+  removeUserID(){
+    localStorage.removeItem(this.keys.USERID);
+  }
+
+  /**
+   * remove user token
+   */
+   removeUserToken(){
+    localStorage.removeItem(this.keys.TOKEN);
+  }
+
+  /**
    * return user token
    * @returns 
    */
@@ -76,13 +90,6 @@ export class LocalStorageService {
    */
   setUserToken(token: string){
     localStorage.setItem(this.keys.TOKEN,token);
-  }
-
-  /**
-   * delete token saved
-   */
-  clearToken(){
-    localStorage.removeItem(this.keys.TOKEN);
   }
 
   /**

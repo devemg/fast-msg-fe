@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { userProfile } from 'src/app/modules/Messages/Services/mock-data.spec';
 
 import { ResetPasswordComponent } from './reset-password.component';
 
@@ -27,4 +28,11 @@ describe('ResetPasswordComponent', () => {
     component.submit();
     expect(component).toBeTruthy();
   });
+
+  it('should reset and redirect', () => {
+    component.loginForm.patchValue({email: userProfile.email});
+    component.submit();
+    expect(component.loginForm.valid).toBeTrue();
+  });
+
 });
