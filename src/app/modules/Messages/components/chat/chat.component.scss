@@ -10,6 +10,11 @@
     background-image: url(https://image.freepik.com/vector-gratis/doodle-inconsutil-social_1284-4665.jpg);
 }
 
+.arrow-btn {
+  margin-right: 5px;
+  display: none;
+}
+
 .info {
     display: flex;
     height: 100%;
@@ -29,7 +34,7 @@
 
 .container-messages {
     width: 100%;
-    max-height: 82.7%;
+    //max-height: 82.7%;
     background-color: rgba(0, 0, 0, 0.267);
     overflow-x: hidden;
     overflow-y: auto;
@@ -104,6 +109,13 @@
     border: none;
   }
 
+}
+
+
+@media screen and (max-width:768px) {
+  .arrow-btn {
+      display: block;
+  }
 }
 
 

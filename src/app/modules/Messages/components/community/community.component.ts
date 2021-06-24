@@ -53,7 +53,7 @@ export class CommunityComponent implements OnInit {
       this.contactService.addContact(contact).then(res=>{
         // success message
         this.snackBar.open('Contacto Agregado','Ok',{duration:3000});
-        this.router.navigate(['../contacts'],{relativeTo:this.activatedRoute});
+        this.router.navigate(['user/contacts']);
       })
       .catch(err=>console.log(err));
     }

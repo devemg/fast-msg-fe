@@ -13,6 +13,7 @@ import { MessagesService } from '../../Services/messages.service';
 export class MainChatComponent implements OnInit {
 
   selectedChat: ChatPreview;
+  showContacts = 0; 
   
   private destroy$: Subject<void> = new Subject();
 

@@ -1,6 +1,9 @@
 <div class="container-all">
     <mat-toolbar color="primary" *ngIf="chat">
       <div class="info">
+        <button mat-icon-button class="arrow-btn" (click)="backContacts.emit()">
+          <mat-icon>arrow_back_ios_new</mat-icon>
+        </button>
           <img [src]="chat.image" alt="image" />
           <div>{{chat.title}}</div>
       </div>

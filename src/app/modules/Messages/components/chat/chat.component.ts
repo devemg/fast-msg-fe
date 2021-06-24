@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Chat } from '../../models/chat';
 import { MessagesService } from '../../Services/messages.service';
@@ -11,6 +11,7 @@ import { MessagesService } from '../../Services/messages.service';
 export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
   @Input('chat') chat:Chat;
+  @Output('backContacts') backContacts: EventEmitter<any> = new EventEmitter();
 
   messageControl: FormControl;
 
