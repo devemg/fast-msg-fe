@@ -1,6 +1,6 @@
 <div class="container-all" *ngIf="showIt">
-    <h1>Puedes Ingresar con el usuario <strong>invitado@fmessages.com</strong> y la contraseña 
-    <strong>fastmessages</strong> para explorar nuestras funcionalidades</h1>
+    <h1>Puedes Ingresar con el usuario <strong matTooltip="Click para copiar" [cdkCopyToClipboard]="contact.email">{{contact.email}}</strong> y la contraseña 
+    <strong matTooltip="Click para copiar" [cdkCopyToClipboard]="contact.password">{{contact.password}}</strong> para explorar nuestras funcionalidades</h1>
 
     <button mat-icon-button (click)="showIt = false;">
         <mat-icon>close</mat-icon>

@@ -15,4 +15,19 @@
         padding: 1em 0.5em 1em 0.5em;
         font-size: 20px;
     }
+
+    strong:hover {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width:536px) {
+    .container-all {
+        align-items: flex-start;
+        
+        h1 {
+            font-size: 17px;
+        }
+    }
+    
 }

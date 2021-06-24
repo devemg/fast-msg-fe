@@ -21,7 +21,7 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRippleModule} from '@angular/material/core'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {ClipboardModule} from '@angular/cdk/clipboard'; 
 
 @NgModule({
   declarations: [],
@@ -48,7 +48,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatMomentDateModule,
     MatMenuModule,
     MatRippleModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ClipboardModule
   ]
 })
 export class AngularMaterialModule { }

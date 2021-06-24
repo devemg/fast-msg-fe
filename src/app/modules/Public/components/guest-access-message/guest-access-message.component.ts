@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class GuestAccessMessageComponent implements OnInit {
 
   showIt = true;
+  contact = {
+    email: 'invitado@fastmessages.com',
+    password: 'fastmessages'
+  };
   constructor() { }
 
   ngOnInit(): void {

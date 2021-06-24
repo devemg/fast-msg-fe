@@ -26,7 +26,7 @@ export class AuthService {
   login(email:string, password:string): Promise<any> {
     console.log(email,password)
     return new Promise((resolve,reject)=>{
-      if(email == 'invitado@fastmessages.com' && password == "1234"){
+      if(email == 'invitado@fastmessages.com' && password == "fastmessages"){
         let token = {token: this.randomService.getId()};
         this.localservice.setUserToken(token.token);
         resolve(token);
