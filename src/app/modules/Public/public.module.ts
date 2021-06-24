@@ -18,6 +18,7 @@ import { BannerComponent } from './components/landing-page/sections/banner/banne
 import { FooterInfoComponent } from './components/landing-page/sections/footer-info/footer-info.component';
 import { OptionsComponent } from './components/landing-page/sections/options/options.component';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
+import { GuestAccessMessageComponent } from './components/guest-access-message/guest-access-message.component';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { AngularMaterialModule } from 'src/app/angular-material.module';
     HomeComponent, 
     BannerComponent, 
     FooterInfoComponent, 
-    HighlightComponent, OptionsComponent
+    HighlightComponent, OptionsComponent, GuestAccessMessageComponent
   ],
   imports: [
     CommonModule,
