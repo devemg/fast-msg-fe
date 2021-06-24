@@ -9,7 +9,7 @@
 }
 
 .container-menu {
-    background-color: $background-color;
+    background-color: $background-dark-color;
 
     mat-list-option,
     .mat-subheader {
@@ -72,22 +72,22 @@
 
         span {
             padding-left: 3px;
-            animation: slideOutRight 2s;
-            visibility: hidden;
-            width: 0;
-            height: 0;
             font-family: 'Oswald','sans-serif';
         }
     }
 
     a:hover {
         color: $primary-color;
+    }
+}
 
-        span {
-            visibility: visible;
-            width: auto;
-            height: auto;
-            animation: slideInRight 1s;
-        }
+
+@media screen and (max-width:464px) {
+    #menu {
+        display: none;
+    }
+
+    #btn-menu {
+        display: block;
     }
 }
