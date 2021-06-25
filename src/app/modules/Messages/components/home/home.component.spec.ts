@@ -1,20 +1,24 @@
+import { ElementRef } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatSidenav } from '@angular/material/sidenav';
 import {RouterTestingModule} from "@angular/router/testing";
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let authService: AuthService;
   let localservice: LocalStorageService;
+  let utilService: UtilsService;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule ],
     })
     .compileComponents();
   }));
@@ -22,8 +26,8 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
-    authService = TestBed.inject(AuthService);
     localservice = TestBed.inject(LocalStorageService);
+    utilService = TestBed.inject(UtilsService);
     fixture.detectChanges();
   });
 
@@ -56,6 +60,16 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initializate sidenav', () => {
+      expect(component.sidenav).toBeDefined();
+  });
+
+  it('should hide toolbar', () => {
+    let spy = spyOn(utilService,'getMenuObservable').and.returnValue(new Observable(resolver=>{resolver.next(false)}));
+    component.ngOnInit();
+    expect(component.showToolbar).toBeFalse();
   });
 
   it('should fill options', () => {
