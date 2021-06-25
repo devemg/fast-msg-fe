@@ -1,8 +1,8 @@
 <div class="container-all">
     <div class="contacts">
-        <app-contact-chat-list *ngIf="selectedChat == null"></app-contact-chat-list>
+        <app-contact-chat-list></app-contact-chat-list>
     </div>
     <div class="chat">
-        <app-chat *ngIf="selectedChat != null" [chat]="selectedChat" (backContacts)="selectedChat = null" ></app-chat>
+        <app-chat [chat]="selectedChat" (backContacts)="selectedChat = null" ></app-chat>
     </div>
 </div>
