@@ -2,6 +2,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { UtilsService } from 'src/app/services/utils.service';
 import { Chat } from '../../models/chat';
 import { ChatPreview } from '../../models/chat-preview';
 import { MessagesService } from '../../Services/messages.service';
@@ -18,7 +19,11 @@ export class MainChatComponent implements OnInit { //},AfterViewInit {
   
   private destroy$: Subject<void> = new Subject();
 
-  constructor(private messageService: MessagesService, private breakpointObserver:BreakpointObserver) { }
+  constructor(
+    private messageService: MessagesService, 
+    private breakpointObserver:BreakpointObserver,
+    private utilService: UtilsService
+    ) { }
 
   ngOnInit(): void {
     this.subscribeChatChanges();
@@ -47,11 +52,15 @@ export class MainChatComponent implements OnInit { //},AfterViewInit {
    * load chat
    */
   subscribeChatChanges() {
-    this.messageService.getChatObservable().pipe(takeUntil(this.destroy$)).subscribe(response => {  
+    this.utilService.getChatObservable().pipe(takeUntil(this.destroy$)).subscribe(response => {  
       this.selectedChat = response;
     });
   }
 
+  /**
+   * return if can show list of contacts
+   * @returns 
+   */
   canShowContact():boolean{
     if(this.showContacts){
       return true;

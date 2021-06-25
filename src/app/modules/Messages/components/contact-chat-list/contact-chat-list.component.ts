@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
+import { UtilsService } from 'src/app/services/utils.service';
 import { ChatPreview } from '../../models/chat-preview';
 import { MessagesService } from '../../Services/messages.service';
 
@@ -12,7 +13,7 @@ export class ContactChatListComponent implements OnInit {
 
   chatList: ChatPreview[] = [];
 
-  constructor(private messageService: MessagesService) { }
+  constructor(private messageService: MessagesService, private utilService: UtilsService) { }
 
   ngOnInit(): void {
   }
@@ -40,7 +41,7 @@ export class ContactChatListComponent implements OnInit {
     //just for random data 
     let chat = this.chatList.find(element=>element.id == id);
     if(chat){
-      this.messageService.changeChat(chat);
+      this.utilService.changeChat(chat);
     }
   }
 

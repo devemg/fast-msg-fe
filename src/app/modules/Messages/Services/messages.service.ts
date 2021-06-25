@@ -12,17 +12,7 @@ import { RandomDataService } from './random-data.service';
 })
 export class MessagesService {
 
-  subject = new Subject<any>();  
-
   constructor(private randomService: RandomDataService, private localService: LocalStorageService) { }
-
-  changeChat(chat: ChatPreview) {  
-    this.subject.next(chat);  
-  }  
-  
-  getChatObservable(): Observable<ChatPreview> {  
-    return this.subject.asObservable();  
-  }
 
   /**
    * Get random contacts to add
@@ -106,10 +96,10 @@ export class MessagesService {
       //create chat
       let chat = {id:this.randomService.getId(),title:contact.name,image:contact.image, contactId:contact._id};
       this.localService.addChat(chat);
-      this.subject.next(chat);
+      //this.subject.next(chat);
     }else {
       //select chat
-      this.subject.next(elementChat);
+     // this.subject.next(elementChat);
     }
   }
 

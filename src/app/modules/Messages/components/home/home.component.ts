@@ -13,7 +13,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   options: MenuOption [];
- 
+  showToolbar = true;
   
   constructor(private authService: AuthService, private router: Router, private breakpointObserver:BreakpointObserver) {
     this.options = options;
