@@ -6,12 +6,16 @@
       </mat-toolbar>
     <mat-sidenav  class="sidenav" #sidenav (keydown.escape)="sidenav.toggle()" mode="side" opened="false">
         <div class="options">
-            <div class="option" *ngFor="let item of options; let i = index;" [routerLink]="item.route" (click)="selectRoute()">
-                <button [matTooltip]="item.title" matTooltipPosition="right" matRipple><mat-icon color="primary">{{item.icon}}</mat-icon></button>
+            <div class="option" *ngFor="let item of options; let i = index;" 
+            [routerLink]="item.route" (click)="selectRoute()"
+            [matTooltip]="item.title" matTooltipPosition="right" >
+                <button matRipple><mat-icon color="primary">{{item.icon}}</mat-icon></button>
                 <span>{{item.title}}</span>
             </div>
-            <div class="option"  (click)="logout()">
-                <button matTooltip="Salir" matTooltipPosition="right" matRipple><mat-icon color="primary">door_front</mat-icon></button>
+            <div class="option"  
+            (click)="logout()"
+            matTooltip="Salir" matTooltipPosition="right" >
+                <button matRipple><mat-icon color="primary">door_front</mat-icon></button>
                 <span>Salir</span>
             </div>
         </div>
