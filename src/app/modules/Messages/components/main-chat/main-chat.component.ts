@@ -40,6 +40,8 @@ export class MainChatComponent implements OnInit { //},AfterViewInit {
         '(max-width: 768px)', '(max-width: 550px)'
           ]).subscribe(result => {
             if(!result.matches){
+              this.canShowHideMenu = false;
+              this.showContacts = true;
               return;
             }
             // (max-width: 768px)
@@ -51,6 +53,9 @@ export class MainChatComponent implements OnInit { //},AfterViewInit {
             // (max-width: 550px)
             if (result.breakpoints['(max-width: 550px)']) {
               this.canShowHideMenu = true;
+              if(this.selectedChat){
+                this.utilService.hideMenu();
+              }
             }else {
               this.canShowHideMenu = false;
             }
