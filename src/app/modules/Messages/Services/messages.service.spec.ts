@@ -1,16 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 import { MessagesService } from './messages.service';
 import { chatList, dummyContactList } from './mock-data.spec';
 
 describe('MessagesService', () => {
   let service: MessagesService;
+  let utilService: UtilsService
   let local: LocalStorageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(MessagesService);
+    utilService = TestBed.inject(UtilsService);
     local = TestBed.inject(LocalStorageService);
   });
 
@@ -82,7 +85,7 @@ describe('MessagesService', () => {
 
   it('should get list of messages', () => {
     service.getChatMessages('1234').then(res=>{
-      expect(res.length).toBeGreaterThan(10);
+      expect(res.length).toBeGreaterThanOrEqual(10);
     })
   });
 
@@ -104,8 +107,8 @@ describe('MessagesService', () => {
   });
   
   it('should update chat with subject', () => {
-    let spy = spyOn(service.subject,'next');
-    service.changeChat({title:'',image:'',contactId:'',id:'',lastMessage:''});
+    let spy = spyOn(utilService.subjectChat,'next');
+    utilService.changeChat({title:'',image:'',contactId:'',id:'',lastMessage:''});
     expect(spy).toHaveBeenCalled();
   });
 

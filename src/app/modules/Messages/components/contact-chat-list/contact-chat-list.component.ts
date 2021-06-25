@@ -36,7 +36,7 @@ export class ContactChatListComponent implements OnInit {
    * Send chat selected id to main chat component
    * @param id 
    */
-  selectChat(event:MatSelectionListChange) {
+  selectChat(event:MatSelectionListChange|any) {
     const id = event.options[0].value;
     //just for random data 
     let chat = this.chatList.find(element=>element.id == id);
