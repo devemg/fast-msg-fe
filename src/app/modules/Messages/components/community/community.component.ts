@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from '../../models/contact';
 import { MessagesService } from '../../Services/messages.service';
-import { RandomDataService } from '../../Services/random-data.service';
 
 @Component({
   selector: 'app-community',
@@ -17,10 +16,9 @@ export class CommunityComponent implements OnInit {
 
   isContacts = false;
   constructor(
-    private contactService: MessagesService, 
     private snackBar: MatSnackBar, 
     private activatedRoute: ActivatedRoute,
-    private randomService: RandomDataService,
+    private contactService: MessagesService,
     private router: Router) { }
 
   
