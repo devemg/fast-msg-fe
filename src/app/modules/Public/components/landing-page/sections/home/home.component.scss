@@ -1,7 +1,7 @@
 @import '/src/colors.scss';
 #content-first{
     background-color: $primary-color;
-    background-image: url('/assets/img/backgrounds/square_bg.png');
+    background-image: url('~/assets/img/backgrounds/square_bg.png');
     display: flex;
     flex-flow: row wrap;
     height: 100vh;
