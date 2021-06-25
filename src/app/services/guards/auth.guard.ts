@@ -9,11 +9,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log('ROUTE',route)
-      console.log('STATE',state)
-    return new Promise((resolve,reject)=>{
-      resolve(true)
-    });
+    return true;
   }
   
 }
