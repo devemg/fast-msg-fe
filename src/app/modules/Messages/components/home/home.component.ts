@@ -19,8 +19,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.options = options;
   }
 
-  ngOnInit() {  
+  ngOnInit() { 
+  }
 
+  ngOnChanges() {
+    console.log('change')
   }
 
   ngAfterViewInit() {
