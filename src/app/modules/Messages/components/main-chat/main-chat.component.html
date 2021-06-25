@@ -3,6 +3,6 @@
         <app-contact-chat-list *ngIf="canShowContact()"></app-contact-chat-list>
     </div>
     <div *ngIf="selectedChat != null" class="chat">
-        <app-chat [chat]="selectedChat" (backContacts)="selectedChat = null" ></app-chat>
+        <app-chat [chat]="selectedChat" (backContacts)="clearSelectedChat()" ></app-chat>
     </div>
 </div>

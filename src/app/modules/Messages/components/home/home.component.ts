@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-home',
@@ -15,15 +16,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   options: MenuOption [];
   showToolbar = true;
   
-  constructor(private authService: AuthService, private router: Router, private breakpointObserver:BreakpointObserver) {
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private breakpointObserver:BreakpointObserver,
+    private utilservice: UtilsService) {
     this.options = options;
   }
 
   ngOnInit() { 
-  }
-
-  ngOnChanges() {
-    console.log('change')
+    this.utilservice.getMenuObservable().subscribe(res=>{
+      this.showToolbar = res;
+    });
   }
 
   ngAfterViewInit() {

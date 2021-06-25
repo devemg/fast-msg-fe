@@ -8,8 +8,6 @@ import { ChatPreview } from '../modules/Messages/models/chat-preview';
 export class UtilsService {
 
   subjectChat = new Subject<any>();  
-
-  
   subjectMenu = new Subject<any>();  
 
   constructor() { }
@@ -48,7 +46,7 @@ export class UtilsService {
    * return observable to menu
    * @returns 
    */
-  getMenuSubscriber(): Observable<boolean>{
+  getMenuObservable(): Observable<boolean>{
     return this.subjectMenu.asObservable();
   }
 
