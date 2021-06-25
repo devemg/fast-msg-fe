@@ -1,12 +1,12 @@
 <section  class="container-highlight" [ngStyle]="{'background-color': color}" >
     <div data-aos="fade-left" data-aos-delay="50"  *ngIf="aligment == 'left'" class="element-image" >
-        <div class="image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+        <img loading="lazy" [src]="image" class="image" />
     </div>
     <div data-aos="fade-down" data-aos-delay="50" class="element">
         <h2>{{title}}</h2>
         <p>{{text}}</p>
     </div>
     <div data-aos="fade-right" data-aos-delay="50" *ngIf="aligment == 'right'" class="element-image">
-        <div class="image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+        <img loading="lazy" [src]="image" class="image" />
     </div>
 </section>
