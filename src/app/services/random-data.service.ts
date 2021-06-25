@@ -4,6 +4,7 @@ import { ChatMessage } from '../modules/Messages/models/chat-message';
 import { ChatPreview } from '../modules/Messages/models/chat-preview';
 import { Contact } from '../modules/messages/models/contact';
 import { UserProfile } from '../modules/Messages/models/user';
+import { name, internet, datatype, image, lorem } from 'faker';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,10 @@ export class RandomDataService {
    */
     getUser(): UserProfile {
     return {
-      _id: 'datatype.uuid()',
-      image: 'image.avatar()',
-      name: 'name.findName()',
-      email: 'internet.email()'
+      _id: datatype.uuid(),
+      image: image.avatar(),
+      name: name.findName(),
+      email: internet.email()
     };
   }
 
@@ -30,7 +31,7 @@ export class RandomDataService {
    * @returns 
    */
    getId(){
-    return 'datatype.uuid()';
+    return datatype.uuid();
   }
 
     /**
@@ -42,10 +43,10 @@ export class RandomDataService {
     let list: Contact[] = [];
     for(let i = 0; i < qty; i++ ){
       list.push({
-        _id: 'datatype.uuid()',
-        image: 'image.avatar()',
-        name: 'name.findName()',
-        email: 'internet.email()'
+        _id: datatype.uuid(),
+        image: image.avatar(),
+        name: name.findName(),
+        email: internet.email()
       });
     }
     return list;
@@ -58,11 +59,11 @@ export class RandomDataService {
     let list: ChatPreview[] = [];
     for(let i = 0; i < qty; i++ ){
       list.push({
-        id: 'datatype.uuid()',
-        image: 'image.avatar()',
-        title: 'name.findName()',
-        lastMessage: 'lorem.sentence()',
-        contactId: 'datatype.uuid()',
+        id: datatype.uuid(),
+        image: image.avatar(),
+        title: name.findName(),
+        lastMessage: lorem.sentence(),
+        contactId: datatype.uuid(),
       });
     }
     return list;
@@ -75,10 +76,10 @@ export class RandomDataService {
     let list: ChatMessage[] = [];
     for(let i = 0; i < qty; i++ ){
       list.push({
-        id: 'datatype.uuid()',
-        content:'lorem.sentence()',
-        date: new Date(), //datatype.datetime(),
-        isOwn: true //datatype.boolean()
+        id: datatype.uuid(),
+        content:lorem.sentence(),
+        date: datatype.datetime(),
+        isOwn: datatype.boolean()
       });
     }
     return list;
@@ -89,10 +90,10 @@ export class RandomDataService {
    * @returns 
    */
   getRandomNumber(): number {
-    return 0/*datatype.number({
+    return datatype.number({
     'min': 10,
     'max': 25
-    });**/
+    });
   }
 
     /**
@@ -101,10 +102,10 @@ export class RandomDataService {
    */
      getChat(): Chat{
       return {
-        id: 'datatype.uuid()',
-        image: 'image.avatar()',
-        title: 'name.findName()',
-        contactId: 'datatype.uuid()',
+        id: datatype.uuid(),
+        image: image.avatar(),
+        title: name.findName(),
+        contactId: datatype.uuid(),
         messages: []
       }
     }
