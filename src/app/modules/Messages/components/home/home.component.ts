@@ -24,19 +24,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.breakpointObserver.observe([
-      '(max-width: 550px)'
-        ]).subscribe(result => {
-          if (result.matches) {
-            this. sidenav.close();
-          }else {
-            this. sidenav.open();
-          }
-        }); 
+    setTimeout(() => {
+      this.breakpointObserver.observe([
+        '(max-width: 550px)'
+          ]).subscribe(result => {
+            if (result.matches) {
+              this. sidenav.close();
+              this.sidenav.mode = 'over';
+            }else {
+              this. sidenav.open();
+              this.sidenav.mode = 'side';
+            }
+          }); 
+    }, 200);
   }
 
+  selectRoute(){
+    if(this.sidenav.mode == 'over'){
+      this.sidenav.close();
+    }
+  }
 
   logout() {
+    this.selectRoute();
     this.authService.logout();
     this.router.navigate(['']);
   }

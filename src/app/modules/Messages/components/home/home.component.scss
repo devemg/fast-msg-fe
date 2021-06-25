@@ -8,6 +8,10 @@
     color: white;
 }
 
+mat-toolbar {
+    display: none;
+}
+
 .sidenav {
     background-color: $background-color;
     height: 100%;
@@ -28,6 +32,16 @@
     width: auto;
     .option {
         padding: 0.5em;
+        display: flex;
+        align-items: center;
+        
+        span {
+            display: none;
+            color: white;
+            font-family: 'Oswald','sans-serif';
+            letter-spacing: 1px;
+        }
+
         
         button {
             width: 50px;
@@ -42,18 +56,26 @@
             background-color: transparent;
         }
 
-        button:hover {
+        mat-icon {
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .option:hover {
+        cursor: pointer;
+        span {
+            color: $primary-color;
+        }
+
+
+        button {
             cursor: pointer;
 
             mat-icon {
                 color: white;
             }
-        }
-
-        mat-icon {
-            font-size: 40px;
-            width: 40px;
-            height: 40px;
         }
     }
 }
@@ -74,4 +96,23 @@
 
 .top-menu {
     background-color: white;
+}
+
+
+@media screen and (max-width: 550px) {
+
+    mat-toolbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .options .option span {
+        display: block;
+    }
+
+    .sidenav {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    
 }
