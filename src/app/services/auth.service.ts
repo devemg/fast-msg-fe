@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { RandomDataService } from '../modules/Messages/Services/random-data.service';
 import { LocalStorageService } from './local-storage.service';
+import { RandomDataService } from './random-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private randomService:RandomDataService,private localservice: LocalStorageService) { }
+  constructor(private localservice: LocalStorageService, private randomService: RandomDataService) { }
 
   /**
    * CLose the sesion
@@ -27,7 +27,7 @@ export class AuthService {
     console.log(email,password)
     return new Promise((resolve,reject)=>{
       if(email == 'invitado@fastmessages.com' && password == "fastmessages"){
-        let token = {token: this.randomService.getId()};
+        let token = {token: this.randomService.getId() };
         this.localservice.setUserToken(token.token);
         resolve(token);
       }else {

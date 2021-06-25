@@ -3,7 +3,7 @@ import { UpdatePasswordDto } from '../modules/messages/dtos/update-password.dto'
 import { ChatPreview } from '../modules/Messages/models/chat-preview';
 import { Contact } from '../modules/messages/models/contact';
 import { UserProfile } from '../modules/Messages/models/user';
-import { RandomDataService } from '../modules/Messages/Services/random-data.service';
+import { RandomDataService } from './random-data.service';
 
 @Injectable({
   providedIn: 'root'
