@@ -5,4 +5,7 @@
     <div *ngIf="selectedChat != null" class="chat">
         <app-chat [chat]="selectedChat" (backContacts)="clearSelectedChat()" ></app-chat>
     </div>
+    <div *ngIf="canShowPreview()" class="chat-preview">
+        <img src="assets/img/icons/logo-fastmessage.svg" alt="Fast Messsage" />
+    </div>
 </div>

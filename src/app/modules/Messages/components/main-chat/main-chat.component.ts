@@ -91,6 +91,18 @@ export class MainChatComponent implements OnInit { //},AfterViewInit {
   }
 
   /**
+   * return if can show chat preview
+   * this preview shows when there is not chat selected
+   * @returns 
+   */
+  canShowPreview(): boolean{
+    if(this.showContacts){
+      return this.selectedChat == null;
+    }
+    return false;
+  }
+
+  /**
    * clear selected chat
    */
   clearSelectedChat(){

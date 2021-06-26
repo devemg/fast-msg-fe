@@ -18,6 +18,20 @@
     width: 100%;
 }
 
+.chat-preview {
+    background-color: $background-dark-color;
+    background-image: url('../../../../../assets/img/backgrounds/square_bg.png');   
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 30%;
+    }
+}
+
 
 @media screen and (max-width:768px) {
     .container-all {
